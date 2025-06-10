@@ -10,7 +10,12 @@ export default function Clientes({ prop }) {
           <p className="">NUESTROS</p>
           <p className="font-bold">CLIENTES</p>
         </div>
-        <div className="grid grid-cols-4 gap-4 "></div>
+        <p className=" text-white">
+          Construimos estrategias digitales para potenciar tu negocio
+        </p>
+        <p className=" text-white">
+          Optimizando los recursos con una metodología consultiva.
+        </p>
       </div>
     </HorizontalScrollWrapper>
   );

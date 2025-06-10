@@ -104,30 +104,32 @@ export default function Servicios() {
               sectionRefs.current[0] = el;
             }}
           >
-            <div className=" flex flex-col justify-center items-center text-6xl mb-6 text-white">
-              <p className="custom-stroke">NUESTROS</p>
-              <p className="font-bold">SERVICIOS</p>
-            </div>
-            <div className="grid grid-cols-4 gap-4 mb-12">
-              {services.map(({ label }, index) => (
-                <div
-                  key={index}
-                  onClick={() => scrollTo(index + 1)}
-                  className="cursor-pointer hover:rotate-12 transition-transform duration-300 relative w-[210px] h-[210px] flex justify-center items-center text-center"
-                >
-                  <Image
-                    src={carpeta}
-                    alt="Carpeta vacía"
-                    fill
-                    style={{ objectFit: "contain" }}
-                  />
-                  <span className="absolute text-white text-2xl font-semibold leading-tight">
-                    {label.split(" ").slice(0, 2).join(" ")}
-                    <br />
-                    {label.split(" ").slice(2).join(" ")}
-                  </span>
-                </div>
-              ))}
+            <div className="sm:mb-0 mb-12">
+              <div className="flex flex-col justify-center items-center md:text-6xl text-4xl md:mb-6 mb-2 text-white">
+                <p className="custom-stroke">NUESTROS</p>
+                <p className="font-bold">SERVICIOS</p>
+              </div>
+              <div className="grid md:grid-cols-4 grid-cols-2 md:gap-4 gap-x-2 md:mb-12 mb-0">
+                {services.map(({ label }, index) => (
+                  <div
+                    key={index}
+                    onClick={() => scrollTo(index + 1)}
+                    className="cursor-pointer hover:rotate-12 transition-transform duration-300 relative md:w-[210px] w-[130px] md:h-[210px] h-[130px] flex justify-center items-center text-center"
+                  >
+                    <Image
+                      src={carpeta}
+                      alt="Carpeta vacía"
+                      fill
+                      style={{ objectFit: "contain" }}
+                    />
+                    <span className="absolute text-white md:text-2xl text-lg font-semibold leading-tight">
+                      {label.split(" ").slice(0, 2).join(" ")}
+                      <br />
+                      {label.split(" ").slice(2).join(" ")}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </PageWrapper>
@@ -150,7 +152,6 @@ export default function Servicios() {
         activeIndex={activeIndex}
         selectedIndex={0}
         scrollDirection={scrollDirection}
-
       />
     </>
   );

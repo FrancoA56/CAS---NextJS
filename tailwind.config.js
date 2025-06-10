@@ -8,12 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: "#C7D997", // Pantone 580 CP
-        teal: "#8ECAC0", // Pantone 3242 CP
-        blue: "#93D1E3", // Pantone 636 CP
-        pink: "#D47FB1", // Pantone 2375 CP
-        yellow: "#F3D56A", // Pantone 1215 CP
-        peach: "#E8B7A3", // Pantone 488 CP
+        green: "#A5E6A8", // Pantone 580 CP
+        teal: "#B791DD", // Pantone 3242 CP
+        blue: "#78C8D2", // Pantone 636 CP
+        pink: "#EE8EC3", // Pantone 2375 CP
+        yellow: "#FFDF7D", // Pantone 1215 CP
+        peach: "#FFC4AC", // Pantone 488 CP
         gray: "#888A8B", // Pantone Cool Gray 8 CP
       },
       fontFamily: {
