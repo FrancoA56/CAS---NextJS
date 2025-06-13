@@ -10,7 +10,7 @@ export default function ServiceNav({
 }: {
   onSelect: (index: number) => void;
   activeIndex: number;
-  selectedIndex: number | null;
+  selectedIndex: number;
   scrollDirection: "left" | "right";
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function ServiceNav({
   };
 
   return (
-    <nav className="fixed bottom-0 w-full text-white z-10">
+    <nav className="fixed bottom-0 w-full text-white z-99 bg-teal">
       {/* Versión Desktop (siempre visible) */}
       <div className="hidden sm:grid sm:grid-cols-8">
         {items.map((item, index) => {
@@ -40,11 +40,11 @@ export default function ServiceNav({
             <div
               key={`desktop-${index}`}
               onClick={() => onSelect(index + 1)}
-              className="relative cursor-pointer overflow-visible border border-white text-center w-full h-full flex items-center justify-center group transition duration-300 group-hover:bg-green"
+              className="relative cursor-pointer overflow-visible border border-white text-center w-full h-full flex items-center justify-center group transition duration-300"
             >
               {isActive && (
                 <motion.div
-                  className="absolute inset-0 bg-green z-0"
+                  className="absolute inset-0 bg-pink z-0"
                   initial={{
                     scaleX: 0,
                     originX: scrollDirection === "right" ? 0 : 1,
@@ -62,7 +62,7 @@ export default function ServiceNav({
       </div>
 
       {/* Versión Mobile */}
-      <div className="sm:hidden border-t-2  border-white bg-pink">
+      <div className="sm:hidden border-t-2  border-white bg-teal">
         {/* Botón de flecha */}
         <div
           className=" animate-bounce w-full mt-2 flex justify-center py-2 cursor-pointer"
@@ -85,7 +85,7 @@ export default function ServiceNav({
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="overflow-hidden bg-peach"
+              className="overflow-hidden bg-blue"
             >
               <div className="flex flex-col">
                 {items.map((item, index) => {
@@ -95,7 +95,7 @@ export default function ServiceNav({
                       key={`mobile-${index}`}
                       onClick={() => handleItemClick(index)}
                       className={`relative cursor-pointer border text-center p-3 flex items-center justify-center transition-colors ${
-                        isActive ? "bg-green" : "hover:bg-green"
+                        isActive ? "bg-pink" : "hover:bg-pink"
                       }`}
                     >
                       <span className="text-sm">{item}</span>

@@ -8,24 +8,14 @@ import LogoCasBlanco from "../media/LogoCasBlanco.png";
 import Image from "next/image";
 import Link from "next/link";
 
-// Colores de fondo viejos
-// const backgroundColors: Record<string, string> = {
-//   "/": "#8ECAC0",
-//   "/servicios": "#D47FB1",
-//   "/clientes": "#E8B7A3",
-//   "/quienessomos": "#C7D997",
-//   "/contacto": "#F3D56A",
-//   "/equipo": "#93D1E3",
-// };
-
 // Colores de fondo nuevos
 const backgroundColors: Record<string, string> = {
   "/": "#78C8D2",
-  "/servicios": "#EE8EC3",
+  "/servicios": "#B791DD",
   "/clientes": "#FFC4AC",
   "/quienessomos": "#A5E6A8",
   "/contacto": "#FFDF7D",
-  "/equipo": "#B791DD",
+  "/equipo": "#EE8EC3",
 };
 
 export default function RootLayout({
@@ -44,13 +34,24 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="overflow-hidden transition-colors duration-700 font-gotham">
-        <div className="absolute z-40 md:top-10 top-8 left-6 flex flex-col space-y-2 font-gotham">
+        <div className="absolute z-90 top-0 left-0 h-full w-[100px] border-r border-white/30 flex-col items-center justify-between py-8 md:inline hidden">
+          {/* Botón hamburguesa */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="mt-2 left-8 absolute"
+          >
+            <FiAlignJustify size={32} className="text-white" />
+          </button>
+
+          {/* Texto rotado */}
+          <div className="absolute bottom-64 left-16 transform -translate-x-1/2 rotate-[-90deg] origin-bottom text-white opacity-80 tracking-widest text-2xl whitespace-nowrap">
+            CAS - MARKETING & DESIGN
+          </div>
+        </div>
+        <div className="absolute z-40 md:top-10 top-8 left-6 flex-col space-y-2 font-gotham inline md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             <FiAlignJustify size={32} className="text-white" />
           </button>
-        </div>
-        <div className="absolute left-12 bottom-16 transform -rotate-90 origin-left text-2xl text-white h-12 opacity-70 tracking-widest font-gotham whitespace-nowrap md:inline hidden">
-          CAS - MARKETING & DESIGN
         </div>
         <FullScreenNav
           prop={backgroundColor}

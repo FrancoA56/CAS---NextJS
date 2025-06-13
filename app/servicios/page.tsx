@@ -5,17 +5,16 @@ import HorizontalScrollWrapper, {
 } from "../../components/HorizontalScrollWrapper";
 import PageWrapper from "../../components/PageWrapper";
 import Image from "next/image";
-import tilde from "../../media/tilde.png";
-import carpeta from "../../media/carpetaVaciaFina.png";
+import carpeta from "../../media/carpetaRellena.png";
 import ServiceNav from "../../components/ServiceNav";
-import AnalisisDeAudiencia from "../../components/services/AnalisisDeAudiencia";
-import RedesSociales from "../../components/services/RedesSociales";
-import EmailMarketing from "../../components/services/EmailMarketing";
-import AsesoriaPersonalizada from "../../components/services/AsesoriaPersonalizada";
-import CreacionDeContenido from "../../components/services/CreacionContenido";
-import SitiosWeb from "../../components/services/SitiosWebYProgramación";
-import DisenoGrafico from "../../components/services/DisenoGrafico";
-import CampanasPublicitarias from "../../components/services/CampanasPublicitarias";
+import AnalisisDeAudiencia from "../../components/servicios/AnalisisDeAudiencia";
+import RedesSociales from "../../components/servicios/RedesSociales";
+import EmailMarketing from "../../components/servicios/EmailMarketing";
+import AsesoriaPersonalizada from "../../components/servicios/AsesoriaPersonalizada";
+import CreacionDeContenido from "../../components/servicios/CreacionContenido";
+import SitiosWeb from "../../components/servicios/SitiosWebYProgramación";
+import DisenoGrafico from "../../components/servicios/DisenoGrafico";
+import CampanasPublicitarias from "../../components/servicios/CampanasPublicitarias";
 
 export default function Servicios() {
   const scrollRef = useRef<HorizontalScrollWrapperRef>(null);
@@ -86,7 +85,7 @@ export default function Servicios() {
 
   const services = [
     { label: "Diseño Gráfico", Component: DisenoGrafico },
-    { label: "Sitios Web y Programación", Component: SitiosWeb },
+    { label: "Sitios Web", Component: SitiosWeb },
     { label: "Creación de contenido", Component: CreacionDeContenido },
     { label: "Analisis de audiencia", Component: AnalisisDeAudiencia },
     { label: "Email Marketing", Component: EmailMarketing },
@@ -114,7 +113,7 @@ export default function Servicios() {
                   <div
                     key={index}
                     onClick={() => scrollTo(index + 1)}
-                    className="cursor-pointer hover:rotate-12 transition-transform duration-300 relative md:w-[210px] w-[130px] md:h-[210px] h-[130px] flex justify-center items-center text-center"
+                    className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
                   >
                     <Image
                       src={carpeta}

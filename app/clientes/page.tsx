@@ -1,22 +1,12 @@
 import HorizontalScrollWrapper from "../../components/HorizontalScrollWrapper";
-import Image from "next/image";
-import carpeta from "../../media/carpetaVaciaFina.png";
+import InicioC from "../../components/clientes/inicio";
+import SecondC from "../../components/clientes/second";
 
 export default function Clientes({ prop }) {
   return (
     <HorizontalScrollWrapper>
-      <div className="h-screen w-full flex justify-center items-center flex-col">
-        <div className="flex flex-col justify-center items-center text-6xl mb-6 text-white">
-          <p className="">NUESTROS</p>
-          <p className="font-bold">CLIENTES</p>
-        </div>
-        <p className=" text-white">
-          Construimos estrategias digitales para potenciar tu negocio
-        </p>
-        <p className=" text-white">
-          Optimizando los recursos con una metodología consultiva.
-        </p>
-      </div>
+      <InicioC />
+      <SecondC />
     </HorizontalScrollWrapper>
   );
 }

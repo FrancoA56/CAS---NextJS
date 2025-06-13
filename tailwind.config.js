@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        rotate360: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "rotate-once": "rotate360 0.8s ease-in-out",
+      },
       colors: {
         green: "#A5E6A8", // Pantone 580 CP
         teal: "#B791DD", // Pantone 3242 CP
