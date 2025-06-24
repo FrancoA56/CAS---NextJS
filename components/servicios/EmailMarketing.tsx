@@ -1,31 +1,33 @@
-import { FaEnvelopeOpenText } from "react-icons/fa";
-import Image from "next/image";
-import tilde from "../../media/tilde.png";
+import Link from "next/link";
+import HorizontalCarousel from "./CarruselHorizontal";
 
 export default function EmailMarketing() {
   return (
-    <div className="flex flex-col items-center justify-center px-8 text-white max-w-3xl text-center mb-12">
-      <FaEnvelopeOpenText className="text-teal-400 text-6xl mb-4 animate-pulse" />
-      <h2 className="text-4xl font-bold mb-2">Email Marketing</h2>
-      <p className="text-2xl mb-6">
-        Potenciamos tu comunicación directa con campañas segmentadas que aumentan 
-        engagement, conversiones y fidelización.
-      </p>
-
-      <ul className="text-left text-xl space-y-3">
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} />
-          Automatizaciones y flujos de nutrición (drip campaigns)
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} />
-          Diseño responsive y plantillas personalizadas
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} />
-          Análisis de métricas clave (open rate, CTR, conversión)
-        </li>
-      </ul>
+    <div className="flex flex-row">
+      <div className="w-1/2 flex justify-center items-center">
+        <HorizontalCarousel />
+      </div>
+      <div className="flex flex-col items-end justify-end text-end px-8 text-black w-1/2 mb-12 mr-12">
+        <h2 className="text-6xl md:text-8xl font-bold mb-2 text-green">
+          Email{" "}
+        </h2>
+        <h2 className="text-6xl md:text-8xl font-bold mb-6 custom-stroke-green">
+          {" "}
+          Marketing
+        </h2>
+        <p className="text-2xl mb-6">
+          Diseñamos campañas de email que acompañan a tus clientesen cada etapa,
+          con mensajes pensados y automatizacionesque llegan en el momento
+          justo. Anticipate a sus necesidades y{" "}
+          <span className="text-green font-semibold">generá impacto real.</span>
+        </p>
+        <button className="bg-green rounded-3xl border border-black py-2 px-4">
+          <Link href="/contacto" replace className="flex flex-row">
+            No dudes en consultarnos {">"}
+            {">"}
+          </Link>
+        </button>
+      </div>
     </div>
   );
 }

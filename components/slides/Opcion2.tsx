@@ -1,6 +1,6 @@
 export default function Opcion2() {
   return (
-    <div className="flex flex-col items-center justify-center px-8 text-white max-w-3xl text-center mb-12">
+    <div className="flex flex-col items-center justify-center px-8 text-black max-w-3xl text-center mb-12">
           Posicionamiento y Visibilidad de Marca
     </div>
   );

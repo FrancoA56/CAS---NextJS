@@ -1,22 +1,9 @@
 "use client";
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { FiAlignJustify } from "react-icons/fi";
 import FullScreenNav from "../components/FullScreenNav";
-import LogoCasBlanco from "../media/LogoCasBlanco.png";
-import Image from "next/image";
-import Link from "next/link";
 
-// Colores de fondo nuevos
-const backgroundColors: Record<string, string> = {
-  "/": "#78C8D2",
-  "/servicios": "#B791DD",
-  "/clientes": "#FFC4AC",
-  "/quienessomos": "#A5E6A8",
-  "/contacto": "#FFDF7D",
-  "/equipo": "#EE8EC3",
-};
 
 export default function RootLayout({
   children,
@@ -24,8 +11,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-  const backgroundColor = backgroundColors[pathname] || "#ffffff";
+  const backgroundColor = "#ffffff";
 
   useEffect(() => {
     document.body.style.backgroundColor = backgroundColor;
@@ -34,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="overflow-hidden transition-colors duration-700 font-gotham">
-        <div className="absolute z-90 top-0 left-0 h-full w-[100px] border-r border-white/30 flex-col items-center justify-between py-8 md:inline hidden">
+        <div className="bg-black absolute z-10 top-0 left-0 h-full w-[100px] border-r border-black/30 flex-col items-center justify-between py-8 md:inline hidden">
           {/* Botón hamburguesa */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -48,9 +34,9 @@ export default function RootLayout({
             CAS - MARKETING & DESIGN
           </div>
         </div>
-        <div className="absolute z-40 md:top-10 top-8 left-6 flex-col space-y-2 font-gotham inline md:hidden">
+        <div className="absolute z-0 md:top-10 top-8 left-6 flex-col space-y-2 font-gotham inline md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            <FiAlignJustify size={32} className="text-white" />
+            <FiAlignJustify size={32} className="text-black" />
           </button>
         </div>
         <FullScreenNav
@@ -59,14 +45,7 @@ export default function RootLayout({
           setIsOpen={setIsOpen}
         />
         <main>{children}</main>
-        <Link href="/">
-          <Image
-            src={LogoCasBlanco}
-            alt="LogoCas"
-            width={100} // Este es el tamaño máximo (para desktop)
-            className="absolute top-9 right-9 w-[80px] md:w-[100px]"
-          />
-        </Link>{" "}
+        
       </body>
     </html>
   );

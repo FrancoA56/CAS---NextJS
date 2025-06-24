@@ -2,6 +2,7 @@
 import HorizontalScrollWrapper, {
   HorizontalScrollWrapperRef,
 } from "../components/HorizontalScrollWrapper";
+import { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
 import Footer from "../components/footer";
 import SlideMain from "../components/slides/MainSlide";
@@ -10,20 +11,51 @@ import Opcion1 from "../components/slides/Opcion1";
 import Opcion2 from "../components/slides//Opcion2";
 import Opcion3 from "../components/slides//Opcion3";
 import Opcion4 from "../components/slides//Opcion4";
+import Opcion5 from "../components/slides//Opcion5";
+import slide2 from "../media/slide2.png";
+import Image from "next/image";
 
 export default function Home() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const scrollRef = useRef<HorizontalScrollWrapperRef>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const scrollTo = (index: number) => {
     scrollRef.current?.scrollToIndex(index);
   };
 
+  const pink = "#EE8EC3";
+  const green = "#A5E6A8";
+  const teal = "#B791DD";
+  const peach = "#FFC4AC";
+  const blue = "#78C8D2";
+
   const ideales = [
-    { label: "Generación de Leads Calificados", Component: Opcion1 },
-    { label: "Posicionamiento y Visibilidad de Marca", Component: Opcion2 },
-    { label: "Estrategia Comercial y Comunicación", Component: Opcion3 },
-    { label: "Ahorro de Tiempo y Recursos", Component: Opcion4 },
+    {
+      label: "Atrae nuevos clientes",
+      background: pink,
+      Component: Opcion1,
+    },
+    {
+      label: "Mostra tu marca",
+      background: green,
+      Component: Opcion2,
+    },
+    {
+      label: "Comunica lo que haces",
+      background: teal,
+      Component: Opcion3,
+    },
+    {
+      label: "Ahorra tiempo y recursos",
+      background: peach,
+      Component: Opcion4,
+    },
+    {
+      label: "Posicionate",
+      background: blue,
+      Component: Opcion5,
+    },
   ];
 
   return (
@@ -32,26 +64,40 @@ export default function Home() {
         <SlideMain />
       </PageWrapper>
       <PageWrapper>
-        <div className="flex flex-col items-center justify-center w-full h-full text-center px-6 md:px-32">
-          <h2 className="text-white text-3xl md:text-6xl font-extrabold uppercase mb-6">
-            Impulsamos marcas con estrategia, diseño y creatividad.
-          </h2>
-          <p className="text-white text-lg md:text-2xl max-w-3xl mb-10">
-            En <span className="font-bold">CAS</span>, creamos experiencias
-            visuales y campañas que conectan con tu audiencia. Combinamos
-            análisis, creatividad y tecnología para generar impacto real.
-          </p>
-          <div className="flex flex-wrap sm:grid sm:grid-cols-2 justify-center gap-4">
-            {ideales.map(({ label }, index) => (
-              <button
-                key={index}
-                onClick={() => scrollTo(index + 2)}
-                className="bg-white/10 border border-white/20 px-6 py-4 rounded-xl text-white text-sm backdrop-blur-md sm:w-auto w-full"
-              >
-                <span>{label}</span>
-              </button>
-            ))}
+        <div className="flex flex-row ">
+          <div className="flex flex-col items-center justify-center w-full h-full text-center px-6 md:px-32">
+            <h2 className="text-black text-3xl md:text-6xl font-extrabold uppercase mb-6">
+              soluciones creativas
+            </h2>
+            <h2 className="text-gradient-cas text-3xl md:text-6xl font-extrabold uppercase mb-6">
+              resultados reales
+            </h2>
+            <p className="text-black text-lg md:text-2xl max-text-3xl mb-10">
+              En <span className="font-bold text-gradient-cas-ns">CAS</span>, no
+              solo hacemos marketing, diseñamos experiencias que conectan marcas
+              con personas. Nuestro enfoque es integral y creativo, combinando
+              estrategia, diseño y contenido en un mismo equipo para garantizar
+              la mejor solución.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 z-0 mx-32">
+              {ideales.map(({ label, background }, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollTo(index + 2)}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  style={{
+                    backgroundColor:
+                      hoveredIndex === index ? `${background}99` : background, // "33" = 20% opacidad en hex
+                  }}
+                  className="border border-black/30 px-6 py-4 rounded-xl text-black backdrop-blur-md text-sm sm:w-auto w-full transition-colors duration-300"
+                >
+                  <span>{label}</span>
+                </button>
+              ))}
+            </div>
           </div>
+          <Image src={slide2} alt="slide2" height={650} />
         </div>
       </PageWrapper>
       {ideales.map(({ Component }, i) => (

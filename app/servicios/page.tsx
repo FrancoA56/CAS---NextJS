@@ -1,20 +1,24 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-import HorizontalScrollWrapper, {
+import HorizontalScrollWrapperServices, {
   HorizontalScrollWrapperRef,
-} from "../../components/HorizontalScrollWrapper";
+} from "../../components/HorizontalScrollWrapperServices";
 import PageWrapper from "../../components/PageWrapper";
 import Image from "next/image";
-import carpeta from "../../media/carpetaRellena.png";
 import ServiceNav from "../../components/ServiceNav";
-import AnalisisDeAudiencia from "../../components/servicios/AnalisisDeAudiencia";
 import RedesSociales from "../../components/servicios/RedesSociales";
 import EmailMarketing from "../../components/servicios/EmailMarketing";
 import AsesoriaPersonalizada from "../../components/servicios/AsesoriaPersonalizada";
 import CreacionDeContenido from "../../components/servicios/CreacionContenido";
 import SitiosWeb from "../../components/servicios/SitiosWebYProgramación";
 import DisenoGrafico from "../../components/servicios/DisenoGrafico";
-import CampanasPublicitarias from "../../components/servicios/CampanasPublicitarias";
+import PaidMedia from "../../components/servicios/PaidMedia";
+import CarpetaRosa from "../../media/carpetas/rosa1.png";
+import CarpetaAmarillo from "../../media/carpetas/amarillo1.png";
+import CarpetaAzul from "../../media/carpetas/azul1.png";
+import CarpetaVerde from "../../media/carpetas/verde1.png";
+import CarpetaVioleta from "../../media/carpetas/violeta1.png";
+import CarpetaSalmon from "../../media/carpetas/salmon1.png";
 
 export default function Servicios() {
   const scrollRef = useRef<HorizontalScrollWrapperRef>(null);
@@ -84,19 +88,30 @@ export default function Servicios() {
   }, []);
 
   const services = [
-    { label: "Diseño Gráfico", Component: DisenoGrafico },
-    { label: "Sitios Web", Component: SitiosWeb },
-    { label: "Creación de contenido", Component: CreacionDeContenido },
-    { label: "Analisis de audiencia", Component: AnalisisDeAudiencia },
-    { label: "Email Marketing", Component: EmailMarketing },
-    { label: "Redes Sociales", Component: RedesSociales },
-    { label: "Campañas Publicitarias", Component: CampanasPublicitarias },
-    { label: "Asesoria Personalizada", Component: AsesoriaPersonalizada },
+    {
+      label: "Diseño Gráfico",
+      Component: DisenoGrafico,
+      image: CarpetaAmarillo,
+    },
+    {
+      label: "Email Marketing",
+      Component: EmailMarketing,
+      image: CarpetaVerde,
+    },
+    { label: "Social Media", Component: RedesSociales, image: CarpetaRosa },
+    { label: "Diseño Web", Component: SitiosWeb, image: CarpetaAzul },
+    { label: "Paid Media", Component: PaidMedia, image: CarpetaVioleta },
+    { label: "Contenido", Component: CreacionDeContenido, image: CarpetaAzul },
+    {
+      label: "Asesorias",
+      Component: AsesoriaPersonalizada,
+      image: CarpetaSalmon,
+    },
   ];
 
   return (
     <>
-      <HorizontalScrollWrapper ref={scrollRef}>
+      <HorizontalScrollWrapperServices ref={scrollRef}>
         <PageWrapper>
           <div
             ref={(el) => {
@@ -104,30 +119,57 @@ export default function Servicios() {
             }}
           >
             <div className="sm:mb-0 mb-12">
-              <div className="flex flex-col justify-center items-center md:text-6xl text-4xl md:mb-6 mb-2 text-white">
-                <p className="custom-stroke">NUESTROS</p>
-                <p className="font-bold">SERVICIOS</p>
+              <div className="flex flex-col justify-center items-center md:text-6xl text-4xl md:mb-6 mb-2 ">
+                <p className="font-bold">NUESTROS</p>
+                <p className="text-gradient-cas custom-stroke ">SERVICIOS</p>
               </div>
-              <div className="grid md:grid-cols-4 grid-cols-2 md:gap-4 gap-x-2 md:mb-12 mb-0">
-                {services.map(({ label }, index) => (
-                  <div
-                    key={index}
-                    onClick={() => scrollTo(index + 1)}
-                    className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
-                  >
-                    <Image
-                      src={carpeta}
-                      alt="Carpeta vacía"
-                      fill
-                      style={{ objectFit: "contain" }}
-                    />
-                    <span className="absolute text-white md:text-2xl text-lg font-semibold leading-tight">
-                      {label.split(" ").slice(0, 2).join(" ")}
-                      <br />
-                      {label.split(" ").slice(2).join(" ")}
-                    </span>
-                  </div>
-                ))}
+              {/* Dividir en dos filas */}
+              <div className="flex flex-col gap-4 md:mb-12 mb-0">
+                {/* Primera fila - 4 carpetas */}
+                <div className="flex justify-center md:justify-between gap-4">
+                  {services.slice(0, 4).map(({ label, image }, index) => (
+                    <div
+                      key={index}
+                      onClick={() => scrollTo(index + 1)}
+                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                    >
+                      <Image
+                        src={image}
+                        alt="Carpeta"
+                        fill
+                        style={{ objectFit: "contain" }}
+                      />
+                      <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                        {label.split(" ").slice(0, 1).join(" ")}
+                        <br />
+                        {label.split(" ").slice(1)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Segunda fila - 3 carpetas centradas */}
+                <div className="flex justify-center gap-4">
+                  {services.slice(4).map(({ label, image }, index) => (
+                    <div
+                      key={index + 4}
+                      onClick={() => scrollTo(index + 5)} // índice ajustado por el slice
+                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                    >
+                      <Image
+                        src={image}
+                        alt="Carpeta"
+                        fill
+                        style={{ objectFit: "contain" }}
+                      />
+                      <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                        {label.split(" ").slice(0, 1).join(" ")}
+                        <br />
+                        {label.split(" ").slice(1)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -144,7 +186,7 @@ export default function Servicios() {
             </div>
           </PageWrapper>
         ))}
-      </HorizontalScrollWrapper>
+      </HorizontalScrollWrapperServices>
 
       <ServiceNav
         onSelect={scrollTo}

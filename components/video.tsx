@@ -10,7 +10,6 @@ export default function AnimatedVideo() {
         height: "auto",
         objectFit: "cover",
         display: "block",
-        mixBlendMode: 'screen',
       }}
     >
       <source src="/media/corazonVideo.webm" type="video/webM" />

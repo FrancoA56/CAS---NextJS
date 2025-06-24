@@ -31,7 +31,7 @@ export default function SecondE() {
   ];
 
   return (
-    <div className="h-screen w-screen flex-shrink-0 flex items-center px-4">
+    <div className="h-screen w-screen flex-shrink-0 flex items-center px-4 ml-12">
       <div className="flex space-x-8 px-16">
         {teamMembers.map((member, index) => (
           <div
@@ -48,9 +48,9 @@ export default function SecondE() {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+              <h3 className="text-2xl font-bold text-black">{member.name}</h3>
               <p className="text-teal-400 mb-2">{member.role}</p>
-              <p className="text-white text-sm">{member.fact}</p>
+              <p className="text-black text-sm">{member.fact}</p>
             </div>
           </div>
         ))}

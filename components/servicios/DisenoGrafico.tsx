@@ -1,32 +1,32 @@
-import { FaPalette } from "react-icons/fa";
-import Image from "next/image";
-import tilde from "../../media/tilde.png";
-import corazon from "../../media/corazon.png";
+import Link from "next/link";
+import VerticalCarousel from "./CarruselVertical"; // Ajustá ruta si es necesario
 
 export default function DisenoGrafico() {
   return (
-    <div className="flex flex-col items-center justify-center px-8 text-white max-w-3xl text-center mb-12">
-      <FaPalette className="text-teal-400 text-6xl mb-4 animate-pulse" />
-      <h2 className="text-4xl font-bold mb-2">Diseño Gráfico</h2>
-      <p className="text-2xl mb-6">
-        Creamos identidades visuales impactantes que comunican la esencia de tu 
-        marca y captan la atención de tu audiencia.
-      </p>
+    <div className="flex flex-col md:flex-row w-full px-8 py-12 items-center justify-between">
+      {/* Texto */}
+      <div className="flex flex-col items-start justify-center text-black text-left mb-12 md:w-1/2 w-full ml-32">
+        <h2 className="text-6xl md:text-8xl font-bold mb-2 text-yellow">DISEÑO</h2>
+        <h2 className="text-6xl md:text-8xl font-bold mb-6 custom-stroke-yellow">GRÁFICO</h2>
+        <p className="text-lg md:text-xl mb-6 text-justify">
+          Diseñamos piezas que no solo se ven bien, sino que comunican. Desde
+          posteos y banners hasta packaging, creamos identidad visual,
+          materiales para puntos de venta y{" "}
+          <span className="text-yellow font-semibold">
+            todo lo que tu marca necesita para destacarse.
+          </span>
+        </p>
+        <button className="bg-yellow rounded-3xl border border-black py-2 px-4">
+          <Link href="/contacto" replace className="flex flex-row">
+            No dudes en consultarnos {">"}{">"}
+          </Link>
+        </button>
+      </div>
 
-      <ul className="text-left text-xl space-y-3">
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} />
-          Diseño de logotipos e identidad visual
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} />
-          Materiales gráficos para redes sociales
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} />
-          Diseño de banners y anuncios publicitarios
-        </li>
-      </ul>
+      {/* Carrusel */}
+      <div className="md:w-1/2 w-full flex justify-center">
+        <VerticalCarousel />
+      </div>
     </div>
   );
 }

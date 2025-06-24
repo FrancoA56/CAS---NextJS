@@ -15,14 +15,13 @@ export default function ServiceNav({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const items = [
-    "DISEÑO",
-    "WEB",
+    "DISEÑO GRAFICO",
+    "EMAIL MARKETING",
+    "SOCIAL MEDIA",
+    "DISEÑO WEB",
+    "PAID MEDIA",
     "CONTENIDO",
-    "ANÁLISIS",
-    "EMAIL",
-    "RRSS",
-    "CAMPAÑAS",
-    "ASESORÍA",
+    "ASESORÍAS",
   ];
 
   const handleItemClick = (index: number) => {
@@ -31,20 +30,20 @@ export default function ServiceNav({
   };
 
   return (
-    <nav className="fixed bottom-0 w-full text-white z-99 bg-teal">
+    <nav className="fixed bottom-0 w-full text-black z-40 bg-white">
       {/* Versión Desktop (siempre visible) */}
-      <div className="hidden sm:grid sm:grid-cols-8">
+      <div className="hidden sm:grid sm:grid-cols-7">
         {items.map((item, index) => {
           const isActive = activeIndex === index + 1;
           return (
             <div
               key={`desktop-${index}`}
               onClick={() => onSelect(index + 1)}
-              className="relative cursor-pointer overflow-visible border border-white text-center w-full h-full flex items-center justify-center group transition duration-300"
+              className="relative cursor-pointer overflow-visible border border-black text-center w-full h-full flex items-center justify-center group transition duration-300"
             >
               {isActive && (
                 <motion.div
-                  className="absolute inset-0 bg-pink z-0"
+                  className="absolute inset-0 bg-pink"
                   initial={{
                     scaleX: 0,
                     originX: scrollDirection === "right" ? 0 : 1,
@@ -53,7 +52,7 @@ export default function ServiceNav({
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 />
               )}
-              <div className="relative z-10 p-2 flex items-center justify-center overflow-visible">
+              <div className="relative p-2 flex items-center justify-center overflow-visible">
                 <span className="text-sm md:text-base">{item}</span>
               </div>
             </div>

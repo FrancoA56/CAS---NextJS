@@ -13,14 +13,14 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
           exit={{ x: "-100%" }}
           transition={{ duration: 0.4 }}
           style={{ backgroundColor: prop }}
-          className="fixed inset-0 text-5xl font-gotham uppercase text-white z-40 flex flex-col justify-center items-center text-center "
+          className="fixed inset-0 text-5xl font-gotham uppercase text-black z-50 flex flex-col justify-center items-center text-center "
         >
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute md:top-10 top-8 left-6 focus:outline-none"
+            className="absolute md:top-10 top-8 left-8 focus:outline-none"
             aria-label="Cerrar menú"
           >
-            <FiX size={32} className="text-white" />
+            <FiX size={32} className="text-black" />
           </button>
           <ul className="flex flex-col gap-10">
             <li>
@@ -28,7 +28,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/"
                 onClick={() => setIsOpen(false)}
                 replace
-                className=" text-transparent hover:text-white transition-all duration-300 custom-stroke"
+                className="text-5xl font-gotham uppercase custom-stroke custom-stroke-hover-gradient"
               >
                 Inicio
               </Link>
@@ -38,9 +38,9 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/servicios"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl font-gotham uppercase  text-transparent hover:text-white transition-all duration-300 custom-stroke"
+                className="text-5xl font-gotham uppercase custom-stroke custom-stroke-hover-gradient"
               >
-                Servicios
+                Nuestros Servicios
               </Link>
             </li>
             <li>
@@ -48,7 +48,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/quienessomos"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl font-gotham uppercase  text-transparent hover:text-white transition-all duration-300 custom-stroke"
+                className="text-5xl font-gotham uppercase custom-stroke custom-stroke-hover-gradient"
               >
                 ¿QUIÉNES SOMOS?
               </Link>
@@ -58,9 +58,9 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/equipo"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl font-gotham uppercase  text-transparent hover:text-white transition-all duration-300 custom-stroke"
+                className="text-5xl font-gotham uppercase custom-stroke custom-stroke-hover-gradient"
               >
-                EQUIPO
+                Nuestro EQUIPO
               </Link>
             </li>
             <li>
@@ -68,9 +68,9 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/clientes"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl font-gotham uppercase  text-transparent hover:text-white transition-all duration-300 custom-stroke"
+                className="text-5xl font-gotham uppercase custom-stroke custom-stroke-hover-gradient"
               >
-                Clientes
+                Confian en nosotros
               </Link>
             </li>
             <li>
@@ -78,9 +78,9 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/contacto"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl font-gotham uppercase  text-transparent hover:text-white transition-all duration-300 custom-stroke"
+                className="text-5xl font-gotham uppercase custom-stroke custom-stroke-hover-gradient"
               >
-                Contacto
+                Contactanos
               </Link>
             </li>
           </ul>

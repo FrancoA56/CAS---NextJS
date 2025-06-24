@@ -3,20 +3,69 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('../public/fonts/Gotham-Book.woff2') format('woff2');
+  font-family: "Gotham";
+  src: url("../public/fonts/Gotham-Book.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-.custom-stroke {
-  -webkit-text-stroke: 1.5px white;
-  color: transparent;
-  transition: color 0.3s ease;
+.text-gradient-cas {
+  background: linear-gradient(
+    90deg,
+    #a5e6a8,
+    #b791dd,
+    #78c8d2,
+    #ee8ec3,
+    #ffdf7d,
+    #ffc4ac
+  );
+  -webkit-text-stroke: 0.1px black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-cas-ns {
+  background: linear-gradient(
+    90deg,
+    #a5e6a8,
+    #b791dd,
+    #78c8d2,
+    #ee8ec3,
+    #ffdf7d,
+    #ffc4ac
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.custom-stroke:hover {
-  color: white;
+.custom-stroke {
+  -webkit-text-stroke: 1.5px black;
+  color: transparent;
+  transition: all 0.3s ease;
+}
+.custom-stroke-yellow {
+  -webkit-text-stroke: 0.1px black;
+  color: #ffdf7d;
+  transition: all 0.3s ease;
+}
+.custom-stroke-green {
+  -webkit-text-stroke: 0.1px black;
+  color: #A5E6A8;
+  transition: all 0.3s ease;
+}
+
+/* Esta clase se activa en hover */
+.custom-stroke-hover-gradient:hover {
+  background: linear-gradient(
+    90deg,
+    #a5e6a8,
+    #b791dd,
+    #78c8d2,
+    #ee8ec3,
+    #ffdf7d,
+    #ffc4ac
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* global.css */
