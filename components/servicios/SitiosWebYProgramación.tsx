@@ -1,31 +1,36 @@
-import { FaCode } from "react-icons/fa";
+import Link from "next/link";
 import Image from "next/image";
-import tilde from "../../media/tilde.png";
+import image1 from "../../media/compuDisenoWeb.png";
 
-export default function SitioWebYProgramacion() {
+export default function DisenioWeb() {
   return (
-    <div className="flex flex-col items-center justify-center px-8 text-black max-w-3xl text-center mb-12">
-      <FaCode className="text-teal-400 text-6xl mb-4 animate-pulse" />
-      <h2 className="text-4xl font-bold mb-2">Desarrollo Web & Programación</h2>
-      <p className="text-2xl mb-6">
-        Construimos sitios web rápidos, seguros y escalables con tecnología de punta, 
-        optimizados para conversiones y SEO.
-      </p>
-
-      <ul className="text-left text-xl space-y-3">
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:rotate-12"/>
-          Desarrollo a medida con React/Next.js, Node.js y bases de datos
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:-rotate-12"/>
-          Landing pages de alta conversión (hasta 3x más leads)
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:rotate-12"/>
-          Integración con APIs, pasarelas de pago y CRM
-        </li>
-      </ul>
+    <div className="flex flex-row">
+      <div className="w-1/2 flex justify-center items-center">
+        <Image src={image1} alt="compu" className="ml-32 "></Image>
+      </div>
+      <div className="flex flex-col items-end justify-end text-end px-8 text-black w-1/2 mb-12 mr-12">
+        <h2 className="text-6xl md:text-7xl font-bold mb-2 text-blue">
+          DISEÑO{" "}
+        </h2>
+        <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-blue">
+          {" "}
+          WEB
+        </h2>
+        <p className="text-2xl mb-6">
+          Diseñamos webs que representan tu marca, están pensadas para convertir
+          y funcionan bien en todos los dispositivos. Claras, ágiles y alineadas
+          con tus objetivos. Porque{" "}
+          <span className="text-blue font-semibold">
+            una buena web no solo se ve bien, trabaja para vos.
+          </span>
+        </p>
+        <Link href="/contacto" replace className="flex flex-row">
+          <button className="bg-blue rounded-sm border border-black py-3 px-4 hover:bg-blue/80 transition-colors ease-in-out">
+            No dudes en consultarnos {">"}
+            {">"}
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

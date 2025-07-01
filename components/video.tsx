@@ -1,18 +1,9 @@
-export default function AnimatedVideo() {
+export function VideoComponent() {
   return (
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
-      style={{
-        width: "50%",
-        height: "auto",
-        objectFit: "cover",
-        display: "block",
-      }}
-    >
-      <source src="/media/corazonVideo.webm" type="video/webM" />
+    <video width="320" height="240" controls preload="none">
+      <source src="../public/video/contenidoVideo.webm" type="video/webm" />
+      
+      Your browser does not support the video tag.
     </video>
-  );
+  )
 }

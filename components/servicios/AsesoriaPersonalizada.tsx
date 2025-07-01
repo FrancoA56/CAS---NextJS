@@ -1,30 +1,37 @@
-import { FaHandsHelping } from "react-icons/fa";
+import Link from "next/link";
 import Image from "next/image";
-import tilde from "../../media/tilde.png";
+import imagen1 from "../../media/MaterialWeb/imageAsesoria.jpg";
 
 export default function AsesoriaPersonalizada() {
   return (
-    <div className="flex flex-col items-center justify-center px-8 text-black max-w-3xl text-center mb-12">
-      <FaHandsHelping className="text-teal-400 text-6xl mb-4 animate-pulse" />
-      <h2 className="text-4xl font-bold mb-2">Asesoría Personalizada</h2>
-      <p className="text-2xl mb-6">
-        Te guiamos paso a paso en tu estrategia digital con soluciones adaptadas a tus necesidades específicas.
-      </p>
+    <div className="flex flex-col md:flex-row w-full px-8 py-12 items-center justify-between">
+      {/* Texto */}
+      <div className="flex flex-col items-start justify-center text-black text-left mb-12 md:w-2/3 w-full ml-32">
+        <h2 className="text-6xl md:text-7xl font-bold mb-2 text-peach">
+          ASESORIAS
+        </h2>
+        <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-peach">
+          PARA TU MARCA
+        </h2>
+        <p className="text-lg md:text-xl mb-6 text-justify pr-12">
+          <span className="text-peach font-semibold">
+            ¿No sabés por dónde empezar o cómo mejorar lo que ya tenés?{" "}
+          </span>
+          Te acompañamos con asesorías personalizadas para ordenar tu
+          comunicación, definir tu estrategia y tomar decisiones con claridad.{" "}
+        </p>
+        <Link href="/contacto" replace className="flex flex-row">
+          <button className="bg-peach rounded-sm border border-black py-3 px-4 hover:bg-peach/80 transition-colors ease-in-out">
+            No dudes en consultarnos {">"}
+            {">"}
+          </button>
+        </Link>
+      </div>
 
-      <ul className="text-left text-xl space-y-3">
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:rotate-12"/>
-          Sesiones 1:1 con expertos en marketing
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:-rotate-12"/>
-          Planes de acción personalizados
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:rotate-12"/>
-          Seguimiento y ajustes continuos
-        </li>
-      </ul>
+      {/* Carrusel */}
+      <div className="md:w-1/3 w-full flex justify-center">
+        <Image src={imagen1} alt="asesoria personalizada" className="w-full" />
+      </div>
     </div>
   );
 }

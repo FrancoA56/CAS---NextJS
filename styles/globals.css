@@ -13,11 +13,11 @@
   background: linear-gradient(
     90deg,
     #a5e6a8,
-    #b791dd,
     #78c8d2,
+    #b791dd,
     #ee8ec3,
-    #ffdf7d,
-    #ffc4ac
+    #ffc4ac,
+    #ffdf7d
   );
   -webkit-text-stroke: 0.1px black;
   -webkit-background-clip: text;
@@ -42,6 +42,11 @@
   color: transparent;
   transition: all 0.3s ease;
 }
+.stroke {
+  -webkit-text-stroke: 0.8px black;
+  color: transparent;
+  transition: all 0.3s ease;
+}
 .custom-stroke-yellow {
   -webkit-text-stroke: 0.1px black;
   color: #ffdf7d;
@@ -50,6 +55,26 @@
 .custom-stroke-green {
   -webkit-text-stroke: 0.1px black;
   color: #A5E6A8;
+  transition: all 0.3s ease;
+}
+.custom-stroke-pink {
+  -webkit-text-stroke: 0.1px black;
+  color: #EE8EC3;
+  transition: all 0.3s ease;
+}
+.custom-stroke-blue {
+  -webkit-text-stroke: 0.1px black;
+  color: #78c8d2;
+  transition: all 0.3s ease;
+}
+.custom-stroke-teal {
+  -webkit-text-stroke: 0.1px black;
+  color: #b791dd;
+  transition: all 0.3s ease;
+}
+.custom-stroke-peach {
+  -webkit-text-stroke: 0.1px black;
+  color: #ffc4ac;
   transition: all 0.3s ease;
 }
 
@@ -64,6 +89,7 @@
     #ffdf7d,
     #ffc4ac
   );
+    -webkit-text-stroke: 0.1px black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

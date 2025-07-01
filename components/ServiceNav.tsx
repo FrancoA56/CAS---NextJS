@@ -23,6 +23,15 @@ export default function ServiceNav({
     "CONTENIDO",
     "ASESORÍAS",
   ];
+  const colors = [
+    "#FFDF7D", // Diseño Gráfico - yellow
+    "#A5E6A8", // Email Marketing - green
+    "#EE8EC3", // Social Media - pink
+    "#78C8D2", // Diseño Web - blue
+    "#B791DD", // Paid Media - teal
+    "#78C8D2", // Contenido - blue
+    "#FFC4AC", // Asesorías - peach
+  ];
 
   const handleItemClick = (index: number) => {
     onSelect(index + 1);
@@ -43,7 +52,8 @@ export default function ServiceNav({
             >
               {isActive && (
                 <motion.div
-                  className="absolute inset-0 bg-pink"
+                  className="absolute inset-0"
+                  style={{ backgroundColor: colors[index] }}
                   initial={{
                     scaleX: 0,
                     originX: scrollDirection === "right" ? 0 : 1,
@@ -72,7 +82,7 @@ export default function ServiceNav({
             transition={{ duration: 0.3 }}
             className="flex flex-row"
           >
-             <FiChevronUp size={24} />
+            <FiChevronUp size={24} />
           </motion.div>
         </div>
 
@@ -94,8 +104,9 @@ export default function ServiceNav({
                       key={`mobile-${index}`}
                       onClick={() => handleItemClick(index)}
                       className={`relative cursor-pointer border text-center p-3 flex items-center justify-center transition-colors ${
-                        isActive ? "bg-pink" : "hover:bg-pink"
+                        isActive ? "" : "hover:bg-pink"
                       }`}
+                      style={isActive ? { backgroundColor: colors[index] } : {}}
                     >
                       <span className="text-sm">{item}</span>
                     </div>

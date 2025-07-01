@@ -8,14 +8,13 @@ export default function Contacto() {
   >([]);
 
   const items = [
-    "DISEÑO",
-    "WEB",
+    "DISEÑO GRAFICO",
+    "EMAIL MARKETING",
+    "SOCIAL MEDIA",
+    "DISEÑO WEB",
+    "PAID MEDIA",
     "CONTENIDO",
-    "ANÁLISIS",
-    "EMAIL",
-    "RRSS",
-    "CAMPAÑAS",
-    "ASESORÍA",
+    "ASESORÍAS",
   ];
 
   const toggleServicio = (item: string) => {
@@ -33,94 +32,119 @@ export default function Contacto() {
 
   return (
     <div className="h-screen w-full flex justify-center items-center flex-col px-4">
-      <div className="md:flex hidden gap-4 flex-col sm:flex-row justify-center items-center text-6xl mb-6 text-center">
-        <p className="text-gradient-cas custom-stroke">CREAMOS</p>
-        <p className="text-gradient-cas font-bold ">JUNTOS</p>
+      <div className="flex flex-row justify-center gap-4 items-center md:text-6xl text-4xl mb-2 ">
+        <p className="font-bold">TRABAJEMOS</p>
+        <p className="text-gradient-cas custom-stroke ">JUNTOS</p>
       </div>
 
       <form
-        className="w-full max-w-lg space-y-4 bg-teal p-8 rounded-xl backdrop-blur-md border border-white/30 text-black"
+        className="w-full max-w-2xl space-y-4 bg-green p-8 rounded-xl backdrop-blur-md border border-white/30 text-white"
         onSubmit={handleSubmit}
       >
         <div className="flex sm:flex-row flex-col gap-4">
-          <div>
-            <label className="block mb-1 text-sm">Nombre</label>
+          <div className="flex-1">
+            <label className="block mb-1 text-sm font-bold ">Nombre</label>
             <input
               type="text"
               required
-              className="w-full p-3 bg-white/20 rounded-md text-black placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
               placeholder="Tu nombre"
             />
           </div>
-          <div>
-            <label className="block mb-1 text-sm">Email</label>
+          <div className="flex-1">
+            <label className="block mb-1 text-sm font-bold">Email</label>
             <input
               type="email"
               required
-              className="w-full p-3 bg-white/20 rounded-md text-black placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
               placeholder="tunombre@email.com"
             />
           </div>
         </div>
 
         <div className="flex sm:flex-row flex-col gap-4">
-          <div>
-            <label className="block mb-1 text-sm">Nombre de Empresa</label>
+          <div className="flex-1">
+            <label className="block mb-1 text-sm font-bold">
+              Nombre de Empresa
+            </label>
             <input
               type="text"
               required
-              className="w-full p-3 bg-white/20 rounded-md text-black placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
               placeholder="Tu empresa"
             />
           </div>
-          <div>
-            <label className="block mb-1 text-sm">Rubro</label>
+          <div className="flex-1">
+            <label className="block mb-1 text-sm font-bold">Rubro</label>
             <input
               type="text"
               required
-              className="w-full p-3 bg-white/20 rounded-md text-black placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
-              placeholder="Tu rubro"
+              className="w-full p-3 text-ellipsis bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              placeholder="Ej. Indumentaria, decoración"
             />
           </div>
         </div>
 
         {/* SERVICIOS */}
         <div>
-          <label className="block mb-2 text-sm">
+          <label className="block mb-2 text-sm font-bold">
             ¿Qué servicios te interesan?
           </label>
-          <div className="flex flex-wrap gap-3">
+
+          <select
+            onChange={(e) => {
+              const selected = e.target.value;
+              if (selected && !serviciosSeleccionados.includes(selected)) {
+                setServiciosSeleccionados((prev) => [...prev, selected]);
+              }
+              // Reiniciamos el select al valor vacío para que se pueda volver a seleccionar
+              e.target.value = "";
+            }}
+            className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+            defaultValue=""
+          >
+            <option value="Seleccioná varios" className="text-white bg-green"></option>
             {items.map((item) => (
-              <label
-                key={item}
-                className="flex items-center gap-2 cursor-pointer group"
-              >
-                <input
-                  type="checkbox"
-                  value={item}
-                  checked={serviciosSeleccionados.includes(item)}
-                  onChange={() => toggleServicio(item)}
-                  className="hidden peer"
-                />
-                <span className="w-5 h-5 border-2 border-white rounded-full flex items-center justify-center peer-checked:bg-blue transition-all duration-200">
-                  {/** El punto interno blanco cuando está seleccionado */}
-                  <div className="w-2.5 h-2.5 bg-black rounded-full scale-0 peer-checked:scale-100 transition-transform duration-200" />
-                </span>
-                <span className="text-sm ">{item}</span>
-              </label>
+              <option key={item} value={item} className="text-white bg-green">
+                {item}
+              </option>
             ))}
-          </div>
+          </select>
+
+          {/* Servicios seleccionados con botón de quitar */}
+          {serviciosSeleccionados.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {serviciosSeleccionados.map((servicio) => (
+                <div
+                  key={servicio}
+                  className="flex items-center bg-white/20 text-white rounded-full px-4 py-1 text-sm backdrop-blur-sm"
+                >
+                  <span>{servicio}</span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setServiciosSeleccionados((prev) =>
+                        prev.filter((s) => s !== servicio)
+                      )
+                    }
+                    className="ml-2 text-white hover:text-red-400"
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div>
-          <label className="block mb-1 text-sm">Mensaje</label>
+          <label className="block mb-1 text-sm font-bold">Mensaje</label>
           <textarea
             rows={3}
-            className="w-full p-3 bg-white/20 rounded-md text-black placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50 resize-none"
+  className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50 resize-none scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-white/10"
             placeholder="Contanos tu idea..."
           />
         </div>
-
         {/* Campo oculto para enviar servicios seleccionados */}
         <input
           type="hidden"
@@ -128,9 +152,15 @@ export default function Contacto() {
           value={serviciosSeleccionados.join(", ")}
         />
 
-        <button type="submit" className="bg-blue hover:bg-blue/60 transition-colors duration-200 border border-black/30 px-6 py-2 rounded-xl text-black backdrop-blur-md">
-          Enviar
-        </button>
+        <div className="flex justify-center items-start">
+          <button
+            type="submit"
+            className="flex flex-col items-center text-white "
+          >
+            <span className="w-96 h-px bg-white mb-2 transition-all duration-300 group-hover:w-16" />
+            <span className="font-semibold tracking-wide">Enviar</span>
+          </button>
+        </div>
       </form>
     </div>
   );

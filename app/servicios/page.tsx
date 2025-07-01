@@ -1,8 +1,8 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-import HorizontalScrollWrapperServices, {
+import HorizontalScrollWrapper, {
   HorizontalScrollWrapperRef,
-} from "../../components/HorizontalScrollWrapperServices";
+} from "../../components/HorizontalScrollWrapper";
 import PageWrapper from "../../components/PageWrapper";
 import Image from "next/image";
 import ServiceNav from "../../components/ServiceNav";
@@ -111,7 +111,7 @@ export default function Servicios() {
 
   return (
     <>
-      <HorizontalScrollWrapperServices ref={scrollRef}>
+      <HorizontalScrollWrapper ref={scrollRef}>
         <PageWrapper>
           <div
             ref={(el) => {
@@ -186,7 +186,7 @@ export default function Servicios() {
             </div>
           </PageWrapper>
         ))}
-      </HorizontalScrollWrapperServices>
+      </HorizontalScrollWrapper>
 
       <ServiceNav
         onSelect={scrollTo}

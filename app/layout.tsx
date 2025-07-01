@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="overflow-hidden transition-colors duration-700 font-gotham">
-        <div className="bg-black absolute z-10 top-0 left-0 h-full w-[100px] border-r border-black/30 flex-col items-center justify-between py-8 md:inline hidden">
+        <div className="bg-black absolute z-20 top-0 left-0 h-full w-[100px] border-r border-black/30 flex-col items-center justify-between py-8 md:inline hidden">
           {/* Botón hamburguesa */}
           <button
             onClick={() => setIsOpen(!isOpen)}

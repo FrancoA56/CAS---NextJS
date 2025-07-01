@@ -1,31 +1,44 @@
-import { FaCameraRetro } from "react-icons/fa";
+import Link from "next/link";
 import Image from "next/image";
-import tilde from "../../media/tilde.png";
+import celular from "../../media/pantalla-celu.png";
+import Video1 from "./video";
 
 export default function CreacionDeContenido() {
   return (
-    <div className="flex flex-col items-center justify-center px-8 text-black max-w-3xl text-center mb-12">
-      <FaCameraRetro className="text-teal-400 text-6xl mb-4 animate-pulse" />
-      <h2 className="text-4xl font-bold mb-2">Creación de Contenido</h2>
-      <p className="text-2xl mb-6">
-        Producimos contenido estratégico y de alta calidad que conecta con tu audiencia 
-        y fortalece tu presencia digital.
-      </p>
-
-      <ul className="text-left text-xl space-y-3">
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:rotate-12"/>
-          Fotografía y video profesional para redes sociales
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:-rotate-12"/>
-          Copywriting persuasivo y SEO optimizado
-        </li>
-        <li className="flex items-center gap-3">
-          <Image src={tilde} alt="check" width={50} height={50} className="hover:rotate-12"/>
-          Planificación de calendario de contenidos
-        </li>
-      </ul>
+    <div className="flex flex-row">
+      <div className="w-1/3 flex justify-center items-center ml-32">
+        <div className="relative w-[300px] h-[600px] bottom-20">
+          <div className="rounded-md">
+            <Video1 />
+            {/* <Image
+              src={celular}
+              alt="marco celular"
+              className="pointer-events-none relative bottom-72 left-3 h-[460px] w-[280px] "
+            /> */}
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-end justify-end text-end px-8 text-black w-2/3 my-auto mr-12">
+        <h2 className="text-6xl md:text-7xl font-bold mb-2 text-blue">
+          CREACION DE{" "}
+        </h2>
+        <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-blue">
+          CONTENIDO
+        </h2>
+        <p className="text-2xl mb-6 w-2/3">
+          Pensamos ideas originales que reflejan tu identidad, comunican lo que
+          importa y hacen que tu marca se destaque en el mercado. Porque{" "}
+          <span className="text-blue font-semibold">
+            lo genérico no conecta.
+          </span>
+        </p>
+        <Link href="/contacto" replace className="flex flex-row">
+          <button className="bg-blue rounded-sm border border-black py-3 px-4 hover:bg-blue/80 transition-colors ease-in-out">
+            No dudes en consultarnos {">"}
+            {">"}
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
