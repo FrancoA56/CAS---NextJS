@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import imagen1 from "../../media/google.jpg";
-import imagen2 from "../../media/target.png";
 
 export default function Opcion5() {
   return (
@@ -25,9 +24,8 @@ export default function Opcion5() {
           <div className="font-bold text-5xl">POSICIONATE</div>
           <div className="stroke text-6xl">EN EL MERCADO</div>
           <div className="mt-2 text-right w-3/4">
-            Nuestro equipo es ideal para que el marketing en tunegocio ya no sea
-            un problema. Pensamos en todo lo que tu marca necesita y lo podes
-            encontrar en <span className="font-bold">CAS</span>.
+            Construimos una presencia sólida y coherente que te permite competir
+            con fuerza y crecer de manera sostenida en tu sector.
           </div>
         </div>
       </div>

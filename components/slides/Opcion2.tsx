@@ -3,7 +3,7 @@ import imagen1 from "../../media/colorWholesale.png";
 
 export default function Opcion2() {
   return (
-    <div className="h-screen w-full flex flex-col justify-start px-40 text-black text-center py-12 bg-teal">
+    <div className="h-screen w-auto flex flex-col justify-start px-40 text-black text-center py-12 bg-teal">
       {/* Título */}
       <div className="flex flex-col items-center justify-center mt-12 px-44">
         <Image
