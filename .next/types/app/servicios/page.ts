@@ -1,4 +1,4 @@
-// File: D:\point\CAS\CAS---NextJS\app\servicios\page.tsx
+// File: C:\Users\fadamoli\Desktop\CAS\nextjs-tailwind-gotham\app\servicios\page.tsx
 import * as entry from '../../../../app/servicios/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

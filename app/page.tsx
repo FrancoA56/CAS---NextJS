@@ -38,11 +38,11 @@ export default function Home() {
       background: green,
       Component: Opcion1,
     },
-    {
-      label: "Mostra tu marca",
-      background: teal,
-      Component: Opcion2,
-    },
+    // {
+    //   label: "Mostra tu marca",
+    //   background: teal,
+    //   Component: Opcion2,
+    // },
     {
       label: "Comunica lo que haces",
       background: blue,
@@ -66,14 +66,12 @@ export default function Home() {
         <SlideMain />
       </PageWrapper>
       <PageWrapper>
-        <PageWrapper>
           <SecondSlide
             ideales={ideales}
             scrollTo={scrollTo}
             hoveredIndex={hoveredIndex}
             setHoveredIndex={setHoveredIndex}
           />
-        </PageWrapper>
       </PageWrapper>
       {ideales.map(({ Component }, i) => (
         <PageWrapperInicio key={i}>

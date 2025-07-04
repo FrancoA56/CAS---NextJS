@@ -3,31 +3,81 @@ import HorizontalCarousel from "./CarruselHorizontal";
 
 export default function EmailMarketing() {
   return (
-    <div className="flex flex-row">
-      <div className="w-1/2 flex justify-center items-center">
-        <HorizontalCarousel />
+    <>
+      <div className="md:flex md:flex-row hidden">
+        <div className="w-1/2 flex justify-center items-center">
+          <HorizontalCarousel />
+        </div>
+        <div className="flex flex-col items-end justify-center text-end px-8 text-black w-1/2 mb-12 mr-12">
+          <h2 className="text-6xl md:text-7xl font-bold mb-2 text-green">
+            EMAIL{" "}
+          </h2>
+          <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-green">
+            {" "}
+            MARKETING
+          </h2>
+          <ul className="text-lg list-disc list-inside mb-6" dir="rtl">
+            <li className="text-right">
+              Diseño de piezas para redes, campañas y web
+            </li>
+            <li className="text-right">
+              Desarrollo y actualización de identidad visual
+            </li>
+            <li className="text-right">
+              Creación de material gráfico para eventos y promociones
+            </li>
+            <li className="text-right">
+              Adaptación de diseños para múltiples formatos y plataformas
+            </li>
+            <li className="text-right">
+              Asesoría creativa para potenciar tu imagen de marca
+            </li>
+          </ul>
+          <Link href="/contacto" replace className="flex flex-row">
+            <button className="bg-green rounded-sm border border-black py-3 px-4 hover:bg-green/80 transition-colors ease-in-out">
+              Empecemos {">"}
+              {">"}
+            </button>
+          </Link>
+        </div>
       </div>
-      <div className="flex flex-col items-end justify-end text-end px-8 text-black w-1/2 mb-12 mr-12">
-        <h2 className="text-6xl md:text-7xl font-bold mb-2 text-green">
-          EMAIL{" "}
-        </h2>
-        <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-green">
-          {" "}
-          MARKETING
-        </h2>
-        <p className="text-2xl mb-6">
-          Diseñamos campañas de email que acompañan a tus clientesen cada etapa,
-          con mensajes pensados y automatizacionesque llegan en el momento
-          justo. Anticipate a sus necesidades y{" "}
-          <span className="text-green font-semibold">generá impacto real.</span>
-        </p>
-        <Link href="/contacto" replace className="flex flex-row">
-          <button className="bg-green rounded-sm border border-black py-3 px-4 hover:bg-green/80 transition-colors ease-in-out">
-            No dudes en consultarnos {">"}
-            {">"}
-          </button>
-        </Link>
+      <div className="flex flex-col md:hidden">
+        <div className="flex justify-center items-center">
+          <HorizontalCarousel />
+        </div>
+        <div className="flex flex-col items-end justify-center text-end mr-8 ml-4 text-black">
+          <h2 className="text-4xl font-bold mb-2 text-green">
+            EMAIL{" "}
+          </h2>
+          <h2 className="text-5xl font-bold mb-4 custom-stroke-green">
+            {" "}
+            MARKETING
+          </h2>
+          <ul className="text-lg list-disc list-inside mb-6" dir="rtl">
+            <li className="text-right">
+              Diseño de piezas para redes, campañas y web
+            </li>
+            <li className="text-right">
+              Desarrollo y actualización de identidad visual
+            </li>
+            <li className="text-right">
+              Creación de material gráfico para eventos y promociones
+            </li>
+            <li className="text-right">
+              Adaptación de diseños para múltiples formatos y plataformas
+            </li>
+            <li className="text-right">
+              Asesoría creativa para potenciar tu imagen de marca
+            </li>
+          </ul>
+          <Link href="/contacto" replace className="flex flex-row">
+            <button className="bg-green rounded-sm border border-black py-3 px-4 hover:bg-green/80 transition-colors ease-in-out">
+              Empecemos {">"}
+              {">"}
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

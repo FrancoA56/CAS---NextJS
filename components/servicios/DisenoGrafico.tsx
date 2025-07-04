@@ -3,35 +3,68 @@ import VerticalCarousel from "./CarruselVertical"; // Ajustá ruta si es necesar
 
 export default function DisenoGrafico() {
   return (
-    <div className="flex flex-col md:flex-row w-full px-8 py-12 items-center justify-between">
-      {/* Texto */}
-      <div className="flex flex-col items-start justify-center text-black text-left mb-12 md:w-1/2 w-full ml-32">
-        <h2 className="text-6xl md:text-7xl font-bold mb-2 text-yellow">
-          DISEÑO
-        </h2>
-        <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-yellow">
-          GRÁFICO
-        </h2>
-        <p className="text-lg md:text-xl mb-6 text-justify">
-          Diseñamos piezas que no solo se ven bien, sino que comunican. Desde
-          posteos y banners hasta packaging, creamos identidad visual,
-          materiales para puntos de venta y{" "}
-          <span className="text-yellow font-semibold">
-            todo lo que tu marca necesita para destacarse.
-          </span>
-        </p>
-        <Link href="/contacto" replace className="flex flex-row">
-          <button className="bg-yellow rounded-sm border border-black py-3 px-4 hover:bg-yellow/80 transition-colors ease-in-out">
-            No dudes en consultarnos {">"}
-            {">"}
-          </button>
-        </Link>
+    <>
+      <div className="hidden md:flex md:flex-row w-full px-8 py-12 items-center">
+        {/* Texto */}
+        <div className="flex flex-col items-start justify-center text-black text-start md:w-1/2 w-full md:ml-0 ml-8 ">
+          <h2 className="text-6xl md:text-7xl font-bold mb-2 text-yellow">
+            DISEÑO
+          </h2>
+          <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-yellow">
+            GRÁFICO
+          </h2>
+          <ul className="text-lg list-disc list-inside mb-6">
+            <li>Diseño de piezas para redes, campañas y web</li>
+            <li>Desarrollo y actualización de identidad visual</li>
+            <li>Creación de material gráfico para eventos y promociones</li>
+            <li>Adaptación de diseños para múltiples formatos y plataformas</li>
+            <li>Asesoría creativa para potenciar tu imagen de marca</li>
+          </ul>
+
+          <Link href="/contacto" replace className="flex flex-row">
+            <button className="bg-yellow rounded-sm border border-black py-3 px-4 hover:bg-yellow/80 transition-colors ease-in-out">
+              Quiero un diseño {">"}
+              {">"}
+            </button>
+          </Link>
+        </div>
+
+        {/* Carrusel */}
+        <div className="md:w-1/2 w-full flex justify-end">
+          <VerticalCarousel />
+        </div>
       </div>
 
-      {/* Carrusel */}
-      <div className="md:w-1/2 w-full flex justify-center">
-        <VerticalCarousel />
+      <div className="flex flex-col md:hidden w-full  py-12 items-center">
+        {/* Texto */}
+        <div className="flex flex-col items-start justify-center text-black text-start w-full ml-8 ">
+          <h2 className="text-6xl font-bold mb-2 text-yellow">
+            DISEÑO
+          </h2>
+          <h2 className="text-6xl font-bold mb-6 custom-stroke-yellow">
+            GRÁFICO
+          </h2>
+          <ul className="text-lg list-disc list-inside mb-6">
+            <li>Diseño de piezas para redes, campañas y web</li>
+            <li>Desarrollo y actualización de identidad visual</li>
+            <li>Creación de material gráfico para eventos y promociones</li>
+            <li>Adaptación de diseños para múltiples formatos y plataformas</li>
+            <li>Asesoría creativa para potenciar tu imagen de marca</li>
+          </ul>
+
+          <Link href="/contacto" replace className="flex flex-row">
+            <button className="bg-yellow rounded-sm border border-black py-3 px-4 hover:bg-yellow/80 transition-colors ease-in-out">
+              Quiero un diseño {">"}
+              {">"}
+            </button>
+          </Link>
+        </div>
+
+        {/* Carrusel */}
+        <div className="w-full flex justify-end mr-12">
+          <VerticalCarousel />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
