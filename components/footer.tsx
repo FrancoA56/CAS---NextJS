@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="text-black px-6 sm:px-8 py-8 sm:py-12 font-gotham">
+    <footer className="text-black px-6 sm:px-8 py-8 sm:py-12 font-gotham h-screen w-screen flex flex-col justify-center items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {/* Columna 1: Contacto */}
         <div className="space-y-4 sm:space-y-6">

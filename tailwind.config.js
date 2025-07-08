@@ -33,6 +33,9 @@ module.exports = {
         trabajando2: "url('media/trabajando2.jpeg)",
         trabajando3: "url('media/trabajando3.jpeg)",
       },
+       screens: {
+        "3xl": "1920px"
+       }
     },
   },
   plugins: [],

@@ -57,20 +57,26 @@ export default function Servicios() {
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // IntersectionObserver para scrollspy
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) {
-          const index = sectionRefs.current.findIndex(
-            (ref) => ref === visible.target
-          );
-          if (index !== -1) setActiveIndex(index);
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+
+        if (visibleEntries.length === 0) {
+          // Fallback: no hay ninguna sección visible → asumimos la inicial
+          setActiveIndex(0);
+          return;
         }
+
+        const visible = visibleEntries[0];
+        const index = sectionRefs.current.findIndex(
+          (ref) => ref === visible.target
+        );
+
+        if (index !== -1) setActiveIndex(index);
       },
       {
-        threshold: 0.5, // 50% visible
+        threshold: 0.9, // podés mantener esto más tolerante también
         root: scrollRef.current?.getScrollableElement() ?? null,
         rootMargin: "0px",
       }
@@ -122,9 +128,11 @@ export default function Servicios() {
             className="hidden sm:flex"
           >
             <div className="sm:mb-0 mb-12">
-              <div className="flex flex-col justify-center items-center text-6xl  mb-6 ">
-                <p className="font-bold">NUESTROS</p>
-                <p className="text-gradient-cas custom-stroke ">SERVICIOS</p>
+              <div className="flex flex-col justify-center items-center  mb-6 ">
+                <p className="font-bold text-6xl 3xl:text-7xl">NUESTROS</p>
+                <p className="text-gradient-cas text-6xl 3xl:text-8xl">
+                  SERVICIOS
+                </p>
               </div>
               {/* Dividir en dos filas */}
               <div className="flex flex-col gap-4 mb-12">
@@ -134,7 +142,7 @@ export default function Servicios() {
                     <div
                       key={index}
                       onClick={() => scrollTo(index + 1)}
-                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] 3xl:w-[220px] 3xl:h-[220px] flex justify-center items-center text-center"
                     >
                       <Image
                         src={image}
@@ -142,7 +150,7 @@ export default function Servicios() {
                         fill
                         style={{ objectFit: "contain" }}
                       />
-                      <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                      <span className="absolute text-black md:text-2xl 3xl:text-3xl text-lg leading-tight mt-3">
                         {label.split(" ").slice(0, 1).join(" ")}
                         <br />
                         {label.split(" ").slice(1)}
@@ -157,7 +165,7 @@ export default function Servicios() {
                     <div
                       key={index + 4}
                       onClick={() => scrollTo(index + 5)} // índice ajustado por el slice
-                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] 3xl:w-[220px] 3xl:h-[220px] flex justify-center items-center text-center"
                     >
                       <Image
                         src={image}
@@ -165,7 +173,7 @@ export default function Servicios() {
                         fill
                         style={{ objectFit: "contain" }}
                       />
-                      <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                      <span className="absolute text-black md:text-2xl 3xl:text-3xl text-lg leading-tight mt-3">
                         {label.split(" ").slice(0, 1).join(" ")}
                         <br />
                         {label.split(" ").slice(1)}

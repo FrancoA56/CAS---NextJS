@@ -50,7 +50,7 @@ export default function ServiceNav({
               onClick={() => onSelect(index + 1)}
               className="relative cursor-pointer overflow-visible border border-black text-center w-full h-full flex items-center justify-center group transition duration-300"
             >
-              {isActive && (
+              {isActive  && (
                 <motion.div
                   className="absolute inset-0"
                   style={{ backgroundColor: colors[index] }}
@@ -63,7 +63,7 @@ export default function ServiceNav({
                 />
               )}
               <div className="relative p-2 flex items-center justify-center overflow-visible">
-                <span className="text-sm md:text-base">{item}</span>
+                <span className="text-sm md:text-base 3xl:text-lg">{item}</span>
               </div>
             </div>
           );

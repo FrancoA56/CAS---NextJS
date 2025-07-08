@@ -27,13 +27,13 @@ export default function SecondSlide({
 
       <div className="md:flex md:flex-row hidden h-screen w-full">
         <div className="flex flex-col items-center justify-center text-center px-6 md:px-12">
-          <h2 className="text-black text-3xl md:text-6xl font-extrabold uppercase mb-6">
+          <h2 className="text-black text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl font-extrabold uppercase mb-6">
             soluciones creativas
           </h2>
-          <h2 className="text-gradient-cas text-3xl md:text-6xl font-extrabold uppercase mb-6">
+          <h2 className="text-gradient-cas text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl uppercase mb-6">
             resultados reales
           </h2>
-          <p className="text-black text-lg md:text-2xl max-text-3xl mb-10 px-0 md:px-12">
+          <p className="text-black text-lg md:text-2xl 3xl:text-3xl mb-10 px-0 md:px-12">
             En <span className="font-extrabold text-gradient-cas-ns">CAS</span>{" "}
             diseñamos experiencias que conectan marcas con personas. Nuestro
             enfoque es integral y creativo, combinando estrategia, contenido y
@@ -52,7 +52,7 @@ export default function SecondSlide({
                 }}
                 className="border border-black/30 px-6 py-3 rounded-sm text-black backdrop-blur-md text-sm sm:w-auto w-full transition-colors duration-300"
               >
-                <span>{label}</span>
+                <span className="text-lg 3xl:text-xl">{label}</span>
               </button>
             ))}
           </div>
@@ -60,12 +60,12 @@ export default function SecondSlide({
         <Image
           src={slide2}
           alt="slide2"
-          className="relative left-[10%] py-12 z-10 w-1/4 h-auto"
+          className="relative left-[10%] py-12 z-10 w-1/4 3xl:w-[22%] h-auto rounded-sm "
         />
       </div>
 
       {/*MOVIL*/}
-      <div className="flex flex-col md:hidden h-full w-full items-center justify-center text-center mb-12">
+      <div className="flex flex-col md:hidden h-screen w-full items-center justify-center text-center pb-12">
         <div className="flex flex-col items-center justify-center text-center px-6 ">
           <h2 className="text-black text-4xl font-extrabold uppercase mb-6">
             soluciones creativas
@@ -97,11 +97,6 @@ export default function SecondSlide({
             ))}
           </div>
         </div>
-        {/* <Image
-          src={slide2}
-          alt="slide2"
-          className="relative left-[10%] py-12 z-10 w-1/4 h-auto"
-        /> */}
       </div>
     </>
   );

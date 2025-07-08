@@ -4,26 +4,26 @@ import imagen1 from "../../media/google.jpg";
 
 export default function Opcion5() {
   return (
-    <div className="h-screen w-full flex flex-row px-20 text-black text-center py-12 bg-peach">
-      <div className="flex flex-row items-center">
+    <div className="h-screen w-full flex flex-row px-20 text-black text-center py-24 bg-peach">
+      <div className="flex flex-row items-left">
         <Image
           src={imagen1}
           alt="WholesaleColores"
-          className="rounded-xl w-[600px]"
+          className="rounded-xl w-[100%]"
         ></Image>
       </div>
       {/* Texto al fondo alineado a la derecha */}
-      <div className="flex flex-col items-end text-end w-full justify-between pb-24  pr-12">
+      <div className="flex flex-col items-end text-end w-full justify-between pr-12">
         <Link href="/servicios" replace className="flex flex-row mt-24">
-          <button className="bg-peach rounded-sm border border-black py-2 px-4 hover:bg-white/20 transition-colors ease-in-out">
+          <button className="bg-peach text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 hover:bg-white/20 transition-colors ease-in-out">
             Conoce nuestros servicios {">"}
             {">"}
           </button>
         </Link>
-        <div className="flex flex-col justify-end items-end">
-          <div className="font-bold text-5xl">POSICIONATE</div>
-          <div className="stroke text-6xl">EN EL MERCADO</div>
-          <div className="mt-2 text-right w-3/4">
+        <div className="flex flex-col justify-end items-end mb-24">
+          <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">POSICIONATE</div>
+          <div className="stroke text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">EN EL MERCADO</div>
+          <div className="w-full mt-2 text-end 3xl:text-2xl">
             Construimos una presencia sólida y coherente que te permite competir
             con fuerza y crecer de manera sostenida en tu sector.
           </div>

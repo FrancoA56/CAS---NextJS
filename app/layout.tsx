@@ -30,7 +30,7 @@ export default function RootLayout({
           </button>
 
           {/* Texto rotado */}
-          <div className="absolute bottom-64 left-16 transform -translate-x-1/2 rotate-[-90deg] origin-bottom text-white opacity-80 tracking-widest text-2xl whitespace-nowrap">
+          <div className="absolute bottom-64 3xl:bottom-80 left-16 transform -translate-x-1/2 rotate-[-90deg] origin-bottom text-white opacity-80 tracking-widest text-2xl 3xl:text-3xl whitespace-nowrap">
             CAS - MARKETING & DESIGN
           </div>
         </div>

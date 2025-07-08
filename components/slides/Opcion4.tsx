@@ -4,11 +4,12 @@ export default function Opcion4() {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visibleSteps, setVisibleSteps] = useState<number>(0);
   const [lineProgress, setLineProgress] = useState(0); // 0 a 100
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !hasAnimated) {
           // Animar la línea del 0% al 100% en pasos
           let progress = 0;
           const interval = setInterval(() => {
@@ -17,7 +18,10 @@ export default function Opcion4() {
             // Cada 25% de avance mostramos un paso
             const stepToShow = Math.floor(progress / (100 / pasos.length));
             setVisibleSteps((prev) => Math.max(prev, stepToShow));
-            if (progress >= 100) clearInterval(interval);
+            if (progress >= 100) {
+              clearInterval(interval);
+              setHasAnimated(true);
+            }
           }, 100);
         }
       },
@@ -26,7 +30,7 @@ export default function Opcion4() {
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [hasAnimated]);
 
   const pasos = [
     { label: "Investigación" },
@@ -42,10 +46,10 @@ export default function Opcion4() {
       className="h-screen w-full flex flex-col justify-center  text-black text-center py-12 bg-pink"
       ref={ref}
     >
-      <div className="flex flex-col items-end text-end w-full 2xl:pt-20 lg:pt-0 px-20">
-        <div className="font-bold text-5xl pr-12">AHORRA</div>
-        <div className="stroke text-6xl pr-12">TIEMPO Y RECURSOS</div>
-        <div className="mt-2 text-right pr-12 w-2/3">
+      <div className="flex flex-col items-end text-end pr-24">
+        <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">AHORRA</div>
+        <div className="stroke text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">TIEMPO Y RECURSOS</div>
+        <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl">
           Somos una agencia 360° que cubre todas las áreas clave para
           potenciarte, con un acompañamiento completo y efectivo. Todo en un
           solo lugar para que puedas enfocarte en lo que realmente importa.

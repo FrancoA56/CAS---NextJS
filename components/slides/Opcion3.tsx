@@ -26,10 +26,10 @@ export default function Opcion3() {
       </div>
 
       {/* Texto al fondo alineado a la derecha */}
-      <div className="flex flex-col items-end text-end w-full 2xl:pb-20 lg:pb-0 pt-6">
-        <div className="font-bold text-5xl pr-28">COMUNICA</div>
-        <div className="stroke text-6xl pr-28">LO QUE HACES</div>
-        <div className="mt-2 text-right px-28 ">
+      <div className="flex flex-col items-end text-end">
+        <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">COMUNICA</div>
+        <div className="stroke text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">LO QUE HACES</div>
+        <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl">
           Una buena comunicación conecta, genera confianza y sobre todo hace que
           te elijan. Desde tu presentación institucional hasta cómo hablás en
           redes, tu web o tus eventos, te ayudamos a construir un discurso

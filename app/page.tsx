@@ -14,8 +14,7 @@ import Opcion3 from "../components/slides//Opcion3";
 import Opcion4 from "../components/slides//Opcion4";
 import Opcion5 from "../components/slides//Opcion5";
 import SecondSlide from "../components/slides/SecondSlide";
-import slide2 from "../media/slide2.jpg";
-import Image from "next/image";
+import ImagesCol from "../components/slides/ImagesCol";
 
 export default function Home() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -66,23 +65,26 @@ export default function Home() {
         <SlideMain />
       </PageWrapper>
       <PageWrapper>
-          <SecondSlide
-            ideales={ideales}
-            scrollTo={scrollTo}
-            hoveredIndex={hoveredIndex}
-            setHoveredIndex={setHoveredIndex}
-          />
+        <SecondSlide
+          ideales={ideales}
+          scrollTo={scrollTo}
+          hoveredIndex={hoveredIndex}
+          setHoveredIndex={setHoveredIndex}
+        />
       </PageWrapper>
       {ideales.map(({ Component }, i) => (
-        <PageWrapperInicio key={i}>
-          <div
-            ref={(el) => {
-              sectionRefs.current[i + 1] = el ?? undefined;
-            }}
-          >
-            <Component />
-          </div>
-        </PageWrapperInicio>
+        <>
+          <PageWrapperInicio key={i}>
+            <div
+              ref={(el) => {
+                sectionRefs.current[i + 1] = el ?? undefined;
+              }}
+            >
+              <Component />
+            </div>
+          </PageWrapperInicio>
+          {i === 0 && <ImagesCol />}
+        </>
       ))}
       <PageWrapper>
         <Footer />

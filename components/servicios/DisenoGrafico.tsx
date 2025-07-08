@@ -6,14 +6,14 @@ export default function DisenoGrafico() {
     <>
       <div className="hidden md:flex md:flex-row w-full px-8 py-12 items-center">
         {/* Texto */}
-        <div className="flex flex-col items-start justify-center text-black text-start md:w-1/2 w-full md:ml-0 ml-8 ">
-          <h2 className="text-6xl md:text-7xl font-bold mb-2 text-yellow">
+        <div className="flex flex-col items-start justify-center text-black text-start md:w-1/2 w-full md:ml-0 ml-8 mr-0 3xl:mr-36">
+          <h2 className="text-6xl md:text-7xl 3xl:text-8xl font-bold mb-2 text-yellow">
             DISEÑO
           </h2>
-          <h2 className="text-6xl md:text-7xl font-bold mb-6 custom-stroke-yellow">
+          <h2 className="text-6xl md:text-7xl 3xl:text-8xl font-bold mb-6  custom-stroke-yellow">
             GRÁFICO
           </h2>
-          <ul className="text-lg list-disc list-inside mb-6">
+          <ul className="text-lg 3xl:text-xl list-disc list-inside mb-6">
             <li>Diseño de piezas para redes, campañas y web</li>
             <li>Desarrollo y actualización de identidad visual</li>
             <li>Creación de material gráfico para eventos y promociones</li>
@@ -22,7 +22,7 @@ export default function DisenoGrafico() {
           </ul>
 
           <Link href="/contacto" replace className="flex flex-row">
-            <button className="bg-yellow rounded-sm border border-black py-3 px-4 hover:bg-yellow/80 transition-colors ease-in-out">
+            <button className="bg-yellow rounded-sm border border-black text-lg 3xl:text-xl py-3 px-4 hover:bg-yellow/80 transition-colors ease-in-out">
               Quiero un diseño {">"}
               {">"}
             </button>
@@ -30,7 +30,7 @@ export default function DisenoGrafico() {
         </div>
 
         {/* Carrusel */}
-        <div className="md:w-1/2 w-full flex justify-end">
+        <div className="md:w-1/2 w-full flex">
           <VerticalCarousel />
         </div>
       </div>

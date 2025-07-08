@@ -10,13 +10,13 @@ export default function AsesoriaPersonalizada() {
       <div className="md:flex hidden flex-col md:flex-row w-full px-8 py-12 items-center justify-between">
         {/* Texto */}
         <div className="flex flex-col items-start justify-center text-black text-left mb-12 md:w-2/3 w-full ml-32">
-          <h2 className="text-7xl font-bold mb-2 text-peach">
+          <h2 className="text-7xl 3xl:text-8xl font-bold mb-2 text-peach">
             ASESORIAS
           </h2>
-          <h2 className="text-7xl font-bold mb-6 custom-stroke-peach">
+          <h2 className="text-7xl 3xl:text-8xl font-bold mb-6 custom-stroke-peach">
             PARA TU MARCA
           </h2>
-          <p className="text-xl mb-6 text-justify pr-16">
+          <p className="text-xl 3xl:text-2xl mb-6 text-justify pr-24">
             <span className="text-peach font-semibold">
               ¿No sabés por dónde empezar o cómo mejorar lo que ya tenés?{" "}
             </span>
@@ -24,7 +24,7 @@ export default function AsesoriaPersonalizada() {
             comunicación, definir tu estrategia y tomar decisiones con claridad.{" "}
           </p>
           <Link href="/contacto" replace className="flex flex-row">
-            <button className="bg-peach rounded-sm border border-black py-3 px-4 hover:bg-peach/80 transition-colors ease-in-out">
+            <button className="bg-peach rounded-sm border text-lg 3xl:text-xl border-black py-3 px-4 hover:bg-peach/80 transition-colors ease-in-out">
               Pedí tu asesoria {">"}
               {">"}
             </button>
