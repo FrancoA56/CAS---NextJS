@@ -20,7 +20,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
             className="absolute md:top-10 top-8 left-8 focus:outline-none"
             aria-label="Cerrar menú"
           >
-            <FiX size={32} className="text-black" />
+            <FiX size={32} className="text-black " />
           </button>
           <ul className="flex flex-col gap-10">
             <li>
@@ -28,7 +28,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-6xl font-gotham uppercase font-bold custom-stroke-hover-gradient"
+                className="text-5xl 3xl:text-7xl font-gotham uppercase custom-stroke-hover-gradient"
               >
                 Inicio
               </Link>
@@ -38,7 +38,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/servicios"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-6xl font-gotham uppercase font-bold custom-stroke-hover-gradient"
+                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Nuestros Servicios
               </Link>
@@ -48,7 +48,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/quienessomos"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-6xl font-gotham uppercase font-bold custom-stroke-hover-gradient"
+                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 ¿QUIÉNES SOMOS?
               </Link>
@@ -58,7 +58,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/equipo"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-6xl font-gotham uppercase font-bold custom-stroke-hover-gradient"
+                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Nuestro EQUIPO
               </Link>
@@ -68,7 +68,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/clientes"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-6xl font-gotham uppercase font-bold custom-stroke-hover-gradient"
+                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Confian en nosotros
               </Link>
@@ -78,7 +78,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/sumate"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-6xl font-gotham uppercase font-bold custom-stroke-hover-gradient"
+                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Sumate al team
               </Link>
@@ -88,7 +88,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/contacto"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-6xl font-gotham uppercase font-bold custom-stroke-hover-gradient"
+                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Contactanos
               </Link>

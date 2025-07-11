@@ -95,6 +95,38 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Esta clase se activa en hover */
+.custom-stroke-hover-gradient:hover {
+  background: linear-gradient(
+    90deg,
+    #a5e6a8,
+    #b791dd,
+    #78c8d2,
+    #ee8ec3,
+    #ffdf7d,
+    #ffc4ac
+  );
+  -webkit-text-stroke: 1.5px black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.custom-stroke-hover:hover {
+  background: linear-gradient(
+    90deg,
+    #a5e6a8,
+    #b791dd,
+    #78c8d2,
+    #ee8ec3,
+    #ffdf7d,
+    #ffc4ac
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .custom-stroke {
   -webkit-text-stroke: 1.5px black;
   color: transparent;
@@ -102,6 +134,11 @@
 }
 .stroke {
   -webkit-text-stroke: 0.8px black;
+  color: transparent;
+  transition: all 0.3s ease;
+}
+.stroke-1 {
+  -webkit-text-stroke: 0.1px black;
   color: transparent;
   transition: all 0.3s ease;
 }
@@ -139,22 +176,6 @@
   transition: all 0.3s ease;
 }
 
-/* Esta clase se activa en hover */
-.custom-stroke-hover-gradient:hover {
-  background: linear-gradient(
-    90deg,
-    #a5e6a8,
-    #b791dd,
-    #78c8d2,
-    #ee8ec3,
-    #ffdf7d,
-    #ffc4ac
-  );
-  -webkit-text-stroke: 0.1px black;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 /* global.css */
 .scrollbar-hide::-webkit-scrollbar {

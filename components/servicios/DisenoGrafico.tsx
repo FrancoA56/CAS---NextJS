@@ -37,7 +37,7 @@ export default function DisenoGrafico() {
 
       <div className="flex flex-col md:hidden w-full  py-12 items-center">
         {/* Texto */}
-        <div className="flex flex-col items-start justify-center text-black text-start w-full ml-8 ">
+        <div className="flex flex-col items-start justify-center text-black text-start w-11/12 ml-8 mr-4 ">
           <h2 className="text-6xl font-bold mb-2 text-yellow">
             DISEÑO
           </h2>

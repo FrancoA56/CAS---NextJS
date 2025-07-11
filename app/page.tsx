@@ -48,7 +48,7 @@ export default function Home() {
       Component: Opcion3,
     },
     {
-      label: "Ahorra tiempo y recursos",
+      label: "Ahorrá tiempo y recursos",
       background: pink,
       Component: Opcion4,
     },

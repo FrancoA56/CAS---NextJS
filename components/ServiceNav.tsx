@@ -15,7 +15,7 @@ export default function ServiceNav({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const items = [
-    "DISEÑO GRAFICO",
+    "DISEÑO GRÁFICO",
     "EMAIL MARKETING",
     "SOCIAL MEDIA",
     "DISEÑO WEB",

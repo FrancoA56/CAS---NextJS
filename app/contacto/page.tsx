@@ -43,7 +43,7 @@ export default function Contacto() {
       >
         <div className="flex sm:flex-row flex-col gap-4">
           <div className="flex-1">
-            <label className="block mb-1 text-sm font-bold ">Nombre</label>
+            <label className="block mb-1 text-sm 3xl:text-lg font-bold ">Nombre</label>
             <input
               type="text"
               required
@@ -52,7 +52,7 @@ export default function Contacto() {
             />
           </div>
           <div className="flex-1">
-            <label className="block mb-1 text-sm font-bold">Email</label>
+            <label className="block mb-1 text-sm 3xl:text-lg font-bold">Email</label>
             <input
               type="email"
               required
@@ -64,7 +64,7 @@ export default function Contacto() {
 
         <div className="flex sm:flex-row flex-col gap-4">
           <div className="flex-1">
-            <label className="block mb-1 text-sm font-bold">
+            <label className="block mb-1 text-sm 3xl:text-lg font-bold">
               Nombre de Empresa
             </label>
             <input
@@ -75,7 +75,7 @@ export default function Contacto() {
             />
           </div>
           <div className="flex-1">
-            <label className="block mb-1 text-sm font-bold">Rubro</label>
+            <label className="block mb-1 text-sm 3xl:text-lg font-bold">Rubro</label>
             <input
               type="text"
               required
@@ -87,7 +87,7 @@ export default function Contacto() {
 
         {/* SERVICIOS */}
         <div>
-          <label className="block mb-2 text-sm font-bold">
+          <label className="block mb-2 text-sm 3xl:text-lg font-bold">
             ¿Qué servicios te interesan?
           </label>
 
@@ -117,7 +117,7 @@ export default function Contacto() {
               {serviciosSeleccionados.map((servicio) => (
                 <div
                   key={servicio}
-                  className="flex items-center bg-white/20 text-white rounded-full px-4 py-1 text-sm backdrop-blur-sm"
+                  className="flex items-center bg-white/20 text-white rounded-full px-4 py-1 text-sm 3xl:text-lg backdrop-blur-sm"
                 >
                   <span>{servicio}</span>
                   <button
@@ -138,7 +138,7 @@ export default function Contacto() {
         </div>
 
         <div>
-          <label className="block mb-1 text-sm font-bold">Mensaje</label>
+          <label className="block mb-1 text-sm 3xl:text-lg font-bold">Mensaje</label>
           <textarea
             rows={3}
   className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50 resize-none scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-white/10"

@@ -6,14 +6,17 @@ import {
   FaLinkedin,
   FaFacebook,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="text-black px-6 sm:px-8 py-8 sm:py-12 font-gotham h-screen w-screen flex flex-col justify-center items-center">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
         {/* Columna 1: Contacto */}
         <div className="space-y-4 sm:space-y-6">
-          <h3 className="text-lg sm:text-xl font-semibold">NUESTROS LINKS</h3>
+          <h3 className="text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 w-fit">
+            NUESTROS LINKS
+          </h3>
 
           <div className="flex items-center gap-3 sm:gap-4">
             <FaEnvelope className="text-base sm:text-xl" />
@@ -26,39 +29,54 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-3 sm:gap-4">
             <FaPhoneAlt className="text-base sm:text-xl" />
-            <a href="tel:+5491112345678" className="text-base sm:text-xl transition hover:opacity-80">
+            <a
+              href="tel:+5491112345678"
+              className="text-base sm:text-xl transition hover:opacity-80"
+            >
               +54 9 11 1234-5678
             </a>
           </div>
-          
+
           {/* Redes sociales */}
-          <div className="flex flex-col gap-4 sm:gap-6 pt-4 sm:pt-6">
-            <h3 className="text-lg sm:text-xl font-semibold">SEGUINOS</h3>
-            <div className="flex gap-4 sm:gap-6 text-xl sm:text-2xl">
-              <a
-                href="https://www.instagram.com/casmarketingdesign/?hl=es-la"
-                className="transition hover:opacity-80"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href="https://www.facebook.com/CAS-Marketing-Design-103007271792611"
-                className="transition hover:opacity-80"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaFacebook />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/somoscas/"
-                className="transition hover:opacity-80"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin />
-              </a>
+          <div className="flex flex-row justify-between pt-4 sm:pt-6">
+            <div className="flex flex-col gap-4 sm:gap-6 ">
+              <h3 className=" text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4">
+                SEGUINOS
+              </h3>
+              <div className="flex gap-4 sm:gap-6 text-xl sm:text-2xl">
+                <a
+                  href="https://www.instagram.com/casmarketingdesign/?hl=es-la"
+                  className="transition hover:opacity-80"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram className="w-8" />
+                </a>
+                <a
+                  href="https://www.facebook.com/CAS-Marketing-Design-103007271792611"
+                  className="transition hover:opacity-80"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebook className="w-8" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/somoscas/"
+                  className="transition hover:opacity-80"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin className="w-8" />
+                </a>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <Link href="/contacto" replace className="flex flex-row ">
+                <button className="bg-white text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 hover:bg-black/10 transition-colors ease-in-out">
+                  CONTACTANOS {">"}
+                  {">"}
+                </button>
+              </Link>{" "}
             </div>
           </div>
         </div>
@@ -91,7 +109,8 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="pt-12 sm:pt-24 text-center text-xs sm:text-sm">
-        © {new Date().getFullYear()} CAS Marketing & Design. Todos los derechos reservados.
+        © {new Date().getFullYear()} CAS Marketing & Design. Todos los derechos
+        reservados.
       </div>
     </footer>
   );

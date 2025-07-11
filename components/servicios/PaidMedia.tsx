@@ -25,7 +25,7 @@ export default function PaidMedia() {
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-teal text-lg 3xl:text-xl rounded-sm border border-black py-3 px-4 hover:bg-teal/80 transition-colors ease-in-out">
-              Potencia tus ventas {">"}
+              Potenciá tus ventas {">"}
               {">"}
             </button>
           </Link>
@@ -53,7 +53,7 @@ export default function PaidMedia() {
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-teal rounded-sm border border-black py-3 px-4 hover:bg-teal/80 transition-colors ease-in-out">
-              Potencia tus ventas {">"}
+              Potenciá tus ventas {">"}
               {">"}
             </button>
           </Link>

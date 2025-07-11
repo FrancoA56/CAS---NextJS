@@ -53,7 +53,7 @@ export default function CreacionDeContenido() {
         </div>
         <div className="flex flex-col items-end justify-center text-end px-8 text-black ml-0 3xl:ml-36">
           <h2 className="text-6xl md:text-7xl 3xl:text-8xl font-bold mb-2 text-blue">
-            CREACION DE{" "}
+            CREACIÓN DE{" "}
           </h2>
           <h2 className="text-6xl md:text-7xl 3xl:text-8xl font-bold mb-6 custom-stroke-blue">
             CONTENIDO
@@ -76,7 +76,7 @@ export default function CreacionDeContenido() {
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-blue rounded-sm border border-black py-3 px-4 text-lg 3xl:text-xl hover:bg-blue/80 transition-colors ease-in-out">
-              Impulsa tu marca {">"}
+              Impulsá tu marca {">"}
               {">"}
             </button>
           </Link>
@@ -85,7 +85,7 @@ export default function CreacionDeContenido() {
 
       <div className="md:hidden flex flex-col ">
         <div className="flex flex-col items-end justify-start text-end px-8 mt-0 text-black mb-16">
-          <h2 className="text-5xl font-bold mb-2 text-blue">CREACION DE </h2>
+          <h2 className="text-5xl font-bold mb-2 text-blue">CREACIÓN DE </h2>
           <h2 className="text-6xl font-bold mb-6 custom-stroke-blue">
             CONTENIDO
           </h2>
@@ -104,7 +104,7 @@ export default function CreacionDeContenido() {
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-blue rounded-sm border border-black py-3 px-4 hover:bg-blue/80 transition-colors ease-in-out">
-              Impulsa tu marca {">"}
+              Impulsá tu marca {">"}
               {">"}
             </button>
           </Link>

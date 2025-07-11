@@ -43,7 +43,7 @@ export default function AsesoriaPersonalizada() {
 
       {/* Movil */}
 
-      <div className="flex md:hidden flex-col w-full items-center">
+      <div className="flex md:hidden flex-col w-full items-center h-screen justify-center mb-16">
         {/* Texto */}
         <div className="flex flex-col items-start justify-center text-black text-left mb-12 w-full ml-12">
           <h2 className="text-5xl font-bold mb-2 text-peach">

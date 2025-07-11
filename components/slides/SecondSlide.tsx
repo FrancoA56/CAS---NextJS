@@ -65,12 +65,12 @@ export default function SecondSlide({
       </div>
 
       {/*MOVIL*/}
-      <div className="flex flex-col md:hidden h-screen w-full items-center justify-center text-center pb-12">
+      <div className="flex flex-col md:hidden h-screen w-full items-center justify-center text-center pb-12 pr-6">
         <div className="flex flex-col items-center justify-center text-center px-6 ">
           <h2 className="text-black text-4xl font-extrabold uppercase mb-6">
             soluciones creativas
           </h2>
-          <h2 className="text-gradient-cas text-5xl font-extrabold uppercase mb-6">
+          <h2 className="text-gradient-cas text-5xl uppercase mb-6">
             resultados reales
           </h2>
           <p className="text-black text-lg  mb-10 px-0 ">

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 import FullScreenNav from "../components/FullScreenNav";
 
-
 export default function RootLayout({
   children,
 }: {
@@ -26,17 +25,17 @@ export default function RootLayout({
             onClick={() => setIsOpen(!isOpen)}
             className="mt-2 left-8 absolute"
           >
-            <FiAlignJustify size={32} className="text-white" />
+            <FiAlignJustify size={32} className="text-white " />
           </button>
 
           {/* Texto rotado */}
-          <div className="absolute bottom-64 3xl:bottom-80 left-16 transform -translate-x-1/2 rotate-[-90deg] origin-bottom text-white opacity-80 tracking-widest text-2xl 3xl:text-3xl whitespace-nowrap">
+          <div className="absolute bottom-64 3xl:bottom-80 left-16 transform -translate-x-1/2 rotate-[-90deg] origin-bottom text-white opacity-80 tracking-widest text-2xl 3xl:text-3xl whitespace-nowrap custom-stroke-hover  transition-all transition-discrete ease-in-out">
             CAS - MARKETING & DESIGN
           </div>
         </div>
-        <div className="absolute z-0 md:top-10 top-8 left-6 flex-col space-y-2 font-gotham inline md:hidden">
+        <div className="absolute z-50 md:top-10 top-8 left-6 flex-col space-y-2 font-gotham inline md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            <FiAlignJustify size={32} className="text-black" />
+            <FiAlignJustify size={32} className="text-black z-0" />
           </button>
         </div>
         <FullScreenNav
@@ -45,7 +44,6 @@ export default function RootLayout({
           setIsOpen={setIsOpen}
         />
         <main>{children}</main>
-        
       </body>
     </html>
   );

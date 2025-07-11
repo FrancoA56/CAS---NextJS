@@ -47,7 +47,7 @@ export default function Opcion4() {
       ref={ref}
     >
       <div className="flex flex-col items-end text-end pr-24">
-        <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">AHORRA</div>
+        <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">AHORRÁ</div>
         <div className="stroke text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">TIEMPO Y RECURSOS</div>
         <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl">
           Somos una agencia 360° que cubre todas las áreas clave para
