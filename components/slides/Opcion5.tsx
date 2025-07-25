@@ -35,12 +35,12 @@ export default function Opcion5() {
           </div>
         </div>
       </div>
-      <div className="h-screen w-full flex md:hidden flex-col px-20 text-black text-center py-24 bg-peach">
-        <div className="flex items-left h-1/3">
+      <div className="h-screen w-full flex md:hidden flex-col px-8 text-black text-center py-24 bg-peach">
+        <div className="flex items-center justify-center">
           <Image
             src={imagen1}
             alt="WholesaleColores"
-            className="rounded-xl w-[100%]"
+            className="rounded-xl w-[70%]"
           ></Image>
         </div>
         {/* Texto al fondo alineado a la derecha */}

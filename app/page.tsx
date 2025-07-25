@@ -2,7 +2,7 @@
 import HorizontalScrollWrapperInicio, {
   HorizontalScrollWrapperRef,
 } from "../components/HorizontalScrollWrapperInicio";
-import { useState } from "react";
+import React, { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
 import PageWrapperInicio from "../components/PageWrapperInicio";
 import Footer from "../components/footer";
@@ -73,8 +73,8 @@ export default function Home() {
         />
       </PageWrapper>
       {ideales.map(({ Component }, i) => (
-        <>
-          <PageWrapperInicio key={i}>
+        <React.Fragment key={i}>
+          <PageWrapperInicio>
             <div
               ref={(el) => {
                 sectionRefs.current[i + 1] = el ?? undefined;
@@ -84,8 +84,9 @@ export default function Home() {
             </div>
           </PageWrapperInicio>
           {i === 0 && <ImagesCol />}
-        </>
+        </React.Fragment>
       ))}
+
       <PageWrapper>
         <Footer />
       </PageWrapper>

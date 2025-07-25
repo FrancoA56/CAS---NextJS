@@ -12,9 +12,14 @@ module.exports = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        slideUpFade: {
+          "0%": { transform: "translateY(50px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         "rotate-once": "rotate360 0.8s ease-in-out",
+        "slide-up-fade": "slideUpFade 0.5s ease-out forwards",
       },
       colors: {
         green: "#A5E6A8", // Pantone 580 CP
@@ -33,9 +38,9 @@ module.exports = {
         trabajando2: "url('media/trabajando2.jpeg)",
         trabajando3: "url('media/trabajando3.jpeg)",
       },
-       screens: {
-        "3xl": "1920px"
-       }
+      screens: {
+        "3xl": "1920px",
+      },
     },
   },
   plugins: [],

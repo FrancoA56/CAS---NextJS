@@ -43,7 +43,7 @@ export default function SlideMain() {
 
       {/* Texto principal */}
       <div className="flex flex-col md:flex-row items-center justify-center w-full h-screen">
-        <div className="w-full md:w-2/3  flex flex-col items-end mb-8 md:mb-0 md:px-0 px-6 3xl:px-24">
+        <div className="w-full md:w-2/3  flex flex-col items-end mb-8 md:mb-0 md:px-0 px-6 2xl:px-24 3xl:px-32">
           <h1 className="text-6xl md:text-8xl 3xl:text-9xl text-black uppercase font-[1000]">
             SOMOS
           </h1>

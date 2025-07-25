@@ -43,9 +43,9 @@ export default function Opcion1() {
 
       {/* movil */}
 
-      <div className="h-screen w-full  bg-green py-2 relative overflow-visible sm:hidden flex flex-col ">
+      <div className="h-screen w-full px-8  bg-green py-12 relative overflow-visible sm:hidden flex flex-col ">
         {/* Contenido textual */}
-        <div className="flex flex-col px-8 text-black justify-between gap-20 text-center">
+        <div className="flex flex-col text-black justify-between gap-20 text-center">
           <div className="flex flex-col items-start text-start mt-12">
             <div className="font-bold text-3xl ">ATRAE</div>
             <div className="stroke text-4xl ">NUEVOS CLIENTES</div>
@@ -56,7 +56,27 @@ export default function Opcion1() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col px-8  text-black justify-between text-center">
+        <div className="flex flex-wrap mt-12 gap-12 items-center justify-center">
+          <div className="flip-container w-72 h-72  pointer-events-auto">
+            <div className="flipper rotate-on-hover transition-transform duration-700">
+              <div className="front">
+                <Image
+                  src={image1}
+                  alt="Front"
+                  className="w-full h-full rounded"
+                />
+              </div>
+              <div className="back">
+                <Image
+                  src={image2}
+                  alt="Back"
+                  className="w-full h-full object-cover rounded"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col  text-black justify-between text-center">
           <div className="flex flex-col items-end text-start mt-12">
             <div className="font-bold text-3xl ">MOSTRA</div>
             <div className="stroke text-4xl">TU MARCA</div>
@@ -64,63 +84,6 @@ export default function Opcion1() {
               Creamos identidades visuales que hablan por vos. Trabajamos para
               que tu marca se vea unificada y profesional, pero sobre todo para
               ser recordable.
-            </div>
-          </div>
-        </div>
-
-          <div className="flex flex-wrap mt-12 gap-12 items-center justify-center ">
-            <div className="flip-container w-32 h-32  pointer-events-auto">
-              <div className="flipper rotate-on-hover transition-transform duration-700">
-                <div className="front">
-                  <Image
-                    src={image1}  
-                    alt="Front"
-                    className="w-full h-full rounded"
-                  />
-                </div>
-                <div className="back">
-                  <Image
-                    src={image2}
-                    alt="Back"
-                    className="w-full h-full object-cover rounded"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flip-container w-32 h-32 pointer-events-auto">
-              <div className="flipper rotate-on-hover transition-transform duration-700">
-                <div className="front">
-                  <Image
-                    src={image1}
-                    alt="Front"
-                    className="w-full h-full rounded"
-                  />
-                </div>
-                <div className="back">
-                  <Image
-                    src={image2}
-                    alt="Back"
-                    className="w-full h-full object-cover rounded"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flip-container w-32 h-32 pointer-events-auto">
-              <div className="flipper rotate-on-hover transition-transform duration-700">
-                <div className="front">
-                  <Image
-                    src={image1}
-                    alt="Front"
-                    className="w-full h-full rounded"
-                  />
-                </div>
-                <div className="back">
-                  <Image
-                    src={image2}
-                    alt="Back"
-                    className="w-full h-full object-cover rounded"
-                  />
-                </div>
             </div>
           </div>
         </div>

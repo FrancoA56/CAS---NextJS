@@ -6,7 +6,7 @@ export default function PageWrapperInicio({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-[80vw] h-screen flex items-center justify-center flex-col">
+    <div className="w-[100vw] md:w-[80vw] h-screen flex items-center justify-center flex-col">
       {children}
     </div>
   );

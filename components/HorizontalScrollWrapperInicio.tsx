@@ -22,10 +22,7 @@ const HorizontalScrollWrapperInicio = forwardRef<
       const container = containerRef.current;
       if (container && container.children[index]) {
         const child = container.children[index] as HTMLElement;
-        container.scrollTo({
-          left: child.offsetLeft,
-          behavior: "smooth",
-        });
+        child.scrollIntoView({ behavior: "smooth", inline: "start" });
       }
     },
     getScrollableElement: () => containerRef.current,
@@ -53,7 +50,8 @@ const HorizontalScrollWrapperInicio = forwardRef<
   return (
     <div
       ref={containerRef}
-      className="flex h-screen overflow-x-scroll scrollbar-hide touch-pan-x"
+      data-horizontal-scroll
+      className="flex h-screen overflow-x-scroll scrollbar-hide touch-pan-x overscroll-contain"
     >
       {React.Children.map(children, (child, index) => (
         <div key={index} className="w-auto h-full flex-shrink-0">

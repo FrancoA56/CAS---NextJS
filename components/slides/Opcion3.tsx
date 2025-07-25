@@ -46,9 +46,9 @@ export default function Opcion3() {
       </div>
       {/* Movil */}
  
-      <div className="h-screen w-full flex md:hidden flex-col justify-center  text-black text-center mb-12 bg-blue gap-12">
+      <div className="h-screen w-full flex md:hidden flex-col justify-center px-8  text-black text-center mb-12 bg-blue gap-12">
         {/* Título */}
-        <div className="h-auto flex flex-wrap items-start justify-center gap-2 pr-12">
+        <div className="h-auto flex flex-wrap items-start justify-center gap-2">
           <Image
             src={imagen1}
             alt="WholesaleColores"
@@ -67,7 +67,7 @@ export default function Opcion3() {
         </div>
 
         {/* Texto al fondo alineado a la derecha */}
-        <div className="flex flex-col  pr-20">
+        <div className="flex flex-col ">
           <div className="font-bold text-3xl text-end">COMUNICA</div>
           <div className="stroke text-4xl text-end">LO QUE HACES</div>
           <div className="w-full mt-2 text-end ">
