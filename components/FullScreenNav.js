@@ -55,16 +55,6 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
             </li>
             <li>
               <Link
-                href="/equipo"
-                onClick={() => setIsOpen(false)}
-                replace
-                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
-              >
-                Nuestro EQUIPO
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/clientes"
                 onClick={() => setIsOpen(false)}
                 replace

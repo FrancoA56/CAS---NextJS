@@ -1,23 +1,37 @@
-export default function SecondQS () {
-    return (
-        <div className="h-screen w-screen flex-shrink-0 flex items-center px-16 text-left justify-center">
-        <div className="max-w-4xl">
-          <h2 className="text-4xl font-bold text-black mb-8">
-            Nuestra <span className="text-teal-400">Filosofía</span>
+export default function SecondQS() {
+  return (
+    <div className="h-screen w-screen  flex items-center px-16 text-left justify-center">
+      <div className="max-w-6xl">
+        <div className="inline-block">
+          <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8 ">
+            MISIÓN
           </h2>
-          <div className="space-y-6">
-            <p className="text-xl text-black">
-              Creemos en el marketing digital basado en datos, pero impulsado por creatividad.
-            </p>
-            <p className="text-xl text-black">
-              Cada estrategia debe ser tan única como el negocio al que sirve.
-            </p>
-            <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-teal-400 to-transparent my-8"></div>
-            <p className="text-xl text-black">
-              No somos una fábrica de contenido. Somos arquitectos de experiencias digitales que generan crecimiento real.
-            </p>
-          </div>
+        </div>
+
+        <div className="space-y-6 mb-12">
+          <p className="text-xl md:text-2xl 3xl:text-3xl text-black">
+            Nuestra misión es apoyar a nuestros clientes en el diseño y
+            desarrollo estratégico de su marca, proporcionando herramientas de
+            gestión que ayudarán a la toma de decisiones, potenciando a los
+            mismos.
+          </p>
+        </div>
+        <div className="inline-block">
+          <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8">
+            VISIÓN
+          </h2>
+        </div>
+
+        <div className="space-y-6">
+          <p className="text-xl md:text-2xl 3xl:text-3xl text-black">
+            Posicionarnos en los próximos años como una empresa líder en
+            marketing y publicidad digital dentro del mercado, donde podamos
+            brindar el mejor asesoramiento a cada cliente, generando tendencia a
+            través de nuestra creatividad y encuentren en nosotros un socio
+            estratégico para comunicar su marca.
+          </p>
         </div>
       </div>
-    )
+    </div>
+  );
 }

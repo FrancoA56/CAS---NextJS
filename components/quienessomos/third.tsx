@@ -1,34 +1,114 @@
 export default function ThirdQS() {
   return (
     <div className="h-screen w-screen flex-shrink-0 flex items-center px-16 justify-center">
-      <div className="max-w-4xl">
-        <h2 className="text-4xl font-bold text-black mb-8 items-center flex gap-2 justify-center">
-          Nuestro <span className="text-teal-400"> Enfoque</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="w-full md:max-w-6xl 3xl:max-w-7xl">
+        <div className="inline-block">
+          <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8 ">
+            VALORES
+          </h2>
+        </div>
+        <div
+          className="md:grid md:grid-cols-2 hidden gap-8"
+          style={{ gridAutoRows: "110px" }}
+        >
           {[
             {
-              title: "Estrategia",
-              desc: "Planes personalizados basados en tus objetivos específicos",
+              title: "TRABAJO EN EQUIPO:",
+              desc: "Contribuyendo a una experiencia interdisciplinaria.",
+              color: "#A5E6A8",
             },
             {
-              title: "Tecnología",
-              desc: "Herramientas y plataformas de última generación",
+              title: "CALIDAD:",
+              desc: "Fortaleciendo la excelencia para cada uno de nuestros clientes.",
+              color: "#B791DD",
             },
             {
-              title: "Resultados",
-              desc: "Métricas claras y reportes transparentes",
+              title: "INNOVACIÓN:",
+              desc: "Transformando las ideas en hechos.",
+              color: "#78C8D2",
             },
             {
-              title: "Innovación",
-              desc: "Siempre explorando nuevas fronteras digitales",
+              title: "COMPROMISO:",
+              desc: "Responsabilidad ante los colaboradores y nuestros clientes, implementando creatividad para que cada proyecto sea único.",
+              color: "#EE8EC3",
+            },
+            {
+              title: "RESPONSABILIDAD:",
+              desc: "Nos ocupamos de las necesidades de nuestros clientes.",
+              color: "#FFDF7D",
+            },
+            {
+              title: "PROFESIONALIDAD:",
+              desc: "Buscando la mejor opción para cada cliente. Colaborar con las metas con esfuerzo constante y responsabilidad.",
+              color: "#888A8B",
+            },
+            {
+              title: "ÉTICA:",
+              desc: "Siendo confiables con la información que manejamos.",
+              color: "#FFC4AC",
             },
           ].map((item, index) => (
-            <div key={index} className="border-l-4 border-teal-400 pl-4">
+            <div
+              key={index}
+              className="border-l-4 pl-4 flex flex-col justify-center"
+              style={{ borderLeftColor: item.color }}
+            >
               <h3 className="text-2xl font-bold text-black mb-2">
                 {item.title}
               </h3>
-              <p className="text-black">{item.desc}</p>
+              <p className="text-black text-xl">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div
+          className="grid grid-cols-1 md:hidden gap-8"
+        >
+          {[
+            {
+              title: "TRABAJO EN EQUIPO:",
+              desc: "Contribuyendo a una experiencia interdisciplinaria.",
+              color: "#A5E6A8",
+            },
+            {
+              title: "CALIDAD:",
+              desc: "Fortaleciendo la excelencia para cada uno de nuestros clientes.",
+              color: "#B791DD",
+            },
+            {
+              title: "INNOVACIÓN:",
+              desc: "Transformando las ideas en hechos.",
+              color: "#78C8D2",
+            },
+            {
+              title: "COMPROMISO:",
+              desc: "Responsabilidad ante los colaboradores y nuestros clientes, implementando creatividad para que cada proyecto sea único.",
+              color: "#EE8EC3",
+            },
+            {
+              title: "RESPONSABILIDAD:",
+              desc: "Nos ocupamos de las necesidades de nuestros clientes.",
+              color: "#FFDF7D",
+            },
+            {
+              title: "PROFESIONALIDAD:",
+              desc: "Buscando la mejor opción para cada cliente. Colaborar con las metas con esfuerzo constante y responsabilidad.",
+              color: "#888A8B",
+            },
+            {
+              title: "ÉTICA:",
+              desc: "Siendo confiables con la información que manejamos.",
+              color: "#FFC4AC",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="border-l-4 pl-4 flex flex-col justify-center"
+              style={{ borderLeftColor: item.color }}
+            >
+              <h3 className="text-xl font-bold text-black mb-2">
+                {item.title}
+              </h3>
+              <p className="text-black text-sm ">{item.desc}</p>
             </div>
           ))}
         </div>

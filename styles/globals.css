@@ -48,6 +48,17 @@
   }
 }
 
+@keyframes auto-flip {
+  0%, 40% {
+    transform: rotateY(0deg);
+  }
+  50%, 90% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
 
 
 .animate-pop {
@@ -79,16 +90,17 @@
   overflow: hidden;
 }
 
+.rotate-on-hover {
+  animation: auto-flip 6s infinite ease-in-out;
+}
+
+
 .front {
   transform: rotateY(0deg);
   z-index: 2;
 }
 
 .back {
-  transform: rotateY(180deg);
-}
-
-.flip-container:hover .rotate-on-hover {
   transform: rotateY(180deg);
 }
 

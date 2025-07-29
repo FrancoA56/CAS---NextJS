@@ -9,7 +9,6 @@ import Footer from "../components/footer";
 import SlideMain from "../components/slides/MainSlide";
 import { useRef } from "react";
 import Opcion1 from "../components/slides/Opcion1";
-import Opcion2 from "../components/slides//Opcion2";
 import Opcion3 from "../components/slides//Opcion3";
 import Opcion4 from "../components/slides//Opcion4";
 import Opcion5 from "../components/slides//Opcion5";
@@ -37,11 +36,6 @@ export default function Home() {
       background: green,
       Component: Opcion1,
     },
-    // {
-    //   label: "Mostra tu marca",
-    //   background: teal,
-    //   Component: Opcion2,
-    // },
     {
       label: "Comunica lo que haces",
       background: blue,
@@ -54,7 +48,7 @@ export default function Home() {
     },
     {
       label: "Posicionate",
-      background: peach,
+      background: teal,
       Component: Opcion5,
     },
   ];

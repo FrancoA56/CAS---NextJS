@@ -61,7 +61,7 @@ export default function DisenoGrafico() {
         </div>
 
         {/* Carrusel */}
-        <div className="w-full flex justify-end mr-12">
+        <div className="w-full flex justify-center ">
           <VerticalCarousel />
         </div>
       </div>

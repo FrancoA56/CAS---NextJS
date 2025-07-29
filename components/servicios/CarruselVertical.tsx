@@ -15,7 +15,7 @@ export default function VerticalCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -62,11 +62,11 @@ export default function VerticalCarousel() {
               key={imgIndex}
               initial={{ opacity: 0, scale: 0.7, y: offset * 150 }}
               animate={{
-                opacity: isCenter ? 1 : 0.5,
-                scale: isCenter ? 1.2 : 0.8,
+                opacity: isCenter ? 1 : 0,
+                scale: isCenter ? 1.2 : 0,
                 y: offset * 160,
               }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 1.4 }}
               className="absolute"
             >
               <Image

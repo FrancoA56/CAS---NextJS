@@ -32,13 +32,13 @@ export default function Contacto() {
 
   return (
     <div className="h-screen w-full flex justify-center items-center flex-col px-4">
-      <div className="flex flex-row justify-center gap-4 items-center md:text-6xl text-4xl mb-2 ">
+      <div className="flex flex-row justify-center gap-4 items-center md:text-6xl text-4xl mb-2 md:mb-8 ">
         <p className="font-bold">TRABAJEMOS</p>
         <p className="text-gradient-cas custom-stroke ">JUNTOS</p>
       </div>
 
       <form
-        className="w-full max-w-2xl space-y-4 bg-green p-8 rounded-xl backdrop-blur-md border border-white/30 text-white"
+        className="w-full max-w-2xl space-y-4 bg-blue p-8 rounded-xl backdrop-blur-md border border-white/30 text-white"
         onSubmit={handleSubmit}
       >
         <div className="flex sm:flex-row flex-col gap-4">
@@ -103,9 +103,9 @@ export default function Contacto() {
             className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
             defaultValue=""
           >
-            <option value="Seleccioná varios" className="text-white bg-green"></option>
+            <option value="Seleccioná varios" className="text-white bg-blue"></option>
             {items.map((item) => (
-              <option key={item} value={item} className="text-white bg-green">
+              <option key={item} value={item} className="text-white bg-blue">
                 {item}
               </option>
             ))}

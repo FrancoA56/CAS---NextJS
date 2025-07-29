@@ -3,8 +3,21 @@
 import { useState } from "react";
 
 export default function SecondSumate() {
+  const [serviciosSeleccionados, setServiciosSeleccionados] = useState<
+    string[]
+  >([]);
   const [file, setFile] = useState<File | null>(null);
   const [captchaToken, setCaptchaToken] = useState("");
+
+  const items = [
+    "DISEÑO GRAFICO",
+    "EMAIL MARKETING",
+    "SOCIAL MEDIA",
+    "DISEÑO WEB",
+    "PAID MEDIA",
+    "CONTENIDO",
+    "ASESORÍAS",
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,7 +66,7 @@ export default function SecondSumate() {
         <div className="flex sm:flex-row flex-col gap-4">
           <div className="flex-1">
             <label className="block mb-1 text-sm 3xl:text-lg font-bold ">
-              Nombre
+              Nombre Completo
             </label>
             <input
               type="text"
@@ -78,37 +91,71 @@ export default function SecondSumate() {
         <div className="flex sm:flex-row flex-col gap-4">
           <div className="flex-1">
             <label className="block mb-1 text-sm 3xl:text-lg font-bold">
-              Nombre de Empresa
+              Celular
             </label>
             <input
-              type="text"
+              type="tel"
+              id="phone"
+              name="phone"
               required
               className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
-              placeholder="Tu empresa"
+              placeholder="011-2323-2323"
             />
           </div>
           <div className="flex-1">
             <label className="block mb-1 text-sm 3xl:text-lg font-bold">
-              Rubro
+              Área
             </label>
-            <input
-              type="text"
-              required
-              className="w-full p-3 text-ellipsis bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
-              placeholder="Ej. Indumentaria, decoración"
-            />
+            <select
+              onChange={(e) => {
+                const selected = e.target.value;
+                if (selected && !serviciosSeleccionados.includes(selected)) {
+                  setServiciosSeleccionados((prev) => [...prev, selected]);
+                }
+                // Reiniciamos el select al valor vacío para que se pueda volver a seleccionar
+                e.target.value = "";
+              }}
+              className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              defaultValue=""
+            >
+              <option
+                value="Seleccioná varios"
+                className="text-white bg-teal"
+              ></option>
+              {items.map((item) => (
+                <option key={item} value={item} className="text-white bg-teal">
+                  {item}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
         <div>
-          <label className="block mb-1 text-sm 3xl:text-lg font-bold">
-            Mensaje
-          </label>
-          <textarea
-            rows={3}
-            className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50 resize-none scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-white/10"
-            placeholder="Contanos tu idea..."
-          />
+          {/* Servicios seleccionados con botón de quitar */}
+          {serviciosSeleccionados.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {serviciosSeleccionados.map((servicio) => (
+                <div
+                  key={servicio}
+                  className="flex items-center bg-white/20 text-white rounded-full px-4 py-1 text-sm 3xl:text-lg backdrop-blur-sm"
+                >
+                  <span>{servicio}</span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setServiciosSeleccionados((prev) =>
+                        prev.filter((s) => s !== servicio)
+                      )
+                    }
+                    className="ml-2 text-white hover:text-red-400"
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         {/* Archivo adjunto */}
         {/* Drag & Drop para CV */}

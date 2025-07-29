@@ -4,11 +4,14 @@ export default function InicioQS() {
   return (
     <div className="h-screen w-screen flex-shrink-0 flex flex-col justify-center items-center px-8">
       <div className="text-center">
-        <h1 className="text-6xl md:text-8xl text-gradient-cas mb-6 custom-stroke">
-          ¿QUIÉNES <span className="">SOMOS?</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-black max-w-2xl mx-auto">
-          Transformamos ideas en resultados digitales tangibles
+        <div className="flex flex-col justify-center items-center  mb-6 ">
+          <p className="font-bold text-6xl 3xl:text-7xl">¿QUIÉNES</p>
+          <p className="text-gradient-cas text-6xl 3xl:text-8xl">SOMOS?</p>
+        </div>
+        <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto">
+          Somos una agencia de marketing que diseña soluciones a la medida de tu
+          negocio. Planificamos, creamos y medimos para que tu marca crezca con
+          propósito y puedas delegar con tranquilidad.
         </p>
       </div>
       <div className="mt-16 animate-bounce">

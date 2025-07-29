@@ -5,7 +5,7 @@ import imagen1 from "../../media/google.jpg";
 export default function Opcion5() {
   return (
     <>
-      <div className="h-screen w-full md:flex hidden flex-row px-20 text-black text-center py-24 bg-peach">
+      <div className="h-screen w-full md:flex hidden flex-row px-20 text-black text-center py-24 bg-teal">
         <div className="flex flex-row items-left w-1/3">
           <Image
             src={imagen1}
@@ -16,7 +16,7 @@ export default function Opcion5() {
         {/* Texto al fondo alineado a la derecha */}
         <div className="flex flex-col items-end text-end justify-between pr-12 w-2/3">
           <Link href="/servicios" replace className="flex flex-row mt-24">
-            <button className="bg-peach text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 hover:bg-white/20 transition-colors ease-in-out">
+            <button className="bg-teal text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 hover:bg-white/20 transition-colors ease-in-out">
               Conocé nuestros servicios {">"}
               {">"}
             </button>
@@ -35,7 +35,7 @@ export default function Opcion5() {
           </div>
         </div>
       </div>
-      <div className="h-screen w-full flex md:hidden flex-col px-8 text-black text-center py-24 bg-peach">
+      <div className="h-screen w-full flex md:hidden flex-col px-8 text-black text-center py-24 bg-teal">
         <div className="flex items-center justify-center">
           <Image
             src={imagen1}
@@ -46,7 +46,7 @@ export default function Opcion5() {
         {/* Texto al fondo alineado a la derecha */}
         <div className="flex flex-col items-end text-end h-2/3">
           <Link href="/servicios" replace className="flex flex-row mt-12">
-            <button className="bg-peach text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 hover:bg-white/20 transition-colors ease-in-out">
+            <button className="bg-teal text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 hover:bg-white/20 transition-colors ease-in-out">
               Conocé nuestros servicios {">"}
               {">"}
             </button>
