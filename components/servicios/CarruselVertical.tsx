@@ -11,16 +11,24 @@ const images = [Image1, Image2, Image3];
 
 export default function VerticalCarousel() {
   const [index, setIndex] = useState(0);
+  const [indexMovil, setIndexMovil] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    const intervalMovil = setInterval(() => {
+      setIndexMovil((prev) => (prev + 1) % images.length);
     }, 5000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval), clearInterval(intervalMovil);
+    };
   }, []);
 
   const getIndex = (offset: number) =>
     (index + offset + images.length) % images.length;
+  const getIndexMovil = (offset: number) =>
+    (indexMovil + offset + images.length) % images.length;
 
   return (
     <>
@@ -54,12 +62,12 @@ export default function VerticalCarousel() {
       </div>
       <div className="relative h-[350px] w-[260px] md:hidden flex flex-col items-center justify-center">
         {[1, 0, -1].map((offset, i) => {
-          const imgIndex = getIndex(offset);
+          const imgIndexMovil = getIndexMovil(offset);
           const isCenter = offset === 0;
 
           return (
             <motion.div
-              key={imgIndex}
+              key={imgIndexMovil}
               initial={{ opacity: 0, scale: 0.7, y: offset * 150 }}
               animate={{
                 opacity: isCenter ? 1 : 0,
@@ -70,8 +78,8 @@ export default function VerticalCarousel() {
               className="absolute"
             >
               <Image
-                src={images[imgIndex]}
-                alt={`Imagen ${imgIndex}`}
+                src={images[imgIndexMovil]}
+                alt={`Imagen ${imgIndexMovil}`}
                 className="rounded-xl"
                 width={isCenter ? 460 : 300}
                 height={isCenter ? 460 : 300}

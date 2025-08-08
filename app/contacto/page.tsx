@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function Contacto() {
   const [serviciosSeleccionados, setServiciosSeleccionados] = useState<
@@ -32,37 +33,45 @@ export default function Contacto() {
 
   return (
     <div className="h-screen w-full flex justify-center items-center flex-col px-4">
-      <div className="flex flex-row justify-center gap-4 items-center md:text-6xl text-4xl mb-2 md:mb-8 ">
-        <p className="font-bold">TRABAJEMOS</p>
-        <p className="text-gradient-cas custom-stroke ">JUNTOS</p>
+      <div className="flex flex-col justify-center items-center mb-2 md:mb-8 ">
+        <p className="font-bold text-5xl md:text-6xl 3xl:text-7xl">
+          TRABAJEMOS
+        </p>
+        <p className="text-gradient-cas custom-stroke text-6xl 3xl:text-8xl">
+          JUNTOS
+        </p>
       </div>
 
       <form
-        className="w-full max-w-2xl space-y-4 bg-blue p-8 rounded-xl backdrop-blur-md border border-white/30 text-white"
+        className="w-full max-w-2xl space-y-1 3xl:space-y-4 bg-white p-8 rounded-xl backdrop-blur-md border-2 border-gray text-black"
         onSubmit={handleSubmit}
       >
-        <div className="flex sm:flex-row flex-col gap-4">
+        <div className="flex sm:flex-row flex-col gap-2 md:gap-4">
           <div className="flex-1">
-            <label className="block mb-1 text-sm 3xl:text-lg font-bold ">Nombre</label>
+            <label className="block mb-1 text-sm 3xl:text-lg font-bold ">
+              Nombre
+            </label>
             <input
               type="text"
               required
-              className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              className="w-full p-3 rounded-md text-black border border-gray placeholder-gray outline-none focus:ring-2 focus:ring-white/50"
               placeholder="Tu nombre"
             />
           </div>
-          <div className="flex-1">
-            <label className="block mb-1 text-sm 3xl:text-lg font-bold">Email</label>
+          <div className="flex-1 mb-2 md:mb-0">
+            <label className="block mb-1 text-sm 3xl:text-lg font-bold">
+              Email
+            </label>
             <input
               type="email"
               required
-              className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
-              placeholder="tunombre@email.com"
+              className="w-full p-3 rounded-md text-black border border-gray placeholder-gray outline-none focus:ring-2 focus:ring-white/50"
+              placeholder="tuemail@email.com"
             />
           </div>
         </div>
 
-        <div className="flex sm:flex-row flex-col gap-4">
+        <div className="flex sm:flex-row flex-col gap-2 md:gap-4  ">
           <div className="flex-1">
             <label className="block mb-1 text-sm 3xl:text-lg font-bold">
               Nombre de Empresa
@@ -70,16 +79,18 @@ export default function Contacto() {
             <input
               type="text"
               required
-              className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              className="w-full p-3 rounded-md text-black border border-gray placeholder-gray outline-none focus:ring-2 focus:ring-white/50"
               placeholder="Tu empresa"
             />
           </div>
-          <div className="flex-1">
-            <label className="block mb-1 text-sm 3xl:text-lg font-bold">Rubro</label>
+          <div className="flex-1 mb-2 md:mb-0">
+            <label className="block mb-1 text-sm 3xl:text-lg font-bold">
+              Rubro
+            </label>
             <input
               type="text"
               required
-              className="w-full p-3 text-ellipsis bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+              className="w-full p-3 text-ellipsis  rounded-md text-black border border-gray placeholder-gray outline-none focus:ring-2 focus:ring-white/50"
               placeholder="Ej. Indumentaria, decoración"
             />
           </div>
@@ -100,24 +111,28 @@ export default function Contacto() {
               // Reiniciamos el select al valor vacío para que se pueda volver a seleccionar
               e.target.value = "";
             }}
-            className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50"
+            className="w-full p-3 rounded-md text-gray border border-gray placeholder-gray outline-none focus:ring-2 focus:ring-white/50"
             defaultValue=""
           >
-            <option value="Seleccioná varios" className="text-white bg-blue"></option>
+            <option value="" className="text-black" disabled>
+              Seleccioná Servicios
+            </option>
+
             {items.map((item) => (
-              <option key={item} value={item} className="text-white bg-blue">
+              <option key={item} value={item} className="text-black">
                 {item}
               </option>
             ))}
           </select>
+          <IoIosArrowDown className="relative left-[92%] -translate-y-8 pointer-events-none text-black" />
 
           {/* Servicios seleccionados con botón de quitar */}
           {serviciosSeleccionados.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap gap-2">
               {serviciosSeleccionados.map((servicio) => (
                 <div
                   key={servicio}
-                  className="flex items-center bg-white/20 text-white rounded-full px-4 py-1 text-sm 3xl:text-lg backdrop-blur-sm"
+                  className="flex items-center border border-gray placeholder-gray text-black rounded-full px-4 py-1 text-sm backdrop-blur-sm"
                 >
                   <span>{servicio}</span>
                   <button
@@ -127,7 +142,7 @@ export default function Contacto() {
                         prev.filter((s) => s !== servicio)
                       )
                     }
-                    className="ml-2 text-white hover:text-red-400"
+                    className="ml-2 text-black hover:text-pink"
                   >
                     ×
                   </button>
@@ -138,10 +153,12 @@ export default function Contacto() {
         </div>
 
         <div>
-          <label className="block mb-1 text-sm 3xl:text-lg font-bold">Mensaje</label>
+          <label className="block mb-1 text-sm 3xl:text-lg font-bold">
+            Mensaje
+          </label>
           <textarea
             rows={3}
-  className="w-full p-3 bg-white/20 rounded-md text-white placeholder-white/70 outline-none focus:ring-2 focus:ring-white/50 resize-none scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-white/10"
+            className="w-full p-3 rounded-md text-black border border-gray placeholder-gray outline-none focus:ring-2 focus:ring-white/50 resize-none scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-white/10"
             placeholder="Contanos tu idea..."
           />
         </div>
@@ -153,12 +170,10 @@ export default function Contacto() {
         />
 
         <div className="flex justify-center items-start">
-          <button
-            type="submit"
-            className="flex flex-col items-center text-white "
-          >
-            <span className="w-96 h-px bg-white mb-2 transition-all duration-300 group-hover:w-16" />
-            <span className="font-semibold tracking-wide">Enviar</span>
+          <button type="submit" className="flex flex-col items-center">
+            <span className="font-semibold tracking-wide border border-black rounded-sm backdrop-blur-md text-sm sm:w-auto btn-gradient-cas w-full transition-colors duration-300">
+              Enviar
+            </span>
           </button>
         </div>
       </form>

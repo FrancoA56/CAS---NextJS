@@ -67,8 +67,6 @@ export default function ImagesCol() {
           </div>
         </div>
       </div>
-
-     
     </>
   );
 }

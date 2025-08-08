@@ -58,7 +58,7 @@ export default function Opcion1() {
         </div>
         <div className="flex flex-wrap mt-12 gap-12 items-center justify-center">
           <div className="flip-container w-72 h-72 pointer-events-auto">
-            <div className="flipper rotate-on-hover">
+            <div className="flipper rotate-on-3s">
               <div className="front">
                 <Image
                   src={image1}

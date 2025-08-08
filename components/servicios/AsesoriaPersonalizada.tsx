@@ -43,16 +43,16 @@ export default function AsesoriaPersonalizada() {
 
       {/* Movil */}
 
-      <div className="flex md:hidden flex-col w-full items-center h-screen justify-center mb-16">
+      <div className="flex md:hidden flex-col w-full items-center h-screen justify-center mb-16 px-6">
         {/* Texto */}
-        <div className="flex flex-col items-start justify-center text-black text-left mb-12 w-full ml-12">
+        <div className="flex flex-col items-start justify-center text-black text-left mb-12 w-full">
           <h2 className="text-5xl font-bold mb-2 text-peach">
             ASESORIAS
           </h2>
           <h2 className="text-6xl font-bold mb-6 custom-stroke-peach">
             PARA TU MARCA
           </h2>
-          <p className="text-lg mb-6 text-justify pr-16">
+          <p className="text-lg mb-6 text-justify ">
             <span className="text-peach font-semibold">
               ¿No sabés por dónde empezar o cómo mejorar lo que ya tenés?{" "}
             </span>
@@ -72,7 +72,7 @@ export default function AsesoriaPersonalizada() {
           <Image
             src={imagen1}
             alt="asesoria personalizada"
-            className="w-full px-12"
+            className="w-full"
           />
         </div>
       </div>

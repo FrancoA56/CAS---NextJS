@@ -115,7 +115,6 @@ export default function Opcion4() {
                     ? "animate-slide-up-fade"
                     : "opacity-0"
                 } `}
-                style={{ backgroundColor: pinkColor }}
               >
                 {paso.label}
               </span>
@@ -149,7 +148,6 @@ export default function Opcion4() {
                     ? "animate-slide-up-fade"
                     : "opacity-0"
                 }`}
-                style={{ backgroundColor: pinkColor }}
               >
                 {paso.label}
               </span>

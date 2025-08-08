@@ -17,11 +17,11 @@ export default function PaidMedia() {
           <ul className="text-lg 3xl:text-xl list-disc list-inside mb-6">
             <li>
               Configuración y gestión de campañas en Google, Meta, LinkedIn y
-              más
+              más.
             </li>
-            <li>Testeo A/B de creatividades, copys y audiencias</li>
-            <li>Optimización constante basada en KPIs</li>
-            <li>Segmentación estratégica</li>
+            <li>Testeo A/B de creatividades, copys y audiencias.</li>
+            <li>Optimización constante basada en KPIs.</li>
+            <li>Segmentación estratégica.</li>
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-teal text-lg 3xl:text-xl rounded-sm border border-black py-3 px-4 hover:bg-teal/80 transition-colors ease-in-out">
@@ -37,7 +37,7 @@ export default function PaidMedia() {
         </div>
       </div>
 
-      <div className="md:hidden flex flex-col w-full px-8 pb-16 items-center justify-center">
+      <div className="md:hidden flex flex-col w-full px-6 pb-16 items-center justify-center">
         {/* Texto */}
         <div className="flex flex-col items-start justify-start text-black text-left mb-12 w-full">
           <h2 className="text-6xl font-bold mb-2 text-teal">PAID</h2>
@@ -45,11 +45,11 @@ export default function PaidMedia() {
           <ul className="text-lg list-disc list-inside mb-6">
             <li>
               Configuración y gestión de campañas en Google, Meta, LinkedIn y
-              más
+              más.
             </li>
-            <li>Testeo A/B de creatividades, copys y audiencias</li>
-            <li>Optimización constante basada en KPIs</li>
-            <li>Segmentación estratégica</li>
+            <li>Testeo A/B de creatividades, copys y audiencias.</li>
+            <li>Optimización constante basada en KPIs.</li>
+            <li>Segmentación estratégica.</li>
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-teal rounded-sm border border-black py-3 px-4 hover:bg-teal/80 transition-colors ease-in-out">

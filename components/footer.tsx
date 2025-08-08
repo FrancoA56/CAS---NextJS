@@ -86,22 +86,22 @@ export default function Footer() {
           <div className="flex items-start gap-3 sm:gap-4">
             <FaMapMarkerAlt className="text-base sm:text-xl mt-1" />
             <a
-              href="https://maps.app.goo.gl/FndGN5Nw29wEMoUq5"
+              href="https://maps.app.goo.gl/JjKSjNKUkkZR6QnD7"
               className="text-base sm:text-xl transition hover:opacity-80"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Azopardo 1487 Piso 2 | CP1107 | CABA, Argentina
+              Av. Alicia Moreau de Justo 1930, Piso 3, Oficina 306 <br />
+              CABA | Buenos Aires, Argentina
             </a>
           </div>
-          <div className="w-full h-40 sm:h-48 mt-4">
+          <div className="w-full h-60 mt-4">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d6566.70171469881!2d-58.37220980075117!3d-34.62057288358532!3m2!1i1024!2i768!4f13.1!2m1!1sAzopardo%201487%20Piso%202%20%7C%20CP1107%20%7C%20CABA%2C%20Argentina!5e0!3m2!1ses-419!2sar!4v1749241705967!5m2!1ses-419!2sar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.31999753436!2d-58.364956!3d-34.6213529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334d1f2bc3f3d%3A0xb4d4e772c8679a66!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%20Piso%203%2C%20Oficina%20306%2C%20C1107AFN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1754658655863!5m2!1ses-419!2sar"
               width="100%"
               height="100%"
-              loading="lazy"
-              className="border-0"
               allowFullScreen
+              loading="lazy"
             ></iframe>
           </div>
         </div>

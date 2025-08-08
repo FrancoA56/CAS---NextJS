@@ -14,7 +14,7 @@ export default function Opcion5() {
           ></Image>
         </div>
         {/* Texto al fondo alineado a la derecha */}
-        <div className="flex flex-col items-end text-end justify-between pr-12 w-2/3">
+        <div className="flex flex-col items-end text-end justify-between w-2/3">
           <Link href="/servicios" replace className="flex flex-row mt-24">
             <button className="bg-teal text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 hover:bg-white/20 transition-colors ease-in-out">
               Conocé nuestros servicios {">"}

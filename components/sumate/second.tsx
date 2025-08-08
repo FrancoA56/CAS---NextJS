@@ -60,7 +60,7 @@ export default function SecondSumate() {
   return (
     <div className="h-screen w-full flex justify-center items-center flex-col px-4">
       <form
-        className="w-full max-w-2xl space-y-4 bg-teal p-8 rounded-xl backdrop-blur-md border border-white/30 text-white"
+        className="w-full max-w-2xl space-y-8 bg-teal p-8 rounded-xl backdrop-blur-md border border-white/30 text-white"
         onSubmit={handleSubmit}
       >
         <div className="flex sm:flex-row flex-col gap-4">

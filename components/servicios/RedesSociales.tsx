@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import image1 from "../../media/instagram.png";
-import imagen1 from "../../media/MaterialWeb/celuSocialMedia1.png";
+import instagram from "../../media/Instagram_icon.png";
+import tiktok from "../../media/tiktok.png";
+import linkedin from "../../media/LinkedIn_icon.png";
 import image2 from "../../media/cuadrada.jpg";
+import imagen1 from "../../media/MaterialWeb/celuSocialMedia1.png";
 import imagen2 from "../../media/MaterialWeb/celuSocialMedia2.png";
 import imagen3 from "../../media/MaterialWeb/celuSocialMedia3.png";
 
@@ -19,11 +21,11 @@ export default function RedesSociales() {
             MEDIA
           </h2>
           <ul className="text-lg 3xl:text-xl list-disc list-inside mb-6">
-            <li>Estrategia de contenidos para cada red social</li>
-            <li>Planificación y calendarización</li>
-            <li>Redacción de copys con tono y voz de marca</li>
-            <li>Gestión y publicación en redes sociales</li>
-            <li>Análisis de métricas y reportes</li>
+            <li>Estrategia de contenidos para cada red social.</li>
+            <li>Planificación y calendarización.</li>
+            <li>Redacción de copys con tono y voz de marca.</li>
+            <li>Gestión y publicación en redes sociales.</li>
+            <li>Análisis de métricas y reportes.</li>
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-pink rounded-sm border text-lg 3xl:text-xl border-black py-3 px-4 hover:bg-pink/80 transition-colors ease-in-out">
@@ -39,16 +41,16 @@ export default function RedesSociales() {
               <div className="flipper rotate-on-hover transition-transform duration-700">
                 <div className="front">
                   <Image
-                    src={image1}
+                    src={instagram}
                     alt="Front"
-                    className="w-full h-full rounded"
+                    className="w-48 3xl:w-56 h-48 3xl:h-56"
                   />
                 </div>
                 <div className="back">
                   <Image
                     src={image2}
                     alt="Back"
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-48 3xl:w-60 h-48 3xl:h-60 object-cover rounded"
                   />
                 </div>
               </div>
@@ -56,21 +58,21 @@ export default function RedesSociales() {
           </div>
 
           {/* 2. Derecha, más abajo */}
-          <div className="absolute top-20 3xl:-right-20 right-10 ">
+          <div className="absolute top-20 3xl:-right-8 right-10 ">
             <div className="flip-container w-48 3xl:w-72 h-48 3xl:h-72 pointer-events-auto">
               <div className="flipper rotate-on-hover transition-transform duration-700">
                 <div className="front">
                   <Image
-                    src={image1}
+                    src={linkedin}
                     alt="Front"
-                    className="w-full h-full rounded"
+                    className="w-48 3xl:w-50 h-48 3xl:h-50 justify-center items-center"
                   />
                 </div>
                 <div className="back">
                   <Image
                     src={image2}
                     alt="Back"
-                    className="w-full h-full object-cover rounded"
+                    className="w-48 3xl:w-60 h-48 3xl:h-60 object-cover rounded"
                   />
                 </div>
               </div>
@@ -78,21 +80,21 @@ export default function RedesSociales() {
           </div>
 
           {/* 3. Abajo izquierda, más a la derecha que el primero */}
-          <div className="absolute 3xl:bottom-0 bottom-16 left-10">
+          <div className="absolute 3xl:bottom-0 bottom-16 left-16">
             <div className="flip-container w-48 3xl:w-72 h-48 3xl:h-72 pointer-events-auto">
               <div className="flipper rotate-on-hover transition-transform duration-700">
                 <div className="front">
                   <Image
-                    src={image1}
+                    src={tiktok}
                     alt="Front"
-                    className="w-full h-full rounded"
+                    className="w-48 3xl:w-44 h-48 3xl:h-44"
                   />
                 </div>
                 <div className="back">
                   <Image
                     src={image2}
                     alt="Back"
-                    className="w-full h-full object-cover rounded"
+                    className="w-48 3xl:w-60 h-48 3xl:h-60 object-cover rounded"
                   />
                 </div>
               </div>
@@ -101,17 +103,17 @@ export default function RedesSociales() {
         </div>
       </div>
 
-      <div className="flex flex-col md:hidden px-8 pb-12 w-screen items-center">
+      <div className="flex flex-col md:hidden px-6 pb-12 w-screen items-center">
         {/* Texto */}
         <div className="flex flex-col items-start justify-center text-black text-start w-full">
           <h2 className="text-6xl font-bold mb-2 text-pink">SOCIAL</h2>
           <h2 className="text-6xl font-bold mb-6 custom-stroke-pink">MEDIA</h2>
           <ul className="text-lg list-disc list-inside mb-6">
-            <li>Estrategia de contenidos para cada red social</li>
-            <li>Planificación y calendarización</li>
-            <li>Redacción de copys con tono y voz de marca</li>
-            <li>Gestión y publicación en redes sociales</li>
-            <li>Análisis de métricas y reportes</li>
+            <li>Estrategia de contenidos para cada red social.</li>
+            <li>Planificación y calendarización.</li>
+            <li>Redacción de copys con tono y voz de marca.</li>
+            <li>Gestión y publicación en redes sociales.</li>
+            <li>Análisis de métricas y reportes.</li>
           </ul>
           <Link href="/contacto" replace className="flex flex-row">
             <button className="bg-pink rounded-sm border border-black py-3 px-4 hover:bg-pink/80 transition-colors ease-in-out">

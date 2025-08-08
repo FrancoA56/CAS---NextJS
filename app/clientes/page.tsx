@@ -4,9 +4,9 @@ import SecondC from "../../components/clientes/second";
 
 export default function Clientes({ prop }) {
   return (
-    <HorizontalScrollWrapper>
+    // <HorizontalScrollWrapper>
       <InicioC />
-      <SecondC />
-    </HorizontalScrollWrapper>
+      /* <SecondC /> */
+    // </HorizontalScrollWrapper>
   );
 }

@@ -71,7 +71,7 @@ export default function ServiceNav({
       </div>
 
       {/* Versión Mobile */}
-      <div className="sm:hidden border-t-2  border-white bg-teal">
+      <div className="sm:hidden border-t-2  border-white ">
         {/* Botón de flecha */}
         <div
           className=" animate-bounce w-full mt-2 flex justify-center py-2 cursor-pointer"
