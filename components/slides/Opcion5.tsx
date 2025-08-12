@@ -6,7 +6,7 @@ export default function Opcion5() {
   return (
     <>
       <div className="h-screen w-full md:flex hidden flex-row px-20 text-black text-center py-24 bg-teal">
-        <div className="flex flex-row items-left w-1/3">
+        <div className="flex flex-row items-left">
           <Image
             src={imagen1}
             alt="WholesaleColores"
