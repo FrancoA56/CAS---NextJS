@@ -69,8 +69,9 @@ export default function Sumate() {
             <p className="font-bold text-6xl 3xl:text-7xl">SUMATE</p>
             <p className="text-gradient-cas text-6xl 3xl:text-8xl">AL TEAM</p>
           </div>
-          <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto my-2 mb-12">
-            Te invitamos a trabajar con nosotros
+          <p className="text-xl md:text-2xl text-black max-w-2xl mx-auto mt-2 mb-12">
+            Si la creatividad y el trabajo en equipo es lo tuyo, compartí tu CV y
+            sumate a nuestro banco de talentos para futuras oportunidades.{" "}
           </p>
         </div>
         <div className="flex justify-center items-center flex-col px-4">
@@ -238,9 +239,8 @@ export default function Sumate() {
           </form>
         </div>
       </div>
-            <div></div>
       <div></div>
-
+      <div></div>
     </div>
   );
 }
