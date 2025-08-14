@@ -77,7 +77,12 @@ export default function Opcion4() {
         <div className="stroke text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
           TIEMPO Y RECURSOS
         </div>
-        <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl">
+        <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl hidden md:flex">
+          Somos una agencia 360° que cubre todas las áreas clave para
+          potenciarte,<br/> con un acompañamiento completo y efectivo. Todo en un
+          solo lugar para que puedas enfocarte en lo que realmente importa.
+        </div>
+        <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl flex md:hidden">
           Somos una agencia 360° que cubre todas las áreas clave para
           potenciarte, con un acompañamiento completo y efectivo. Todo en un
           solo lugar para que puedas enfocarte en lo que realmente importa.

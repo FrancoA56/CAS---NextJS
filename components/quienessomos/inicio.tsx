@@ -21,7 +21,7 @@ export default function InicioQS() {
           <FaChevronRight className="text-black text-4xl" />
         </div>
       </div>
-      <Image src={imagen2} alt="imagen de stock" className="h-screen w-auto flex mr-14" />
+      <Image src={imagen2} alt="imagen de stock" className="h-screen w-auto hidden md:flex mr-14 " />
     </div>
   );
 }

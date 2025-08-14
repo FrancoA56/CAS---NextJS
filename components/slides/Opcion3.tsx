@@ -71,10 +71,10 @@ export default function Opcion3() {
           <div className="font-bold text-3xl text-end">COMUNICA</div>
           <div className="stroke text-4xl text-end">LO QUE HACES</div>
           <div className="w-full mt-2 text-end ">
-            Una buena comunicación conecta, genera confianza y sobre todo hace
-            que te elijan. Desde tu presentación institucional hasta cómo hablás
-            en redes, tu web o tus eventos, te ayudamos a construir un discurso
-            claro, alineado con tu marca y con impacto real.
+            Una buena comunicación conecta, genera<br/> confianza y sobre todo hace
+            que te elijan. <br/>Desde tu presentación institucional hasta cómo hablás
+            en redes, tu web o tus eventos, <br/>te ayudamos a construir un discurso
+            claro,<br/> alineado con tu marca y con impacto real.
           </div>
         </div>
       </div>

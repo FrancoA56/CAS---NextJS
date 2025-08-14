@@ -1,7 +1,7 @@
 "use client";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
-import imagen from "../../media/MaterialWeb/quienessomosbannervertical.jpg";
+import imagen from "../../media/sumateAlTeam.webp";
 import Image from "next/image";
 
 export default function Sumate() {
@@ -62,21 +62,21 @@ export default function Sumate() {
   return (
     <div className="h-screen w-screen flex-shrink-0 flex flex-row justify-between items-center px-8">
       <div></div>
-      <Image src={imagen} alt="imagen" className="h-screen w-auto" />
+      <Image src={imagen} alt="imagen" className="h-screen w-auto hidden md:flex" />
       <div className="flex flex-col">
         <div className="text-center">
           <div className="flex flex-col justify-center items-center">
             <p className="font-bold text-6xl 3xl:text-7xl">SUMATE</p>
             <p className="text-gradient-cas text-6xl 3xl:text-8xl">AL TEAM</p>
           </div>
-          <p className="text-xl md:text-2xl text-black max-w-2xl mx-auto mt-2 mb-12">
+          <p className="text-base md:text-lg text-black max-w-2xl mx-auto mt-2 mb-4 md:mb-8">
             Si la creatividad y el trabajo en equipo es lo tuyo, compartí tu CV y
             sumate a nuestro banco de talentos para futuras oportunidades.{" "}
           </p>
         </div>
         <div className="flex justify-center items-center flex-col px-4">
           <form
-            className="w-full max-w-2xl space-y-1 3xl:space-y-4 bg-white p-8 rounded-xl backdrop-blur-md border-2 border-gray text-black"
+            className="w-full max-w-2xl space-y-1 3xl:space-y-4 bg-white px-8 py-6 rounded-xl backdrop-blur-md border-2 border-gray text-black"
             onSubmit={handleSubmit}
           >
             <div className="flex sm:flex-row flex-col gap-2 md:gap-4">

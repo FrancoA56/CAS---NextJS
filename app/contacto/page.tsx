@@ -43,14 +43,14 @@ export default function Contacto() {
           <p className="text-gradient-cas custom-stroke text-6xl 3xl:text-8xl">
             PROYECTO
           </p>
-          <p className="mt-2 max-w-2xl text-lg flex justify-center items-center text-center">
+          <p className="mt-2 max-w-2xl text-base md:text-lg flex justify-center items-center text-center">
             Contanos sobre tu proyecto y descubrí cómo podemos ayudarte a crecer
             con estrategias personalizadas.
           </p>
         </div>
         <div className="justify-center items-center flex">
           <form
-            className="w-full max-w-2xl space-y-1 3xl:space-y-4 bg-white px-8 py-6  rounded-xl backdrop-blur-md border-2 border-gray text-black "
+            className="w-full max-w-2xl space-y-1 3xl:space-y-4 bg-white px-8 py-2 md:py-6  rounded-xl backdrop-blur-md border-2 border-gray text-black "
             onSubmit={handleSubmit}
           >
             <div className="flex sm:flex-row flex-col gap-2 md:gap-4 ">
@@ -187,7 +187,7 @@ export default function Contacto() {
         </div>
       </div>
 
-      <Image src={imagen} alt="imagen" className="h-screen w-auto " />
+      <Image src={imagen} alt="imagen" className="h-screen w-auto hidden md:flex" />
       <div></div>
     </div>
   );

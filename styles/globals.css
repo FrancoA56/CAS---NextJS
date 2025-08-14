@@ -290,3 +290,48 @@ select {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Contenedor de la imagen y el texto */
+.slide-container {
+  position: relative;
+  overflow: hidden;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen siempre al frente */
+.slide-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Texto inicialmente oculto */
+.slide-text {
+  position: absolute;
+  top: 50%; /* posición final, pero empieza invisible */
+  left: 0;
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1;
+  opacity: 0; /* 🔹 invisible */
+  transform: translateY(20px); /* 🔹 ligeramente desplazado hacia abajo */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* animación */
+}
+
+/* Hover: aparece suavemente */
+.slide-container:hover .slide-text {
+  opacity: 1; /* visible */
+  transform: translateY(40px); /* vuelve a su sitio */
+}
+

@@ -5,6 +5,8 @@ import imagen1 from "../../media/google.jpg";
 export default function Opcion5() {
   return (
     <>
+      {/* Desktop */}
+
       <div className="h-screen w-full md:flex hidden flex-row px-20 text-black text-center py-24 bg-teal">
         <div className="flex flex-row items-left">
           <Image
@@ -35,6 +37,8 @@ export default function Opcion5() {
           </div>
         </div>
       </div>
+      {/* Movil */}
+
       <div className="h-screen w-full flex md:hidden flex-col px-8 text-black text-center py-24 bg-teal">
         <div className="flex items-center justify-center">
           <Image
@@ -52,15 +56,12 @@ export default function Opcion5() {
             </button>
           </Link>
           <div className="flex flex-col justify-end items-end mt-12">
-            <div className="font-bold text-3xl ">
-              POSICIONATE
-            </div>
-            <div className="stroke text-4xl ">
-              EN EL MERCADO
-            </div>
+            <div className="font-bold text-3xl ">POSICIONATE</div>
+            <div className="stroke text-4xl ">EN EL MERCADO</div>
             <div className="w-full mt-2 text-end">
-              Construimos una presencia sólida y coherente que te permite
-              competir con fuerza y crecer de manera sostenida en tu sector.
+              Construimos una presencia sólida y coherente <br />
+              que te permite competir con fuerza y crecer <br />de manera sostenida en
+              tu sector.
             </div>
           </div>
         </div>

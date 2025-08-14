@@ -25,6 +25,16 @@ export default function SlideMain() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleNextSlide = () => {
+    const container = document.getElementById("slides-container");
+    if (container) {
+      container.scrollBy({
+        left: container.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="flex flex-col w-full h-screen px-6 md:px-14 py-6">
       <div className="flex justify-between items-start w-full">
@@ -52,7 +62,10 @@ export default function SlideMain() {
           </h1>
         </div>
 
-        <div className="pt-16 animate-bounce md:hidden inline">
+        <div
+          className="pt-16 animate-bounce md:hidden inline"
+          onClick={handleNextSlide}
+        >
           <FaChevronRight className="text-black text-2xl" />
         </div>
       </div>

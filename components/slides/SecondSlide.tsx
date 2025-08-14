@@ -26,7 +26,7 @@ export default function SecondSlide({
       {/*DESKTOP*/}
 
       <div className="md:flex md:flex-row hidden h-screen w-full">
-        <div className="flex flex-col items-center justify-center text-center px-6 md:px-12">
+        <div className="flex flex-col items-center justify-center text-center px-6 md:px-24">
           <h2 className="text-black text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl font-extrabold uppercase mb-6">
             soluciones creativas
           </h2>
@@ -35,8 +35,8 @@ export default function SecondSlide({
           </h2>
           <p className="text-black text-lg md:text-2xl 3xl:text-3xl mb-10 px-0 md:px-12">
             En <span className="font-extrabold text-gradient-cas-ns">CAS</span>{" "}
-            diseñamos experiencias que conectan marcas con personas. Nuestro
-            enfoque es integral y creativo, combinando estrategia, contenido y
+            diseñamos experiencias que conectan marcas con personas.<br/> Nuestro
+            enfoque es integral y creativo, combinando estrategia, contenido y<br/>
             diseño en un mismo equipo para garantizar la mejor solución.
           </p>
           <div className="flex flex-wrap justify-center gap-2 z-0 mx-32">
@@ -67,7 +67,7 @@ export default function SecondSlide({
       {/*MOVIL*/}
       <div className="flex flex-col md:hidden h-screen w-full items-center justify-center text-center pb-12 pr-6">
         <div className="flex flex-col items-center justify-center text-center px-6 ">
-          <h2 className="text-black text-4xl font-extrabold uppercase mb-6">
+          <h2 className="text-black text-4xl font-extrabold uppercase mb-2">
             soluciones creativas
           </h2>
           <h2 className="text-gradient-cas text-5xl uppercase mb-6">

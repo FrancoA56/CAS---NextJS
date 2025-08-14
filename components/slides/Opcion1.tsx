@@ -33,8 +33,8 @@ export default function Opcion1() {
               TU MARCA
             </div>
             <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl">
-              Creamos identidades visuales que hablan por vos. Trabajamos para
-              que tu marca se vea unificada y profesional, pero sobre todo para
+              Creamos identidades visuales que hablan por vos. <br/>Trabajamos para
+              que tu marca se vea unificada y <br/>profesional, pero sobre todo para
               ser recordable.
             </div>
           </div>

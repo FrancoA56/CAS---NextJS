@@ -24,6 +24,8 @@ export default function HorizontalCarousel() {
 
   return (
     <>
+      {/* Desktop */}
+
       <div className="hidden justify-center relative w-1/2 h-full md:flex items-center pt-44 pl-[40%]">
         {/* Imagen actual dentro del marco */}
         <AnimatePresence>
@@ -81,6 +83,8 @@ export default function HorizontalCarousel() {
         </div>
       </div>
 
+      {/* Movil */}
+
       <div className="relative w-[260px] h-[230px] flex md:hidden items-end justify-end pb-12">
         {/* Animaciones de fondo: imágenes rotando */}
         {[-1, 0].map((offset) => {
@@ -110,7 +114,7 @@ export default function HorizontalCarousel() {
                     alt={`Imagen ${imgIndex}`}
                     width={140}
                     height={380}
-                    className="absolute top-[40px] left-[20px] rounded-xl"
+                    className="absolute -top-[21px] left-[20px] rounded-xl"
                   />
                 </div>
               ) : (
