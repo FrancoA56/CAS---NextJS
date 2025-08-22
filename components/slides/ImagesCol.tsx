@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
-import image1 from "../../media/cuadrada.jpg";
-import image2 from "../../media/cuadrada.jpg";
-import image3 from "../../media/cuadrada.jpg";
+import tsc1 from "../../media/tsc-aereo-2.webp";
+import tsc2 from "../../media/tsc-maritimo-1.webp";
+import eh from "../../media/eh2.webp";
+import ooni from "../../media/onni2.webp";
+import expex1 from "../../media/expex1.webp";
+import expex2 from "../../media/expex6.webp";
 
 export default function ImagesCol() {
   return (
@@ -15,14 +18,14 @@ export default function ImagesCol() {
             <div className="flipper rotate-on-hover transition-transform duration-700">
               <div className="front">
                 <Image
-                  src={image1}
+                  src={tsc2}
                   alt="Front"
                   className="w-full h-full rounded"
                 />
               </div>
               <div className="back">
                 <Image
-                  src={image2}
+                  src={tsc1}
                   alt="Back"
                   className="w-full h-full object-cover rounded"
                 />
@@ -33,14 +36,14 @@ export default function ImagesCol() {
             <div className="flipper rotate-on-hover transition-transform duration-700">
               <div className="front">
                 <Image
-                  src={image1}
+                  src={ooni}
                   alt="Front"
                   className="w-full h-full rounded"
                 />
               </div>
               <div className="back">
                 <Image
-                  src={image2}
+                  src={eh}
                   alt="Back"
                   className="w-full h-full object-cover rounded"
                 />
@@ -51,14 +54,14 @@ export default function ImagesCol() {
             <div className="flipper rotate-on-hover transition-transform duration-700">
               <div className="front">
                 <Image
-                  src={image1}
+                  src={expex2}
                   alt="Front"
                   className="w-full h-full rounded"
                 />
               </div>
               <div className="back">
                 <Image
-                  src={image2}
+                  src={expex1}
                   alt="Back"
                   className="w-full h-full object-cover rounded"
                 />

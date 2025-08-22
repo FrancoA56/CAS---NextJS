@@ -3,7 +3,9 @@ import Image from "next/image";
 import instagram from "../../media/Instagram_icon.png";
 import tiktok from "../../media/tiktok.png";
 import linkedin from "../../media/LinkedIn_icon.png";
-import image2 from "../../media/cuadrada.jpg";
+import instagram2 from "../../media/Instagram.webp";
+import tiktok2 from "../../media/cuadrada.jpg";
+import linkedin2 from "../../media/cuadrada.jpg";
 import imagen1 from "../../media/MaterialWeb/celuSocialMedia1.png";
 import imagen2 from "../../media/MaterialWeb/celuSocialMedia2.png";
 import imagen3 from "../../media/MaterialWeb/celuSocialMedia3.png";
@@ -48,9 +50,9 @@ export default function RedesSociales() {
                 </div>
                 <div className="back">
                   <Image
-                    src={image2}
+                    src={instagram2}
                     alt="Back"
-                    className="w-48 3xl:w-60 h-48 3xl:h-60 object-cover rounded"
+                    className="rounded h-auto w-auto"
                   />
                 </div>
               </div>
@@ -70,7 +72,7 @@ export default function RedesSociales() {
                 </div>
                 <div className="back">
                   <Image
-                    src={image2}
+                    src={linkedin2}
                     alt="Back"
                     className="w-48 3xl:w-60 h-48 3xl:h-60 object-cover rounded"
                   />
@@ -92,7 +94,7 @@ export default function RedesSociales() {
                 </div>
                 <div className="back">
                   <Image
-                    src={image2}
+                    src={tiktok2}
                     alt="Back"
                     className="w-48 3xl:w-60 h-48 3xl:h-60 object-cover rounded"
                   />

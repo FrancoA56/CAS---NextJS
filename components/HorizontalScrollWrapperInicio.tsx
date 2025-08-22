@@ -6,13 +6,13 @@ import React, {
   useImperativeHandle,
 } from "react";
 
-export interface HorizontalScrollWrapperRef {
+export interface HorizontalScrollWrapperRefInicio {
   scrollToIndex: (index: number) => void;
   getScrollableElement: () => HTMLDivElement | null;
 }
 
 const HorizontalScrollWrapperInicio = forwardRef<
-  HorizontalScrollWrapperRef,
+  HorizontalScrollWrapperRefInicio,
   { children: React.ReactNode }
 >(({ children }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,18 +32,46 @@ const HorizontalScrollWrapperInicio = forwardRef<
     const container = containerRef.current;
     if (!container) return;
 
+    // Wheel para desktop
     const onWheel = (e: WheelEvent) => {
-      // Evita el scroll vertical y lo convierte en horizontal
       if (e.deltaY !== 0) {
         e.preventDefault();
         container.scrollLeft += e.deltaY;
       }
     };
 
+    // Variables para el touch
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const onTouchStart = (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+
+      const deltaX = touchX - touchStartX;
+      const deltaY = touchY - touchStartY;
+
+      // Solo si el movimiento vertical es más fuerte que el horizontal
+      if (Math.abs(deltaY) > Math.abs(deltaX)) {
+        e.preventDefault(); // Evita scroll vertical
+        container.scrollLeft += deltaY; // Aplica el movimiento vertical como scroll horizontal
+        touchStartY = touchY; // Actualiza el punto de inicio para movimientos continuos
+      }
+    };
+
     container.addEventListener("wheel", onWheel, { passive: false });
+    container.addEventListener("touchstart", onTouchStart, { passive: false });
+    container.addEventListener("touchmove", onTouchMove, { passive: false });
 
     return () => {
       container.removeEventListener("wheel", onWheel);
+      container.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchmove", onTouchMove);
     };
   }, []);
 

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import imagen from "../../media/MaterialWeb/quienessomosbannervertical.jpg";
+import imagen from "../../media/contacto.webp";
 import Image from "next/image";
 
 export default function Contacto() {
@@ -36,7 +36,7 @@ export default function Contacto() {
     <div className="h-screen w-full flex justify-between items-center flex-row px-4">
       <div></div>
       <div className="flex flex-col">
-        <div className="flex flex-col justify-center items-center mb-2 md:mb-8 ">
+        <div className="flex flex-col justify-center items-center mb-2 md:mb-4 ">
           <p className="font-bold text-5xl md:text-6xl 3xl:text-7xl">
             HABLEMOS DE TU
           </p>
@@ -187,8 +187,7 @@ export default function Contacto() {
         </div>
       </div>
 
-      <Image src={imagen} alt="imagen" className="h-screen w-auto hidden md:flex" />
-      <div></div>
+      <Image src={imagen} alt="imagen" className="h-screen w-auto hidden md:flex mr-20" />
     </div>
   );
 }

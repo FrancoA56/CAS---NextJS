@@ -14,7 +14,7 @@ export default function Footer() {
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
         {/* Columna 1: Contacto */}
         <div className="space-y-4 sm:space-y-6">
-          <h3 className="text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4 w-fit">
+          <h3 className="text-lg 3xl:text-xl rounded-sm border-b border-black py-2 px-8 w-fit">
             NUESTROS LINKS
           </h3>
 
@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Redes sociales */}
           <div className="flex flex-row justify-between pt-4 sm:pt-6">
             <div className="flex flex-col gap-4 sm:gap-6 ">
-              <h3 className=" text-lg 3xl:text-xl rounded-sm border border-black py-2 px-4">
+              <h3 className=" text-lg 3xl:text-xl rounded-sm border-b border-black py-2 px-4">
                 SEGUINOS
               </h3>
               <div className="flex gap-4 sm:gap-6 text-xl sm:text-2xl">

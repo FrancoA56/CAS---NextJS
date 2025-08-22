@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import imagen1 from "../../media/google.jpg";
+import imagen1 from "../../media/seo-2.webp";
 
 export default function Opcion5() {
   return (

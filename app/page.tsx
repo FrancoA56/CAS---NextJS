@@ -1,7 +1,10 @@
 "use client";
 import HorizontalScrollWrapperInicio, {
-  HorizontalScrollWrapperRef,
+  HorizontalScrollWrapperRefInicio,
 } from "../components/HorizontalScrollWrapperInicio";
+import HorizontalScrollWrapper, {
+  HorizontalScrollWrapperRef,
+} from "../components/HorizontalScrollWrapper";
 import React, { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
 import PageWrapperInicio from "../components/PageWrapperInicio";
@@ -17,11 +20,23 @@ import ImagesCol from "../components/slides/ImagesCol";
 
 export default function Home() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollRefInicio = useRef<HorizontalScrollWrapperRefInicio>(null);
   const scrollRef = useRef<HorizontalScrollWrapperRef>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  const scrollToInicio = (index: number) => {
+    scrollRefInicio.current?.scrollToIndex(index);
+  };
   const scrollTo = (index: number) => {
     scrollRef.current?.scrollToIndex(index);
+  };
+
+  const goTo = () => {
+    sectionRefs.current[1]?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    });
   };
 
   const pink = "#EE8EC3";
@@ -54,36 +69,72 @@ export default function Home() {
   ];
 
   return (
-    <HorizontalScrollWrapperInicio ref={scrollRef}>
-      <PageWrapper>
-        <SlideMain />
-      </PageWrapper>
-      <PageWrapper>
-        <SecondSlide
-          ideales={ideales}
-          scrollTo={scrollTo}
-          hoveredIndex={hoveredIndex}
-          setHoveredIndex={setHoveredIndex}
-        />
-      </PageWrapper>
-      {ideales.map(({ Component }, i) => (
-        <React.Fragment key={i}>
-          <PageWrapperInicio>
-            <div
-              ref={(el) => {
-                sectionRefs.current[i + 1] = el ?? undefined;
-              }}
-            >
-              <Component />
-            </div>
-          </PageWrapperInicio>
-          {i === 0 && <ImagesCol />}
-        </React.Fragment>
-      ))}
+    <>
+      <div className="hidden md:flex">
+        <HorizontalScrollWrapperInicio ref={scrollRefInicio}>
+          <PageWrapper>
+            <SlideMain goTo={goTo}/>
+          </PageWrapper>
+          <PageWrapper>
+            <SecondSlide
+              ideales={ideales}
+              scrollTo={scrollToInicio}
+              hoveredIndex={hoveredIndex}
+              setHoveredIndex={setHoveredIndex}
+            />
+          </PageWrapper>
+          {ideales.map(({ Component }, i) => (
+            <React.Fragment key={i}>
+              <PageWrapperInicio>
+                <div
+                  ref={(el) => {
+                    sectionRefs.current[i + 1] = el ?? undefined;
+                  }}
+                >
+                  <Component />
+                </div>
+              </PageWrapperInicio>
+              {i === 0 && <ImagesCol />}
+            </React.Fragment>
+          ))}
 
-      <PageWrapper>
-        <Footer />
-      </PageWrapper>
-    </HorizontalScrollWrapperInicio>
+          <PageWrapper>
+            <Footer />
+          </PageWrapper>
+        </HorizontalScrollWrapperInicio>
+      </div>
+      <div className="flex md:hidden">
+        <HorizontalScrollWrapper ref={scrollRef}>
+          <PageWrapper>
+            <SlideMain goTo={goTo}/>
+          </PageWrapper>
+          <PageWrapper>
+            <SecondSlide
+              ideales={ideales}
+              scrollTo={scrollTo}
+              hoveredIndex={hoveredIndex}
+              setHoveredIndex={setHoveredIndex}
+            />
+          </PageWrapper>
+          {ideales.map(({ Component }, i) => (
+            <React.Fragment key={i}>
+              <PageWrapperInicio>
+                <div
+                  ref={(el) => {
+                    sectionRefs.current[i + 1] = el ?? undefined;
+                  }}
+                >
+                  <Component />
+                </div>
+              </PageWrapperInicio>
+            </React.Fragment>
+          ))}
+
+          <PageWrapper>
+            <Footer />
+          </PageWrapper>
+        </HorizontalScrollWrapper>
+      </div>
+    </>
   );
 }

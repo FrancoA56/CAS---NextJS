@@ -1,7 +1,6 @@
 import { FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
-import imagen from "../../media/MaterialWeb/quienessomosbanner.jpg";
-import imagen2 from "../../media/MaterialWeb/quienessomosbannervertical.jpg";
+import imagen from "../../media/quienesSomos.webp";
 
 export default function InicioQS() {
   return (
@@ -21,7 +20,7 @@ export default function InicioQS() {
           <FaChevronRight className="text-black text-4xl" />
         </div>
       </div>
-      <Image src={imagen2} alt="imagen de stock" className="h-screen w-auto hidden md:flex mr-14 " />
+      <Image src={imagen} alt="imagen de stock" className="h-screen w-auto hidden md:flex mr-14 " />
     </div>
   );
 }

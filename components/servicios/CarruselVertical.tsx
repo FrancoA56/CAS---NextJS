@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-import Image1 from "../../media/logoTscCarruselServicios.png";
-import Image2 from "../../media/logoTscCarruselServicios.png";
-import Image3 from "../../media/logoTscCarruselServicios.png";
+import Image1 from "../../media/logoTscCarruselServicios2.png";
+import Image2 from "../../media/disenoGrafico1.png";
+import Image3 from "../../media/disenoGrafico2.png";
 
 const images = [Image1, Image2, Image3];
 
@@ -52,7 +52,7 @@ export default function VerticalCarousel() {
               <Image
                 src={images[imgIndex]}
                 alt={`Imagen ${imgIndex}`}
-                className="rounded-xl"
+                className="rounded-sm"
                 width={isCenter ? 460 : 300}
                 height={isCenter ? 460 : 300}
               />
@@ -80,7 +80,7 @@ export default function VerticalCarousel() {
               <Image
                 src={images[imgIndexMovil]}
                 alt={`Imagen ${imgIndexMovil}`}
-                className="rounded-xl"
+                className="rounded-sm"
                 width={isCenter ? 460 : 300}
                 height={isCenter ? 460 : 300}
               />

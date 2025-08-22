@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import imagen1 from "../../media/MaterialWeb/imageAsesoria.jpg";
+import imagen1 from "../../media/asesorias.webp";
 
 export default function AsesoriaPersonalizada() {
   return (
@@ -9,7 +9,7 @@ export default function AsesoriaPersonalizada() {
 
       <div className="md:flex hidden flex-col md:flex-row w-full px-8 py-12 items-center justify-between">
         {/* Texto */}
-        <div className="flex flex-col items-start justify-center text-black text-left mb-12 md:w-2/3 w-full ml-32">
+        <div className="flex flex-col items-start justify-center text-black text-left mb-12 md:w-1/2 ml-32">
           <h2 className="text-7xl 3xl:text-8xl font-bold mb-2 text-peach">
             ASESORIAS
           </h2>
@@ -32,11 +32,11 @@ export default function AsesoriaPersonalizada() {
         </div>
 
         {/* Carrusel */}
-        <div className="md:w-1/3 w-full flex justify-center">
+        <div className="md:w-1/2 w-full flex justify-center px-20">
           <Image
             src={imagen1}
             alt="asesoria personalizada"
-            className="w-full"
+            className="w-full rounded-sm"
           />
         </div>
       </div>

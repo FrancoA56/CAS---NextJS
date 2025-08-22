@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import image1 from "../../media/MaterialWeb/graficosPaidMedia.png";
+import image1 from "../../media/paidMedia.webp";
 
 export default function PaidMedia() {
   return (
@@ -31,9 +31,8 @@ export default function PaidMedia() {
           </Link>
         </div>
 
-        {/* Carrusel */}
-        <div className="md:w-3/5 w-full flex justify-center">
-          <Image src={image1} alt="graficos" className="mx-12"></Image>
+        <div className="md:w-1/2 flex justify-center items-center">
+          <Image src={image1} alt="graficos" className="mx-12 rounded-sm"></Image>
         </div>
       </div>
 

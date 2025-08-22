@@ -5,7 +5,9 @@ import LogoCasBlanco from "../../media/CAS-logotipo-2.png";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SlideMain() {
+type SlideMainProps = { goTo: (index: number) => void };
+
+export default function SlideMain({ goTo }: SlideMainProps) {
   const words = [
     "CREATIVOS",
     "AESTHETIC",
@@ -24,16 +26,6 @@ export default function SlideMain() {
 
     return () => clearInterval(interval);
   }, []);
-
-  const handleNextSlide = () => {
-    const container = document.getElementById("slides-container");
-    if (container) {
-      container.scrollBy({
-        left: container.clientWidth,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <div className="flex flex-col w-full h-screen px-6 md:px-14 py-6">
@@ -62,11 +54,10 @@ export default function SlideMain() {
           </h1>
         </div>
 
-        <div
-          className="pt-16 animate-bounce md:hidden inline"
-          onClick={handleNextSlide}
-        >
-          <FaChevronRight className="text-black text-2xl" />
+        <div className="pt-16 animate-bounce md:hidden inline">
+          <button onClick={() => goTo(1)} aria-label="Ir a la segunda slide">
+            <FaChevronRight className="text-black text-2xl" />
+          </button>
         </div>
       </div>
     </div>
