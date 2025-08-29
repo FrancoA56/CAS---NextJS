@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import marcoCelular from "../../media/pantalla-celu.png";
-import image1 from "../../media/wholesaleServicios2.png";
-import image2 from "../../media/wholesaleServicios3.png";
-import image3 from "../../media/wholesaleServicios2.png";
+import image1 from "../../media/email1.webp";
+import image2 from "../../media/email2.webp";
+import image3 from "../../media/email3.webp";
 
 const images = [image1, image2, image3];
 
@@ -50,7 +50,7 @@ export default function HorizontalCarousel() {
                 className="absolute w-full h-full"
               >
                 {isCenter ? (
-                  <div className="relative w-full h-full top-[80px]">
+                  <div className="relative w-[357px] h-[751px] top-[80px]">
                     <Image
                       src={images[imgIndex]}
                       alt={`Imagen ${imgIndex}`}
@@ -59,7 +59,7 @@ export default function HorizontalCarousel() {
                     />
                   </div>
                 ) : (
-                  <div className="relative w-full h-full opacity-60">
+                  <div className="relative w-[357px] h-[751px] opacity-60">
                     <Image
                       src={images[imgIndex]}
                       alt={`Imagen ${imgIndex}`}
@@ -114,7 +114,7 @@ export default function HorizontalCarousel() {
                     alt={`Imagen ${imgIndex}`}
                     width={140}
                     height={380}
-                    className="absolute -top-[21px] left-[20px] rounded-xl"
+                    className="absolute -top-[21px] left-[21px] rounded-xl"
                   />
                 </div>
               ) : (

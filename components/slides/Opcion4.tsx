@@ -2,17 +2,26 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Opcion4() {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [visibleSteps, setVisibleSteps] = useState<number>(0);
-  const [lineProgress, setLineProgress] = useState(0); // 0 a 100
+  const [visibleSteps, setVisibleSteps] = useState(0);
+  const [lineProgress, setLineProgress] = useState(0);
+  const [started, setStarted] = useState(false);
 
+  const pasos = [
+    { label: "Investigación" },
+    { label: "Diseño" },
+    { label: "Estrategia" },
+    { label: "Resultados" },
+  ];
+
+  // 🖥️ Desktop: lógica de scroll (ignora mobile)
   useEffect(() => {
-    const handleScroll = () => {
-      const container = document.querySelector(
-        "[data-horizontal-scroll]"
-      ) as HTMLElement;
-      const slide = ref.current;
+    const container = document.querySelector("[data-horizontal-scroll]") as HTMLElement | null;
+    if (!container) return;
 
-      if (!container || !slide) return;
+    const handleScroll = () => {
+      if (window.innerWidth < 768) return; // no tocar mobile
+      const slide = ref.current;
+      if (!slide) return;
 
       const containerLeft = container.scrollLeft;
       const slideOffsetLeft = slide.offsetLeft;
@@ -25,45 +34,64 @@ export default function Opcion4() {
       const slideEnd = slideOffsetLeft + slideWidth;
 
       const isVisible = visibleEnd > slideStart && visibleStart < slideEnd;
+      if (!isVisible) return;
 
-      if (isVisible) {
-        const isMobile = window.innerWidth < 768;
-        const offsetStart = container.offsetWidth * (isMobile ? 1.15 : 0.92);
+      const offsetStart = container.offsetWidth * 0.92;
+      const scrollPositionWithinSlide = containerLeft + offsetStart - slideStart;
 
-        // desplazamiento considerando el offset
-        const scrollPositionWithinSlide =
-          containerLeft + offsetStart - slideStart;
+      const progressRatio = Math.min(Math.max(scrollPositionWithinSlide / slideWidth, 0), 1);
+      const percentage = progressRatio * 100;
 
-        const progressRatio = Math.min(
-          Math.max(scrollPositionWithinSlide / slideWidth, 0),
-          1
-        );
-
-        const percentage = progressRatio * 100;
-
-        setLineProgress(percentage);
-
-        const stepToShow = Math.floor((percentage / 100) * pasos.length);
-        setVisibleSteps(stepToShow);
-      }
+      setLineProgress(percentage);
+      const stepToShow = Math.floor((percentage / 100) * pasos.length);
+      setVisibleSteps(stepToShow);
     };
 
-    const container = document.querySelector(
-      "[data-horizontal-scroll]"
-    ) as HTMLElement;
+    container.addEventListener("scroll", handleScroll);
+    // por si ya está visible al montar:
+    handleScroll();
 
-    container?.addEventListener("scroll", handleScroll);
-    return () => container?.removeEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [pasos.length]);
+
+  // 📱 Mobile: observar visibilidad para arrancar animación
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.innerWidth >= 768) return; // solo mobile
+
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) setStarted(true);
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
-  const pasos = [
-    { label: "Investigación" },
-    { label: "Diseño" },
-    { label: "Estrategia" },
-    { label: "Resultados" },
-  ];
+  // 📱 Mobile: animación por intervalo cuando started === true
+  useEffect(() => {
+    if (!started) return;
 
-  const pinkColor = "#ff68c0";
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 4;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+      }
+      setLineProgress(progress);
+      const stepToShow = Math.floor((progress / 100) * pasos.length);
+      setVisibleSteps(stepToShow);
+    }, 80);
+
+    return () => clearInterval(interval);
+  }, [started, pasos.length]);
 
   return (
     <div
@@ -79,8 +107,9 @@ export default function Opcion4() {
         </div>
         <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl hidden md:flex">
           Somos una agencia 360° que cubre todas las áreas clave para
-          potenciarte,<br/> con un acompañamiento completo y efectivo. Todo en un
-          solo lugar para que puedas enfocarte en lo que realmente importa.
+          potenciarte,
+          <br /> con un acompañamiento completo y efectivo. Todo en un solo
+          lugar para que puedas enfocarte en lo que realmente importa.
         </div>
         <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl flex md:hidden">
           Somos una agencia 360° que cubre todas las áreas clave para
@@ -128,30 +157,23 @@ export default function Opcion4() {
         </div>
       </div>
 
-      {/* Timeline Móvil: vertical */}
-      <div className="md:hidden flex flex-col items-start mt-12 pt-20 px-16 relative ">
-        {/* Línea vertical completa */}
+{/* Timeline Mobile (usa lineProgress del intervalo) */}
+      <div className="md:hidden flex flex-col items-start mt-12 pt-20 px-16 relative">
         <div
-          className="absolute left-[8.1vh] top-0 bottom-14 w-1 bg-white z-0 transition-all duration-500"
-          style={{ height: `${(visibleSteps / pasos.length) * 88}%` }}
+          className="absolute left-[8.1vh] top-0 bottom-14 w-1 bg-white z-0 transition-all duration-200"
+          style={{ height: `${(lineProgress / 100) * 88}%` }}
         />
-
         {pasos.map((paso, index) => (
           <div key={index} className="relative z-10 flex items-center mb-8">
-            {/* Punto en la línea */}
             <div
               className={`w-5 h-5 rounded-full bg-yellow transition-all duration-500 relative ml-3 mr-4 ${
                 visibleSteps >= index + 1 ? "animate-scale-in" : "opacity-0"
               }`}
             />
-
-            {/* Texto del paso */}
             <div className="my-4">
               <span
                 className={`text-base text-white px-3 py-1 rounded-sm transition-transform ${
-                  visibleSteps >= index + 1
-                    ? "animate-slide-up-fade"
-                    : "opacity-0"
+                  visibleSteps >= index + 1 ? "animate-slide-up-fade" : "opacity-0"
                 }`}
               >
                 {paso.label}

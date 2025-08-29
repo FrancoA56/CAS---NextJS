@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-import Image1 from "../../media/logoTscCarruselServicios2.png";
-import Image2 from "../../media/disenoGrafico1.png";
-import Image3 from "../../media/disenoGrafico2.png";
+import Image1 from "../../media/disenoGrafico3.webp";
+import Image2 from "../../media/disenoGrafico2.webp";
+import Image3 from "../../media/disenoGrafico1.webp";
 
 const images = [Image1, Image2, Image3];
 
@@ -60,7 +60,7 @@ export default function VerticalCarousel() {
           );
         })}
       </div>
-      <div className="relative h-[350px] w-[260px] md:hidden flex flex-col items-center justify-center">
+      <div className="relative h-[350px] w-[320px] md:hidden flex flex-col items-center justify-center">
         {[1, 0, -1].map((offset, i) => {
           const imgIndexMovil = getIndexMovil(offset);
           const isCenter = offset === 0;

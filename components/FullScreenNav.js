@@ -13,7 +13,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
           exit={{ x: "-100%" }}
           transition={{ duration: 0.4 }}
           style={{ backgroundColor: prop }}
-          className="fixed inset-0 text-5xl font-gotham uppercase text-black z-50 flex flex-col justify-center items-center text-center "
+          className="fixed inset-0 text-3xl font-gotham uppercase text-black z-50 flex flex-col justify-center items-center text-center "
         >
           <button
             onClick={() => setIsOpen(false)}
@@ -28,7 +28,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-7xl font-gotham uppercase custom-stroke-hover-gradient"
+                className="text-3xl 3xl:text-7xl font-gotham uppercase custom-stroke-hover-gradient"
               >
                 Inicio
               </Link>
@@ -38,7 +38,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/servicios"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
+                className="text-3xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Nuestros Servicios
               </Link>
@@ -48,7 +48,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/quienessomos"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
+                className="text-3xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 ¿QUIÉNES SOMOS?
               </Link>
@@ -58,7 +58,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/clientes"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
+                className="text-3xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Confian en nosotros
               </Link>
@@ -68,7 +68,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/sumate"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
+                className="text-3xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Sumate al team
               </Link>
@@ -78,7 +78,7 @@ export default function FullScreenNav({ isOpen, setIsOpen, prop }) {
                 href="/contacto"
                 onClick={() => setIsOpen(false)}
                 replace
-                className="text-5xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
+                className="text-3xl 3xl:text-7xl font-gotham uppercase  custom-stroke-hover-gradient"
               >
                 Contactanos
               </Link>

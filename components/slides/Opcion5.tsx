@@ -39,7 +39,7 @@ export default function Opcion5() {
       </div>
       {/* Movil */}
 
-      <div className="h-screen w-full flex md:hidden flex-col px-8 text-black text-center py-24 bg-teal">
+      <div className="h-screen w-screen flex md:hidden flex-col px-8 text-black text-center py-24 bg-teal">
         <div className="flex items-center justify-center">
           <Image
             src={imagen1}
@@ -60,8 +60,8 @@ export default function Opcion5() {
             <div className="stroke text-4xl ">EN EL MERCADO</div>
             <div className="w-full mt-2 text-end">
               Construimos una presencia sólida y coherente <br />
-              que te permite competir con fuerza y crecer <br />de manera sostenida en
-              tu sector.
+              que te permite competir con fuerza y crecer <br />
+              de manera sostenida en tu sector.
             </div>
           </div>
         </div>

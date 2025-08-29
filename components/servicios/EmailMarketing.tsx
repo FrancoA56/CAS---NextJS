@@ -37,7 +37,7 @@ export default function EmailMarketing() {
       {/* Movil */}
 
       <div className="flex flex-col md:hidden">
-        <div className="flex justify-center items-center">
+        <div className="relative justify-center items-center left-36">
           <HorizontalCarousel />
         </div>
         <div className="flex flex-col items-start justify-center text-start mx-6 text-black">

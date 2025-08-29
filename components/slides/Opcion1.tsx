@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import image1 from "../../media/eh2.webp";
-import image2 from "../../media/onni2.webp";
+import image1 from "../../media/expex-1x1.webp";
+import image2 from "../../media/expex6.webp";
 
 export default function Opcion1() {
   return (

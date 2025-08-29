@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import tsc1 from "../../media/tsc-aereo-2.webp";
-import tsc2 from "../../media/tsc-maritimo-1.webp";
-import eh from "../../media/eh2.webp";
-import ooni from "../../media/onni2.webp";
-import expex1 from "../../media/expex1.webp";
-import expex2 from "../../media/expex6.webp";
+import tsc2 from "../../media/tsc-1x1.webp";
+import tsc1 from "../../media/tsc-maritimo-1.webp";
+import eh from "../../media/onni2.webp";
+import ooni from "../../media/wholesale-1x1.webp";
+import expex2 from "../../media/expex-1x1.webp";
+import expex1 from "../../media/expex6.webp";
 
 export default function ImagesCol() {
   return (

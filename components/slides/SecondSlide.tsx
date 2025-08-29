@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import slide2 from "../../media/slide2.jpg";
+import slide2 from "../../media/resultados.jpg";
 
 export interface Ideal {
   label: string;
@@ -61,7 +61,7 @@ export default function SecondSlide({
         <Image
           src={slide2}
           alt="slide2"
-          className="relative left-[10%] py-12 z-10 w-1/4 3xl:w-[22%] h-auto rounded-sm "
+          className="relative left-[10%] py-12 z-10 w-1/4 3xl:w-[22%] h-auto rounded "
         />
       </div>
 
