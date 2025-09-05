@@ -1,4 +1,11 @@
+"use client";
+import { useIsIOS } from "../../hooks/useIsIOS";
+
 export default function ThirdQS() {
+  const isIOS = useIsIOS();
+
+  if (isIOS === null) return null; // Esperar que se detecte
+
   const valores = [
     {
       title: "TRABAJO EN EQUIPO:",
@@ -38,7 +45,7 @@ export default function ThirdQS() {
   ];
 
   return (
-    <div className="h-screen w-screen flex-shrink-0 flex items-center px-16 justify-center">
+    <div className="h-[100dvh] safe-area w-screen flex-shrink-0 flex items-center px-16 justify-center">
       <div className="w-full md:max-w-6xl 3xl:max-w-7xl px-0 xl:px-24 3xl:px-0">
         <div className="inline-block md:hidden">
           <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8 ">
@@ -46,13 +53,19 @@ export default function ThirdQS() {
           </h2>
         </div>
         <div
-          className="3xl:grid md:grid-cols-2 hidden gap-8"
+          className="md:grid md:grid-cols-2 hidden gap-8"
           style={{ gridAutoRows: "110px" }}
         >
           <div className="inline-block">
-            <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8 ">
-              VALORES
-            </h2>
+            {isIOS ? (
+              <h2 className="text-4xl text-gradient-cas">
+                VALORES
+              </h2>
+            ) : (
+              <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8 ">
+                VALORES
+              </h2>
+            )}
           </div>
           {valores.map((item, index) => (
             <div
@@ -67,35 +80,37 @@ export default function ThirdQS() {
             </div>
           ))}
         </div>
-        <div
-          className="md:grid md:grid-cols-2 hidden gap-8 3xl:hidden"
-          style={{ gridAutoRows: "95px" }}
-        >
-          {valores.map((item, index) => (
-            <div
-              key={index}
-              className="border-l-4 pl-4 flex flex-col justify-center"
-              style={{ borderLeftColor: item.color }}
-            >
-              <h3 className="text-lg font-bold text-black">{item.title}</h3>
-              <p className="text-black text-lg">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 md:hidden gap-8">
-          {valores.map((item, index) => (
-            <div
-              key={index}
-              className="border-l-4 pl-4 flex flex-col justify-center"
-              style={{ borderLeftColor: item.color }}
-            >
-              <h3 className="text-xl font-bold text-black mb-2">
-                {item.title}
-              </h3>
-              <p className="text-black text-sm ">{item.desc}</p>
-            </div>
-          ))}
-        </div>
+        {isIOS ? (
+          <div className="grid grid-cols-1 md:hidden gap-2">
+            {valores.map((item, index) => (
+              <div
+                key={index}
+                className="border-l-4 pl-4 flex flex-col justify-center"
+                style={{ borderLeftColor: item.color }}
+              >
+                <h3 className="text-lg font-bold text-black mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-black text-sm ">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:hidden gap-6">
+            {valores.map((item, index) => (
+              <div
+                key={index}
+                className="border-l-4 pl-4 flex flex-col justify-center"
+                style={{ borderLeftColor: item.color }}
+              >
+                <h3 className="text-xl font-bold text-black mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-black text-sm ">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

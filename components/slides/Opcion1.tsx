@@ -2,12 +2,15 @@
 import Image from "next/image";
 import image1 from "../../media/expex-1x1.webp";
 import image2 from "../../media/expex6.webp";
-
+import { useIsIOS } from "../../hooks/useIsIOS";
 export default function Opcion1() {
+  const isIOS = useIsIOS();
+
+  if (isIOS === null) return null; // Esperar que se detecte
   return (
     <>
       {/* desktop */}
-      <div className="h-screen w-full bg-green py-12 justify-between relative hidden sm:flex flex-col">
+      <div className="h-[100dvh] safe-area w-full bg-green py-12 justify-between relative hidden sm:flex flex-col">
         {/* Contenido textual */}
         <div className="flex flex-col px-8 lg:px-16 xl:px-44 2xl:px-44 3xl:px-64 text-black justify-between text-center items-center">
           <div className="flex flex-col items-start text-start mt-12">
@@ -25,7 +28,7 @@ export default function Opcion1() {
           </div>
         </div>
         <div className="flex flex-col px-8 lg:px-16 xl:px-32 2xl:px-44 3xl:px-64 text-black justify-between text-center">
-          <div className="flex flex-col items-end text-start mt-12">
+          <div className="flex flex-col items-end text-start mb-12">
             <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">
               MOSTRA
             </div>
@@ -33,9 +36,9 @@ export default function Opcion1() {
               TU MARCA
             </div>
             <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl">
-              Creamos identidades visuales que hablan por vos. <br/>Trabajamos para
-              que tu marca se vea unificada y <br/>profesional, pero sobre todo para
-              ser recordable.
+              Creamos identidades visuales que hablan por vos. <br />
+              Trabajamos para que tu marca se vea unificada y <br />
+              profesional, pero sobre todo para ser recordable.
             </div>
           </div>
         </div>
@@ -43,51 +46,99 @@ export default function Opcion1() {
 
       {/* movil */}
 
-      <div className="h-screen w-full px-8  bg-green py-12 relative overflow-visible sm:hidden flex flex-col ">
-        {/* Contenido textual */}
-        <div className="flex flex-col text-black justify-between gap-20 text-center">
-          <div className="flex flex-col items-start text-start mt-12">
-            <div className="font-bold text-3xl ">ATRAE</div>
-            <div className="stroke text-4xl ">NUEVOS CLIENTES</div>
-            <div className="w-full mt-2 text-start">
-              Generamos oportunidades combinando estrategia, creatividad y
-              performance para que tu marca gane visibilidad, conecte con la
-              audiencia correcta y consiga resultados reales.
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-wrap mt-12 gap-12 items-center justify-center">
-          <div className="flip-container w-72 h-72 pointer-events-auto">
-            <div className="flipper rotate-on-3s">
-              <div className="front">
-                <Image
-                  src={image1}
-                  alt="Front"
-                  className="w-full h-full rounded"
-                />
-              </div>
-              <div className="back">
-                <Image
-                  src={image2}
-                  alt="Back"
-                  className="w-full h-full object-cover rounded"
-                />
+      {isIOS ? (
+        <div className="h-[100dvh] w-full px-6  bg-green relative overflow-visible sm:hidden flex flex-col ">
+          {/* Contenido textual */}
+          <div className="flex flex-col text-black justify-between gap-12 text-center mt-20">
+            <div className="flex flex-col items-start text-start">
+              <div className="font-bold text-2xl ">ATRAE</div>
+              <div className="stroke text-3xl ">NUEVOS CLIENTES</div>
+              <div className="w-full mt-2 text-start">
+                Generamos oportunidades combinando estrategia, creatividad y
+                performance para que tu marca gane visibilidad, conecte con la
+                audiencia correcta y consiga resultados reales.
               </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-col  text-black justify-between text-center">
-          <div className="flex flex-col items-end text-start mt-12">
-            <div className="font-bold text-3xl ">MOSTRA</div>
-            <div className="stroke text-4xl">TU MARCA</div>
-            <div className="w-full mt-2 text-end">
-              Creamos identidades visuales que hablan por vos. Trabajamos para
-              que tu marca se vea unificada y profesional, pero sobre todo para
-              ser recordable.
+          <div className="flex flex-wrap mt-10 gap-12 items-center justify-center">
+            <div className="flip-container w-44 h-44 pointer-events-auto">
+              <div className="flipper rotate-on-3s">
+                <div className="front">
+                  <Image
+                    src={image1}
+                    alt="Front"
+                    className="w-full h-full rounded"
+                  />
+                </div>
+                <div className="back">
+                  <Image
+                    src={image2}
+                    alt="Back"
+                    className="w-full h-full object-cover rounded"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col  text-black justify-between text-center">
+            <div className="flex flex-col items-end text-start mt-10">
+              <div className="font-bold text-2xl ">MOSTRA</div>
+              <div className="stroke text-3xl">TU MARCA</div>
+              <div className="w-full mt-2 text-end">
+                Creamos identidades visuales que hablan por vos. Trabajamos para
+                que tu marca se vea unificada y profesional, pero sobre todo
+                para ser recordable.
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="min-h-screen  h-[100dvh] w-full px-8  bg-green py-20 relative overflow-visible sm:hidden flex flex-col ">
+          {/* Contenido textual */}
+          <div className="flex flex-col text-black justify-between gap-20 text-center">
+            <div className="flex flex-col items-start text-start mt-12">
+              <div className="font-bold text-3xl ">ATRAE</div>
+              <div className="stroke text-4xl ">NUEVOS CLIENTES</div>
+              <div className="w-full mt-2 text-start">
+                Generamos oportunidades combinando estrategia, creatividad y
+                performance para que tu marca gane visibilidad, conecte con la
+                audiencia correcta y consiga resultados reales.
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap mt-12 gap-12 items-center justify-center">
+            <div className="flip-container w-72 h-72 pointer-events-auto">
+              <div className="flipper rotate-on-3s">
+                <div className="front">
+                  <Image
+                    src={image1}
+                    alt="Front"
+                    className="w-full h-full rounded"
+                  />
+                </div>
+                <div className="back">
+                  <Image
+                    src={image2}
+                    alt="Back"
+                    className="w-full h-full object-cover rounded"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col  text-black justify-between text-center">
+            <div className="flex flex-col items-end text-start mt-12">
+              <div className="font-bold text-3xl ">MOSTRA</div>
+              <div className="stroke text-4xl">TU MARCA</div>
+              <div className="w-full mt-2 text-end">
+                Creamos identidades visuales que hablan por vos. Trabajamos para
+                que tu marca se vea unificada y profesional, pero sobre todo
+                para ser recordable.
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

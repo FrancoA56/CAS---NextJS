@@ -30,6 +30,7 @@ export default function Servicios() {
     "right"
   );
   const lastScrollLeft = useRef(0);
+  const [isIOS, setIsIOS] = useState<boolean | null>(null);
 
   const scrollTo = (index: number) => {
     setActiveIndex(index); // actualiza manualmente al hacer click
@@ -52,6 +53,17 @@ export default function Servicios() {
       lastScrollLeft.current = currentScroll;
       setShowNav(currentScroll > 50);
     };
+
+    // Leer de localStorage primero
+    const storedIsIOS = localStorage.getItem("isIOS");
+    if (storedIsIOS !== null) {
+      setIsIOS(storedIsIOS === "true");
+    } else {
+      // Si no existe en localStorage, detectar y guardar
+      const detected = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      setIsIOS(detected);
+      localStorage.setItem("isIOS", detected.toString());
+    }
 
     container.addEventListener("scroll", handleScroll);
     return () => container.removeEventListener("scroll", handleScroll);
@@ -186,112 +198,219 @@ export default function Servicios() {
           </div>
 
           {/* Movil */}
+          {isIOS ? (
+            <div
+              ref={(el) => {
+                sectionRefs.current[0] = el;
+              }}
+              className="sm:hidden flex"
+            >
+              <div className="flex flex-col justify-center pb-24">
+                <div className="flex flex-col justify-center items-center text-4xl mb-2 mt-20">
+                  <p className="font-bold">NUESTROS</p>
+                  <p className="text-gradient-cas custom-stroke ">SERVICIOS</p>
+                </div>
+                {/* Dividir en dos filas */}
+                <div className="flex flex-col gap-1 md:mb-12 mb-0">
+                  {/* Primera fila - 2 carpetas */}
+                  <div className="flex justify-center gap-4">
+                    {services.slice(0, 2).map(({ label, image }, index) => (
+                      <div
+                        key={index}
+                        onClick={() => scrollTo(index + 1)}
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Segunda fila - 2 carpetas */}
+                  <div className="flex justify-center gap-4">
+                    {services.slice(2, 4).map(({ label, image }, index) => (
+                      <div
+                        key={index}
+                        onClick={() => scrollTo(index + 3)}
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Tercera fila - 2 carpetas */}
+                  <div className="flex justify-center gap-4">
+                    {services.slice(4, 6).map(({ label, image }, index) => (
+                      <div
+                        key={index}
+                        onClick={() => scrollTo(index + 5)}
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
 
-          <div
-            ref={(el) => {
-              sectionRefs.current[0] = el;
-            }}
-            className="sm:hidden flex"
-          >
-            <div className="flex flex-col justify-center pb-24">
-              <div className="flex flex-col justify-center items-center text-4xl mb-2 ">
-                <p className="font-bold">NUESTROS</p>
-                <p className="text-gradient-cas custom-stroke ">SERVICIOS</p>
-              </div>
-              {/* Dividir en dos filas */}
-              <div className="flex flex-col gap-4 md:mb-12 mb-0">
-                {/* Primera fila - 2 carpetas */}
-                <div className="flex justify-center gap-4">
-                  {services.slice(0, 2).map(({ label, image }, index) => (
-                    <div
-                      key={index}
-                      onClick={() => scrollTo(index + 1)}
-                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
-                    >
-                      <Image
-                        src={image}
-                        alt="Carpeta"
-                        fill
-                        style={{ objectFit: "contain" }}
-                      />
-                      <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
-                        {label.split(" ").slice(0, 1).join(" ")}
-                        <br />
-                        {label.split(" ").slice(1)}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                {/* Segunda fila - 2 carpetas */}
-                <div className="flex justify-center gap-4">
-                  {services.slice(2, 4).map(({ label, image }, index) => (
-                    <div
-                      key={index}
-                      onClick={() => scrollTo(index + 3)}
-                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
-                    >
-                      <Image
-                        src={image}
-                        alt="Carpeta"
-                        fill
-                        style={{ objectFit: "contain" }}
-                      />
-                      <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
-                        {label.split(" ").slice(0, 1).join(" ")}
-                        <br />
-                        {label.split(" ").slice(1)}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                {/* Tercera fila - 2 carpetas */}
-                <div className="flex justify-center gap-4">
-                  {services.slice(4, 6).map(({ label, image }, index) => (
-                    <div
-                      key={index}
-                      onClick={() => scrollTo(index + 5)}
-                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
-                    >
-                      <Image
-                        src={image}
-                        alt="Carpeta"
-                        fill
-                        style={{ objectFit: "contain" }}
-                      />
-                      <span className="absolute text-black text-lg leading-tight mt-3">
-                        {label.split(" ").slice(0, 1).join(" ")}
-                        <br />
-                        {label.split(" ").slice(1)}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Cuarta fila - 1 carpetas centradas */}
-                <div className="flex justify-center">
-                  {services.slice(6).map(({ label, image }, index) => (
-                    <div
-                      key={index + 4}
-                      onClick={() => scrollTo(index + 7)} // índice ajustado por el slice
-                      className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
-                    >
-                      <Image
-                        src={image}
-                        alt="Carpeta"
-                        fill
-                        style={{ objectFit: "contain" }}
-                      />
-                      <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
-                        {label.split(" ").slice(0, 1).join(" ")}
-                        <br />
-                        {label.split(" ").slice(1)}
-                      </span>
-                    </div>
-                  ))}
+                  {/* Cuarta fila - 1 carpetas centradas */}
+                  <div className="flex justify-center">
+                    {services.slice(6).map(({ label, image }, index) => (
+                      <div
+                        key={index + 4}
+                        onClick={() => scrollTo(index + 7)} // índice ajustado por el slice
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div
+              ref={(el) => {
+                sectionRefs.current[0] = el;
+              }}
+              className="sm:hidden flex"
+            >
+              <div className="flex flex-col justify-center pb-24">
+                <div className="flex flex-col justify-center items-center text-4xl mb-2 ">
+                  <p className="font-bold">NUESTROS</p>
+                  <p className="text-gradient-cas custom-stroke ">SERVICIOS</p>
+                </div>
+                {/* Dividir en dos filas */}
+                <div className="flex flex-col gap-1 mb-0">
+                  {/* Primera fila - 2 carpetas */}
+                  <div className="flex justify-center gap-4">
+                    {services.slice(0, 2).map(({ label, image }, index) => (
+                      <div
+                        key={index}
+                        onClick={() => scrollTo(index + 1)}
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Segunda fila - 2 carpetas */}
+                  <div className="flex justify-center gap-4">
+                    {services.slice(2, 4).map(({ label, image }, index) => (
+                      <div
+                        key={index}
+                        onClick={() => scrollTo(index + 3)}
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Tercera fila - 2 carpetas */}
+                  <div className="flex justify-center gap-4">
+                    {services.slice(4, 6).map(({ label, image }, index) => (
+                      <div
+                        key={index}
+                        onClick={() => scrollTo(index + 5)}
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Cuarta fila - 1 carpetas centradas */}
+                  <div className="flex justify-center">
+                    {services.slice(6).map(({ label, image }, index) => (
+                      <div
+                        key={index + 4}
+                        onClick={() => scrollTo(index + 7)} // índice ajustado por el slice
+                        className="cursor-pointer hover:rotate-12 transition-transform relative md:w-[190px] w-[130px] md:h-[190px] h-[130px] flex justify-center items-center text-center"
+                      >
+                        <Image
+                          src={image}
+                          alt="Carpeta"
+                          fill
+                          style={{ objectFit: "contain" }}
+                        />
+                        <span className="absolute text-black md:text-2xl text-lg leading-tight mt-3">
+                          {label.split(" ").slice(0, 1).join(" ")}
+                          <br />
+                          {label.split(" ").slice(1)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </PageWrapper>
 
         {services.map(({ Component }, i) => (

@@ -15,7 +15,9 @@ export default function Opcion4() {
 
   // 🖥️ Desktop: lógica de scroll (ignora mobile)
   useEffect(() => {
-    const container = document.querySelector("[data-horizontal-scroll]") as HTMLElement | null;
+    const container = document.querySelector(
+      "[data-horizontal-scroll]"
+    ) as HTMLElement | null;
     if (!container) return;
 
     const handleScroll = () => {
@@ -37,9 +39,13 @@ export default function Opcion4() {
       if (!isVisible) return;
 
       const offsetStart = container.offsetWidth * 0.92;
-      const scrollPositionWithinSlide = containerLeft + offsetStart - slideStart;
+      const scrollPositionWithinSlide =
+        containerLeft + offsetStart - slideStart;
 
-      const progressRatio = Math.min(Math.max(scrollPositionWithinSlide / slideWidth, 0), 1);
+      const progressRatio = Math.min(
+        Math.max(scrollPositionWithinSlide / slideWidth, 0),
+        1
+      );
       const percentage = progressRatio * 100;
 
       setLineProgress(percentage);
@@ -95,7 +101,7 @@ export default function Opcion4() {
 
   return (
     <div
-      className="h-screen w-full flex flex-col justify-center  text-black text-center bg-pink"
+      className="h-[100dvh] w-full flex flex-col justify-center  text-black text-center bg-pink pt-20"
       ref={ref}
     >
       <div className="flex flex-col items-end text-end px-8 md:px-24 ">
@@ -157,12 +163,9 @@ export default function Opcion4() {
         </div>
       </div>
 
-{/* Timeline Mobile (usa lineProgress del intervalo) */}
-      <div className="md:hidden flex flex-col items-start mt-12 pt-20 px-16 relative">
-        <div
-          className="absolute left-[8.1vh] top-0 bottom-14 w-1 bg-white z-0 transition-all duration-200"
-          style={{ height: `${(lineProgress / 100) * 88}%` }}
-        />
+      {/* Timeline Mobile (usa lineProgress del intervalo) */}
+      <div className="md:hidden flex flex-col items-start pt-20 px-16 relative">
+       
         {pasos.map((paso, index) => (
           <div key={index} className="relative z-10 flex items-center mb-8">
             <div
@@ -173,7 +176,9 @@ export default function Opcion4() {
             <div className="my-4">
               <span
                 className={`text-base text-white px-3 py-1 rounded-sm transition-transform ${
-                  visibleSteps >= index + 1 ? "animate-slide-up-fade" : "opacity-0"
+                  visibleSteps >= index + 1
+                    ? "animate-slide-up-fade"
+                    : "opacity-0"
                 }`}
               >
                 {paso.label}

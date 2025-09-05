@@ -7,11 +7,15 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import Link from "next/link";
+import { useIsIOS } from "../hooks/useIsIOS";
 
 export default function Footer() {
+  const isIOS = useIsIOS();
+  if (isIOS === null) return null; // Esperar que se detecte
+
   return (
     <footer className="text-black px-6 sm:px-8 py-8 sm:py-12 font-gotham h-screen w-screen flex flex-col justify-center items-center">
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 3xl:gap-24">
         {/* Columna 1: Contacto */}
         <div className="space-y-4 sm:space-y-6">
           <h3 className="text-lg 3xl:text-xl rounded-sm border-b border-black py-2 px-8 w-fit">
@@ -40,7 +44,7 @@ export default function Footer() {
           {/* Redes sociales */}
           <div className="flex flex-row justify-between pt-4 sm:pt-6">
             <div className="flex flex-col gap-4 sm:gap-6 ">
-              <h3 className=" text-lg 3xl:text-xl rounded-sm border-b border-black py-2 px-4">
+              <h3 className="text-lg 3xl:text-xl rounded-sm border-b border-black py-2 px-4">
                 SEGUINOS
               </h3>
               <div className="flex gap-4 sm:gap-6 text-xl sm:text-2xl">
@@ -95,20 +99,32 @@ export default function Footer() {
               CABA | Buenos Aires, Argentina
             </a>
           </div>
-          <div className="w-full h-60 mt-4">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.31999753436!2d-58.364956!3d-34.6213529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334d1f2bc3f3d%3A0xb4d4e772c8679a66!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%20Piso%203%2C%20Oficina%20306%2C%20C1107AFN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1754658655863!5m2!1ses-419!2sar"
-              width="100%"
-              height="100%"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
+          {isIOS ? (
+             <div className="w-full h-30 mt-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.31999753436!2d-58.364956!3d-34.6213529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334d1f2bc3f3d%3A0xb4d4e772c8679a66!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%20Piso%203%2C%20Oficina%20306%2C%20C1107AFN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1754658655863!5m2!1ses-419!2sar"
+                width="100%"
+                height="100%"
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          ) : (
+            <div className="w-full h-60 mt-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.31999753436!2d-58.364956!3d-34.6213529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334d1f2bc3f3d%3A0xb4d4e772c8679a66!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%20Piso%203%2C%20Oficina%20306%2C%20C1107AFN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1754658655863!5m2!1ses-419!2sar"
+                width="100%"
+                height="100%"
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          )}
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="pt-12 sm:pt-24 text-center text-xs sm:text-sm">
+      <div className="pt-12 sm:pt-24 text-center text-base sm:text-xl">
         © {new Date().getFullYear()} CAS Marketing & Design. Todos los derechos
         reservados.
       </div>

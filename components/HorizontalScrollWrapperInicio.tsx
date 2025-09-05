@@ -79,7 +79,7 @@ const HorizontalScrollWrapperInicio = forwardRef<
     <div
       ref={containerRef}
       data-horizontal-scroll
-      className="flex h-screen overflow-x-scroll scrollbar-hide touch-pan-x overscroll-contain"
+      className="flex h-[100dvh] safe-area overflow-x-scroll scrollbar-hide touch-pan-x overscroll-contain"
     >
       {React.Children.map(children, (child, index) => (
         <div key={index} className="w-auto h-full flex-shrink-0">

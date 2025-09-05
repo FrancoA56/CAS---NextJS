@@ -9,6 +9,11 @@
   font-style: normal;
 }
 
+.safe-area {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
+}
+
 @keyframes popIn {
   0% {
     transform: scale(0.6);

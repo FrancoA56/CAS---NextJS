@@ -12,7 +12,7 @@ export default function SlideMain({ goTo }: SlideMainProps) {
     "CREATIVOS",
     "AESTHETIC",
     "SOLUCIONES",
-    "ICONIC",
+    "ESTRATEGIA",
     "CAS :)",
     "CAS :)",
     "CAS :)",
@@ -28,10 +28,10 @@ export default function SlideMain({ goTo }: SlideMainProps) {
   }, []);
 
   return (
-    <div className="flex flex-col w-full h-screen px-6 md:px-14 py-6">
+    <div className="flex flex-col w-full h-[100dvh] px-6 md:px-14 py-6">
       <div className="flex justify-between items-start w-full">
         {/* Logo arriba a la derecha */}
-        <div className="flex justify-end w-full">
+        <div className="flex justify-end w-full mt-4">
           <Link href="/">
             <Image
               src={LogoCasBlanco}
@@ -44,7 +44,7 @@ export default function SlideMain({ goTo }: SlideMainProps) {
       </div>
 
       {/* Texto principal */}
-      <div className="flex flex-col md:flex-row items-center justify-center w-full h-screen">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full h-[100dvh]">
         <div className="w-full md:w-2/3  flex flex-col items-end mb-8 md:mb-0 md:px-0 px-6 2xl:px-24 3xl:px-32">
           <h1 className="text-6xl md:text-8xl 3xl:text-9xl text-black uppercase font-[1000]">
             SOMOS

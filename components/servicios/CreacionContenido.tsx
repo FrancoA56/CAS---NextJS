@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import celular from "../../media/pantalla-celu.png";
-
+import { useIsIOS } from "../../hooks/useIsIOS";
 export default function CreacionDeContenido() {
+  const isIOS = useIsIOS();
+
+  if (isIOS === null) return null; // Esperar que se detecte
   return (
     <>
       {/* Desktop */}
@@ -43,7 +46,7 @@ export default function CreacionDeContenido() {
             </video>
 
             {/* Marco celular */}
-            <div className="absolute top-[82px] left-1 w-[93%] h-full pointer-events-none">
+            <div className="absolute top-[142px] 3xl:top-[82px] left-3 3xl:left-1 w-[93%] h-[75%] 3xl:h-full  pointer-events-none">
               <Image
                 src={celular}
                 alt="marco celular"
@@ -82,55 +85,105 @@ export default function CreacionDeContenido() {
       </div>
 
       {/* Movil */}
-
-      <div className="md:hidden flex flex-col ">
-        <div className="flex m-auto rounded-md mb-12 relative">
-          <video
-            width="180"
-            height="200"
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            playsInline
-            className=" rounded-lg "
-          >
-            <source src="/video/contenidoVideo.webm" type="video/webm" />
-            <source src="/video/contenidoVideo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="pointer-events-none absolute -top-[3.4%] -left-[4%] w-[200px] h-[340px]">
-            <Image
-              src={celular}
-              alt="marco celular"
-              fill
-              unoptimized
-              className="object-fill"
-            />
+      {isIOS ? (
+        <div className="md:hidden flex flex-col ">
+          <div className="flex m-auto rounded-md mb-12 relative mt-12">
+            <video
+              width="180"
+              height="200"
+              autoPlay
+              loop
+              muted
+              preload="auto"
+              playsInline
+              className=" rounded-lg "
+            >
+              <source src="/video/contenidoVideo.webm" type="video/webm" />
+              <source src="/video/contenidoVideo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="pointer-events-none absolute -top-[3.4%] -left-[4%] w-[200px] h-[340px]">
+              <Image
+                src={celular}
+                alt="marco celular"
+                fill
+                unoptimized
+                className="object-fill"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-start justify-start text-start px-8 mt-0 text-black mb-16">
+            <h2 className="text-4xl font-bold mb-1 text-blue">CREACIÓN DE </h2>
+            <h2 className="text-4xl font-bold mb-2 custom-stroke-blue">
+              CONTENIDO
+            </h2>
+            <ul className="list-disc list-inside mb-2">
+              <li>Producción de contenido multimedia.</li>
+              <li>Guión y dirección creativa para piezas audiovisuales.</li>
+              <li>
+                Realización de contenidos temáticos por fechas clave o acciones
+                de marca.
+              </li>
+              <li>Campañas con influencers y creadores UGC.</li>
+            </ul>
+            <Link href="/contacto" replace className="flex flex-row">
+              <button className="bg-blue rounded-sm border border-black py-3 px-4 hover:bg-blue/80 transition-colors ease-in-out">
+                Impulsá tu marca {">"}
+                {">"}
+              </button>
+            </Link>
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start text-start px-8 mt-0 text-black mb-16">
-          <h2 className="text-5xl font-bold mb-2 text-blue">CREACIÓN DE </h2>
-          <h2 className="text-6xl font-bold mb-6 custom-stroke-blue">
-            CONTENIDO
-          </h2>
-          <ul className="list-disc list-inside mb-6 text-lg">
-            <li>Producción de contenido multimedia.</li>
-            <li>Guión y dirección creativa para piezas audiovisuales.</li>
-            <li>
-              Realización de contenidos temáticos por fechas clave o acciones de
-              marca.
-            </li>
-            <li>Campañas con influencers y creadores UGC.</li>
-          </ul>
-          <Link href="/contacto" replace className="flex flex-row">
-            <button className="bg-blue rounded-sm border border-black py-3 px-4 hover:bg-blue/80 transition-colors ease-in-out">
-              Impulsá tu marca {">"}
-              {">"}
-            </button>
-          </Link>
+      ) : (
+        <div className="md:hidden flex flex-col ">
+          <div className="flex m-auto rounded-md mb-12 relative mt-12">
+            <video
+              width="180"
+              height="200"
+              autoPlay
+              loop
+              muted
+              preload="auto"
+              playsInline
+              className=" rounded-lg "
+            >
+              <source src="/video/contenidoVideo.webm" type="video/webm" />
+              <source src="/video/contenidoVideo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="pointer-events-none absolute -top-[3.4%] -left-[4%] w-[200px] h-[340px]">
+              <Image
+                src={celular}
+                alt="marco celular"
+                fill
+                unoptimized
+                className="object-fill"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-start justify-start text-start px-8 mt-0 text-black mb-16">
+            <h2 className="text-6xl font-bold mb-2 text-blue">CREACIÓN DE </h2>
+            <h2 className="text-6xl font-bold mb-6 custom-stroke-blue">
+              CONTENIDO
+            </h2>
+            <ul className="text-lg list-disc list-inside mb-6">
+              <li>Producción de contenido multimedia.</li>
+              <li>Guión y dirección creativa para piezas audiovisuales.</li>
+              <li>
+                Realización de contenidos temáticos por fechas clave o acciones
+                de marca.
+              </li>
+              <li>Campañas con influencers y creadores UGC.</li>
+            </ul>
+            <Link href="/contacto" replace className="flex flex-row">
+              <button className="bg-blue rounded-sm border border-black py-3 px-4 hover:bg-blue/80 transition-colors ease-in-out">
+                Impulsá tu marca {">"}
+                {">"}
+              </button>
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

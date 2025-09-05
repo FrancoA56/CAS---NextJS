@@ -1,37 +1,81 @@
+"use client";
+import { useIsIOS } from "../../hooks/useIsIOS";
+
 export default function SecondQS() {
+  const isIOS = useIsIOS();
+
+  if (isIOS === null) return null; // Esperar que se detecte
   return (
-    <div className="h-screen w-screen  flex items-center  text-left justify-center">
-      <div className="w-auto md:max-w-6xl px-12 md:px-16 xl:px-24 3xl:px-0">
-        <div className="inline-block">
-          <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8 ">
-            MISIÓN
-          </h2>
-        </div>
+    <>
+      {isIOS ? (
+        <div className="h-[100dvh] safe-area w-screen  flex items-center  text-left justify-center">
+          <div className="w-auto md:max-w-6xl px-12 md:px-16 xl:px-24 3xl:px-0">
+            <div className="inline-block">
+              <h2 className="text-5xl  text-gradient-cas mb-4 ">
+                MISIÓN
+              </h2>
+            </div>
 
-        <div className="space-y-6 mb-12">
-          <p className="text-xl md:text-2xl 3xl:text-2xl text-black">
-            Nuestra misión es apoyar a nuestros clientes en el diseño y
-            desarrollo estratégico de su marca, proporcionando herramientas de
-            gestión que ayudarán a la toma de decisiones, potenciando a los
-            mismos.
-          </p>
-        </div>
-        <div className="inline-block">
-          <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8">
-            VISIÓN
-          </h2>
-        </div>
+            <div className="space-y-6 mb-12">
+              <p className="text-lg text-black">
+                Nuestra misión es apoyar a nuestros clientes en el diseño y
+                desarrollo estratégico de su marca, proporcionando herramientas
+                de gestión que ayudarán a la toma de decisiones, potenciando a
+                los mismos.
+              </p>
+            </div>
+            <div className="inline-block">
+              <h2 className="text-5xl  text-gradient-cas mb-4">
+                VISIÓN
+              </h2>
+            </div>
 
-        <div className="space-y-6">
-          <p className="text-xl md:text-2xl 3xl:text-2xl text-black">
-            Posicionarnos en los próximos años como una empresa líder en
-            marketing y publicidad digital dentro del mercado, donde podamos
-            brindar el mejor asesoramiento a cada cliente, generando tendencia a
-            través de nuestra creatividad y encuentren en nosotros un socio
-            estratégico para comunicar su marca.
-          </p>
+            <div className="space-y-6">
+              <p className="text-lg text-black">
+                Posicionarnos en los próximos años como una empresa líder en
+                marketing y publicidad digital dentro del mercado, donde podamos
+                brindar el mejor asesoramiento a cada cliente, generando
+                tendencia a través de nuestra creatividad y encuentren en
+                nosotros un socio estratégico para comunicar su marca.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ) : (
+        <div className="h-[100dvh] safe-area w-screen  flex items-center  text-left justify-center">
+          <div className="w-auto md:max-w-6xl px-12 md:px-16 xl:px-24 3xl:px-0">
+            <div className="inline-block">
+              <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8 ">
+                MISIÓN
+              </h2>
+            </div>
+
+            <div className="space-y-6 mb-12">
+              <p className="text-xl md:text-2xl 3xl:text-2xl text-black">
+                Nuestra misión es apoyar a nuestros clientes en el diseño y
+                desarrollo estratégico de su marca, proporcionando herramientas
+                de gestión que ayudarán a la toma de decisiones, potenciando a
+                los mismos.
+              </p>
+            </div>
+            <div className="inline-block">
+              <h2 className="text-5xl 3xl:text-6xl text-gradient-cas mb-8">
+                VISIÓN
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              <p className="text-xl md:text-2xl 3xl:text-2xl text-black">
+                Posicionarnos en los próximos años como una empresa líder en
+                marketing y publicidad digital dentro del mercado, donde podamos
+                brindar el mejor asesoramiento a cada cliente, generando
+                tendencia a través de nuestra creatividad y encuentren en
+                nosotros un socio estratégico para comunicar su marca.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

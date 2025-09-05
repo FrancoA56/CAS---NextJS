@@ -11,10 +11,9 @@ export default function ImagesCol() {
   return (
     <>
       {/*desktop*/}
-
-      <div className=" relative hidden h-screen md:flex flex-row md:flex-col items-end justify-end left-[8%]  bottom-[105%]  pointer-events-none">
+      <div className=" relative hidden h-screen md:flex flex-row md:flex-col items-end justify-end left-[8%]  3xl:bottom-[105%] bottom-[102%]  pointer-events-none">
         <div className="flex flex-col gap-6">
-          <div className="flip-container w-48 3xl:w-64 h-48 3xl:h-64 pointer-events-auto">
+          <div className="flip-container w-44 3xl:w-64 h-44 3xl:h-64 pointer-events-auto">
             <div className="flipper rotate-on-hover transition-transform duration-700">
               <div className="front">
                 <Image
@@ -32,7 +31,7 @@ export default function ImagesCol() {
               </div>
             </div>
           </div>
-          <div className="flip-container w-48 3xl:w-64 h-48 3xl:h-64 pointer-events-auto">
+          <div className="flip-container w-44 3xl:w-64 h-44 3xl:h-64 pointer-events-auto">
             <div className="flipper rotate-on-hover transition-transform duration-700">
               <div className="front">
                 <Image
@@ -50,7 +49,7 @@ export default function ImagesCol() {
               </div>
             </div>
           </div>
-          <div className="flip-container w-48 3xl:w-64 h-48 3xl:h-64 pointer-events-auto">
+          <div className="flip-container w-44 3xl:w-64 h-44 3xl:h-64 pointer-events-auto">
             <div className="flipper rotate-on-hover transition-transform duration-700">
               <div className="front">
                 <Image
