@@ -19,6 +19,12 @@ import CarpetaAzul from "../../media/carpetas/azul1.png";
 import CarpetaVerde from "../../media/carpetas/verde1.png";
 import CarpetaVioleta from "../../media/carpetas/violeta1.png";
 import CarpetaSalmon from "../../media/carpetas/salmon1.png";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nuestros Servicios | CAS Marketing",
+  description: "Los servicios en los que nos especializamos."
+}
 
 export default function Servicios() {
   const scrollRef = useRef<HorizontalScrollWrapperRef>(null);

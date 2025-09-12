@@ -3,6 +3,28 @@ import "../styles/globals.css";
 import { useState, useEffect } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 import FullScreenNav from "../components/FullScreenNav";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CAS - Marketing & Design",
+  description: "Agencia de marketing y diseño. Potenciamos tu marca.",
+  openGraph: {
+    title: "CAS - Marketing & Design",
+    description: "Agencia de marketing y diseño. Potenciamos tu marca.",
+    url: "https://castradeandco.com",
+    siteName: "CAS - Marketing & Design",
+    images: [
+      {
+        url: "/LogoCasColor.png",
+        width: 786,
+        height: 342,
+        alt: "CAS - Marketing & Design",
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -18,6 +40,10 @@ export default function RootLayout({
 
   return (
     <html lang="es">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <title>CAS - Marketing & Design</title>
+      </head>
       <body className="overflow-hidden transition-colors duration-700 font-gotham">
         <div className="bg-black absolute z-20 top-0 left-0 h-full w-[100px] border-r border-black/30 flex-col items-center justify-between py-8 md:inline hidden">
           {/* Botón hamburguesa */}

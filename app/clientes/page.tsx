@@ -6,8 +6,14 @@ import denisRos from "../../media/denisRos.png";
 import expex from "../../media/Expex.png";
 import Image from "next/image";
 import { useIsIOS } from "../../hooks/useIsIOS";
+import type { Metadata } from "next";
 
-export default function Clientes({ prop }) {
+export const metadata: Metadata = {
+  title: "Nuestros Clientes | CAS Marketing",
+  description: "Confian en nosotros"
+}
+
+export default function Clientes() {
   const isIOS = useIsIOS();
   if (isIOS === null) return null; // Esperar que se detecte
   return (

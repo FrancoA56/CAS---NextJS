@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "functions": {
+    "/clientes": {},
+    "/contacto": {},
+    "/": {},
+    "/quienessomos": {},
+    "/sumate": {},
+    "/servicios": {}
+  }
+}

@@ -17,6 +17,12 @@ import Opcion4 from "../components/slides//Opcion4";
 import Opcion5 from "../components/slides//Opcion5";
 import SecondSlide from "../components/slides/SecondSlide";
 import ImagesCol from "../components/slides/ImagesCol";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CAS - Marketing & Design",
+  description: "Agencia de marketing y diseño. Potenciamos tu marca.",
+};
 
 export default function Home() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -42,7 +48,6 @@ export default function Home() {
   const pink = "#EE8EC3";
   const green = "#A5E6A8";
   const teal = "#B791DD";
-  const peach = "#FFC4AC";
   const blue = "#78C8D2";
 
   const ideales = [
@@ -73,7 +78,7 @@ export default function Home() {
       <div className="hidden md:flex">
         <HorizontalScrollWrapperInicio ref={scrollRefInicio}>
           <PageWrapper>
-            <SlideMain goTo={goTo}/>
+            <SlideMain goTo={goTo} />
           </PageWrapper>
           <PageWrapper>
             <SecondSlide
@@ -106,7 +111,7 @@ export default function Home() {
       <div className="flex md:hidden">
         <HorizontalScrollWrapper ref={scrollRef}>
           <PageWrapper>
-            <SlideMain goTo={goTo}/>
+            <SlideMain goTo={goTo} />
           </PageWrapper>
           <PageWrapper>
             <SecondSlide
