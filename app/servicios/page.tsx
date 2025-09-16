@@ -127,7 +127,7 @@ export default function Servicios() {
     { label: "Paid Media", Component: PaidMedia, image: CarpetaVioleta },
     { label: "Contenido", Component: CreacionDeContenido, image: CarpetaAzul },
     {
-      label: "Asesorias",
+      label: "Asesorías",
       Component: AsesoriaPersonalizada,
       image: CarpetaSalmon,
     },
