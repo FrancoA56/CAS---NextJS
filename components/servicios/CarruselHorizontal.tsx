@@ -25,78 +25,43 @@ export default function HorizontalCarousel() {
   return (
     <>
       {/* Desktop */}
-
-      {/* Desktop */}
-      <div
-        className="hidden justify-center relative w-1/2 h-full md:flex items-center 
-                pt-20 xl:pt-12 2xl:pt-36 3xl:pt-44 
-                pl-[20%] xl:pl-[30%] 2xl:pl-[35%] 3xl:pl-[40%]"
-      >
-        <AnimatePresence>
-          {[0, 0].map((offset) => {
-            const imgIndex = getIndex(offset);
-            const isCenter = offset === 1;
-
-            return (
-              <motion.div
-                key={imgIndex}
-                className="absolute w-full h-full"
-                initial={{
-                  x: offset * 300,
-                  opacity: 0,
-                  scale: isCenter ? 0.95 : 0.7,
-                }}
-                animate={{
-                  x: offset * 180,
-                  opacity: 1,
-                  scale: isCenter ? 1 : 0.9,
-                }}
-                transition={{ duration: 0.6 }}
-              >
-                {isCenter ? (
-                  <div
-                    className="relative 
-                            w-[220px] xl:w-[280px] 2xl:w-[320px] 3xl:w-[357px] 
-                            h-[460px] xl:h-[600px] 2xl:h-[680px] 3xl:h-[751px] 
-                            top-[60px] xl:top-[60px] 2xl:top-[90px] 3xl:top-[80px]"
+      <div className="hidden md:flex relative w-1/2 h-full justify-center items-center">
+        {/* Contenedor fijo para marco + imágenes */}
+        <div className="relative w-[260px] xl:w-[320px] 2xl:w-[360px] 3xl:w-[400px] h-auto">
+          {/* Carrusel dentro del marco */}
+          <div className="absolute inset-0 flex items-center justify-center z-0">
+            <AnimatePresence>
+              {[0].map((offset) => {
+                const imgIndex = getIndex(offset);
+                return (
+                  <motion.div
+                    key={imgIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{
+                      duration: 0.6,
+                      ease: "easeOut",
+                    }}
+                    className="absolute w-[93%] h-[96%] rounded-3xl left-4"
                   >
                     <Image
                       src={images[imgIndex]}
                       alt={`Imagen ${imgIndex}`}
-                      className="rounded-2xl px-2"
-                      priority
+                      className="object-cover rounded-3xl"
+                      fill
                     />
-                  </div>
-                ) : (
-                  <div
-                    className="relative 
-                            w-[220px] xl:w-[280px] 2xl:w-[320px] 3xl:w-[357px] 
-                            h-[460px] xl:h-[600px] 2xl:h-[680px] 3xl:h-[751px] 
-                            opacity-60"
-                  >
-                    <Image
-                      src={images[imgIndex]}
-                      alt={`Imagen ${imgIndex}`}
-                      className="rounded-2xl object-contain p-[20px]"
-                    />
-                  </div>
-                )}
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
 
-        {/* Marco fijo */}
-        <div
-          className="absolute inset-0 z-10 pointer-events-none 
-                  top-[12%] xl:top-[10%] 2xl:top-[14.2%] 3xl:top-[14.7%] 
-                  left-[40%] xl:left-[36%] 2xl:left-[44%] 3xl:left-[45%]"
-        >
+          {/* Marco fijo */}
           <Image
             src={marcoCelular}
             alt="marco celular"
-            className="object-contain 
-                 w-[260px] xl:w-[244px] 2xl:w-[310px] 3xl:w-[322px] h-auto"
+            className="relative z-10 pointer-events-none"
             priority
           />
         </div>

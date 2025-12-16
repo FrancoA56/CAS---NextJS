@@ -100,80 +100,79 @@ export default function Opcion4() {
   }, [started, pasos.length]);
 
   return (
-    <div
-      className="h-[100dvh] w-full flex flex-col justify-center  text-black text-center bg-pink pt-20"
-      ref={ref}
-    >
-      <div className="flex flex-col items-end text-end px-8 md:px-24 ">
-        <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">
-          AHORRÁ
-        </div>
-        <div className="stroke text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
-          TIEMPO Y RECURSOS
-        </div>
-        <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl hidden md:flex">
-          Somos una agencia 360° que cubre todas las áreas clave para
-          potenciarte,
-          <br /> con un acompañamiento completo y efectivo. Todo en un solo
-          lugar para que puedas enfocarte en lo que realmente importa.
-        </div>
-        <div className="w-full md:w-3/4 mt-2 text-end 3xl:text-2xl flex md:hidden">
-          Somos una agencia 360° que cubre todas las áreas clave para
-          potenciarte, con un acompañamiento completo y efectivo. Todo en un
-          solo lugar para que puedas enfocarte en lo que realmente importa.
-        </div>
-      </div>
+    <div ref={ref} className="w-screen h-[100dvh] bg-pink flex flex-shrink-0">
+      {/* Contenedor interno limitado */}
+      <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col justify-center text-black">
+        {/* ===== TITULOS ===== */}
+        <div className="items-end text-right">
+          <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">
+            AHORRÁ
+          </div>
+          <div className="stroke text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
+            TIEMPO Y RECURSOS
+          </div>
 
-      {/* Timeline Desktop*/}
-      <div className=" flex-col items-start justify-start mt-24 pr-12 sm:pr-8 md:pr-16 lg:pr-24 xl:pr-48 hidden md:flex">
-        <div
-          className="relative w-full h-16 flex items-center justify-between pl-8 md:pl-24 lg:pl-52
- "
-        >
-          {/* Línea completa */}
-          <div
-            className="absolute left-0 h-1 bg-white -translate-y-1/2 z-0 transition-all duration-700 ease-in-out"
-            style={{ width: `${lineProgress}%` }}
-          />
+          {/* Texto desktop */}
+          <div className="mt-2 max-w-[720px] ml-auto text-end hidden md:block md:text-xl 3xl:text-2xl">
+            Somos una agencia 360° que cubre todas las áreas clave para
+            potenciarte,
+            con un acompañamiento completo y efectivo. Todo en un solo lugar
+            para que puedas enfocarte en lo que realmente importa.
+          </div>
 
-          {pasos.map((paso, index) => (
+          {/* Texto mobile */}
+          <div className="mt-2 md:hidden text-end">
+            Somos una agencia 360° que cubre todas las áreas clave para
+            potenciarte, con un acompañamiento completo y efectivo. Todo en un
+            solo lugar para que puedas enfocarte en lo que realmente importa.
+          </div>
+        </div>
+
+        {/* ===== TIMELINE DESKTOP ===== */}
+        <div className="hidden md:flex mt-24 self-end w-[90%]">
+          <div className="relative w-full h-16 flex items-center justify-between">
+            {/* Línea animada */}
             <div
-              key={index}
-              className="relative flex flex-col items-center z-10"
-            >
-              {/* Punto sobre la línea */}
+              className="absolute left-0 h-1 bg-white -translate-y-1/2 z-0 transition-all duration-700 ease-in-out"
+              style={{ width: `${lineProgress}%` }}
+            />
+
+            {pasos.map((paso, index) => (
               <div
-                className={`w-5 h-5 rounded-full bg-yellow transition-all duration-500 bottom-0.5 relative ${
+                key={index}
+                className="relative flex flex-col items-center z-10"
+              >
+                {/* Punto */}
+                <div
+                  className={`w-5 h-5 rounded-full bg-yellow transition-all duration-500 bottom-0.5 relative ${
+                    visibleSteps >= index + 1 ? "animate-scale-in" : "opacity-0"
+                  }`}
+                />
+
+                {/* Texto */}
+                <span
+                  className={`text-base md:text-xl text-white px-3 py-1 rounded-sm absolute top-6 transition-transform ${
+                    visibleSteps >= index + 1
+                      ? "animate-slide-up-fade"
+                      : "opacity-0"
+                  }`}
+                >
+                  {paso.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== TIMELINE MOBILE ===== */}
+        <div className="md:hidden flex flex-col pt-20">
+          {pasos.map((paso, index) => (
+            <div key={index} className="relative z-10 flex items-center mb-8">
+              <div
+                className={`w-5 h-5 rounded-full bg-yellow transition-all duration-500 relative mr-4 ${
                   visibleSteps >= index + 1 ? "animate-scale-in" : "opacity-0"
                 }`}
               />
-
-              {/* Texto con fondo pink */}
-              <span
-                className={`text-base md:text-xl 3xl:text-2xl text-white px-3 py-1 rounded-sm absolute top-6 transition-transform ${
-                  visibleSteps >= index + 1
-                    ? "animate-slide-up-fade"
-                    : "opacity-0"
-                } `}
-              >
-                {paso.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Timeline Mobile (usa lineProgress del intervalo) */}
-      <div className="md:hidden flex flex-col items-start pt-20 px-16 relative">
-       
-        {pasos.map((paso, index) => (
-          <div key={index} className="relative z-10 flex items-center mb-8">
-            <div
-              className={`w-5 h-5 rounded-full bg-yellow transition-all duration-500 relative ml-3 mr-4 ${
-                visibleSteps >= index + 1 ? "animate-scale-in" : "opacity-0"
-              }`}
-            />
-            <div className="my-4">
               <span
                 className={`text-base text-white px-3 py-1 rounded-sm transition-transform ${
                   visibleSteps >= index + 1
@@ -184,8 +183,8 @@ export default function Opcion4() {
                 {paso.label}
               </span>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

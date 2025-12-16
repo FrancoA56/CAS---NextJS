@@ -39,6 +39,7 @@ module.exports = {
         trabajando3: "url('media/trabajando3.jpeg)",
       },
       screens: {
+        "tablet": "1000px",
         "3xl": "1920px",
       },
     },

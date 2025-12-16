@@ -69,7 +69,9 @@ export default function RootLayout({
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
-        <main>{children}</main>
+        <main>
+          <div className="max-w-[1980px] w-full">{children}</div>
+        </main>
       </body>
     </html>
   );

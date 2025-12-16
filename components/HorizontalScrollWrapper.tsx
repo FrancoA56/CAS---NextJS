@@ -1,4 +1,5 @@
 "use client";
+
 import React, {
   useEffect,
   useRef,
@@ -16,18 +17,27 @@ const HorizontalScrollWrapper = forwardRef<
   { children: React.ReactNode }
 >(({ children }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const currentIndexRef = useRef(0); // ← Usamos useRef para mantener actualizado el índice
+  const currentIndexRef = useRef(0);
+
+  /** Obtiene el ancho real de cada slide */
+  const getSlideWidth = () => {
+    const el = containerRef.current;
+    if (!el) return window.innerWidth;
+    return el.children[0]?.clientWidth || window.innerWidth;
+  };
 
   useImperativeHandle(ref, () => ({
     scrollToIndex: (index: number) => {
       const container = containerRef.current;
-      if (container) {
-        currentIndexRef.current = index; // ← Actualizamos el índice
-        container.scrollTo({
-          left: index * window.innerWidth,
-          behavior: "smooth",
-        });
-      }
+      if (!container) return;
+
+      currentIndexRef.current = index;
+      const slideWidth = getSlideWidth();
+
+      container.scrollTo({
+        left: index * slideWidth,
+        behavior: "smooth",
+      });
     },
     getScrollableElement: () => containerRef.current,
   }));
@@ -39,31 +49,34 @@ const HorizontalScrollWrapper = forwardRef<
     let isThrottled = false;
     const childrenCount = el.children.length;
 
+    /** ======= SCROLL CON RUEDA ======= */
     const onWheel = (e: WheelEvent) => {
       if (isThrottled) return;
-      if (Math.abs(e.deltaY) < 10) return;
+      if (Math.abs(e.deltaY) < 10) return; // Ignorar micro desplazamientos
 
       e.preventDefault();
 
       const direction = e.deltaY > 0 ? 1 : -1;
+
       currentIndexRef.current = Math.min(
         Math.max(0, currentIndexRef.current + direction),
         childrenCount - 1
       );
 
+      const slideWidth = getSlideWidth();
+
       el.scrollTo({
-        left: currentIndexRef.current * window.innerWidth,
+        left: currentIndexRef.current * slideWidth,
         behavior: "smooth",
       });
 
       isThrottled = true;
-      setTimeout(() => {
-        isThrottled = false;
-      }, 700);
+      setTimeout(() => (isThrottled = false), 650);
     };
-    // Manejo de touch para móvil
-    let startX: number;
-    let isScrolling: boolean;
+
+    /** ======= TOUCH PARA MÓVIL ======= */
+    let startX = 0;
+    let isScrolling = false;
 
     const onTouchStart = (e: TouchEvent) => {
       startX = e.touches[0].clientX;
@@ -72,7 +85,7 @@ const HorizontalScrollWrapper = forwardRef<
 
     const onTouchMove = (e: TouchEvent) => {
       if (!isScrolling) return;
-      e.preventDefault(); // Prevenir scroll vertical
+      e.preventDefault();
     };
 
     const onTouchEnd = (e: TouchEvent) => {
@@ -80,33 +93,31 @@ const HorizontalScrollWrapper = forwardRef<
       isScrolling = false;
 
       const endX = e.changedTouches[0].clientX;
-      const diffX = startX - endX;
+      const diff = startX - endX;
 
-      // Solo ajustar si el desplazamiento es significativo
-      if (Math.abs(diffX) > 50) {
-        const direction = diffX > 0 ? 1 : -1;
+      const slideWidth = getSlideWidth();
+
+      if (Math.abs(diff) > 50) {
+        const direction = diff > 0 ? 1 : -1;
+
         currentIndexRef.current = Math.min(
           Math.max(0, currentIndexRef.current + direction),
           childrenCount - 1
         );
-
-        el.scrollTo({
-          left: currentIndexRef.current * window.innerWidth,
-          behavior: "smooth",
-        });
-      } else {
-        // Ajustar al slide actual si no hubo suficiente desplazamiento
-        el.scrollTo({
-          left: currentIndexRef.current * window.innerWidth,
-          behavior: "smooth",
-        });
       }
+
+      el.scrollTo({
+        left: currentIndexRef.current * slideWidth,
+        behavior: "smooth",
+      });
     };
 
+    /** ======= EVENT LISTENERS ======= */
+    el.addEventListener("wheel", onWheel, { passive: false });
     el.addEventListener("touchstart", onTouchStart);
     el.addEventListener("touchmove", onTouchMove, { passive: false });
     el.addEventListener("touchend", onTouchEnd);
-    el.addEventListener("wheel", onWheel, { passive: false });
+
     return () => {
       el.removeEventListener("wheel", onWheel);
       el.removeEventListener("touchstart", onTouchStart);
@@ -121,7 +132,10 @@ const HorizontalScrollWrapper = forwardRef<
       className="flex w-screen h-[100dvh] safe-area overflow-x-scroll scrollbar-hide snap-x snap-mandatory overscroll-x-none touch-pan-x"
     >
       {React.Children.map(children, (child, index) => (
-        <div key={index} className="w-screen h-[100dvh] safe-area flex-shrink-0 snap-start">
+        <div
+          key={index}
+          className="w-screen h-[100dvh] safe-area flex-shrink-0 snap-start"
+        >
           {child}
         </div>
       ))}

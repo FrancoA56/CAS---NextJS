@@ -1,4 +1,5 @@
 "use client";
+
 import React, {
   useEffect,
   useRef,
@@ -17,61 +18,77 @@ const HorizontalScrollWrapperInicio = forwardRef<
 >(({ children }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  /** Obtiene la posición X real del slide */
+  const getSlidePosition = (index: number) => {
+    const el = containerRef.current;
+    if (!el) return 0;
+
+    const child = el.children[index] as HTMLElement | undefined;
+    if (!child) return 0;
+
+    return child.offsetLeft; // posición absoluta dentro del contenedor
+  };
+
   useImperativeHandle(ref, () => ({
     scrollToIndex: (index: number) => {
       const container = containerRef.current;
-      if (container && container.children[index]) {
-        const child = container.children[index] as HTMLElement;
-        child.scrollIntoView({ behavior: "smooth", inline: "start" });
-      }
+      if (!container) return;
+
+      const position = getSlidePosition(index);
+      
+      container.scrollTo({
+        left: position,
+        behavior: "smooth",
+      });
     },
     getScrollableElement: () => containerRef.current,
   }));
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const el = containerRef.current;
+    if (!el) return;
 
-    // Wheel para desktop
+    /** ======= SCROLL CON RUEDA (mouse) ======= */
     const onWheel = (e: WheelEvent) => {
       if (e.deltaY !== 0) {
         e.preventDefault();
-        container.scrollLeft += e.deltaY;
+        el.scrollLeft += e.deltaY; // desplazamos horizontal con vertical
       }
     };
 
-    // Variables para el touch
-    let touchStartX = 0;
-    let touchStartY = 0;
+    /** ======= TOUCH PARA MÓVIL ======= */
+    let startX = 0;
+    let startY = 0;
 
     const onTouchStart = (e: TouchEvent) => {
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
     };
 
     const onTouchMove = (e: TouchEvent) => {
-      const touchX = e.touches[0].clientX;
-      const touchY = e.touches[0].clientY;
+      const x = e.touches[0].clientX;
+      const y = e.touches[0].clientY;
 
-      const deltaX = touchX - touchStartX;
-      const deltaY = touchY - touchStartY;
+      const deltaX = x - startX;
+      const deltaY = y - startY;
 
-      // Solo si el movimiento vertical es más fuerte que el horizontal
+      // Control: si el movimiento vertical domina, convertimos vertical → horizontal
       if (Math.abs(deltaY) > Math.abs(deltaX)) {
-        e.preventDefault(); // Evita scroll vertical
-        container.scrollLeft += deltaY; // Aplica el movimiento vertical como scroll horizontal
-        touchStartY = touchY; // Actualiza el punto de inicio para movimientos continuos
+        e.preventDefault();
+        el.scrollLeft += -deltaY;
+        startY = y;
       }
     };
 
-    container.addEventListener("wheel", onWheel, { passive: false });
-    container.addEventListener("touchstart", onTouchStart, { passive: false });
-    container.addEventListener("touchmove", onTouchMove, { passive: false });
+    /** ======= EVENTOS ======= */
+    el.addEventListener("wheel", onWheel, { passive: false });
+    el.addEventListener("touchstart", onTouchStart, { passive: false });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
 
     return () => {
-      container.removeEventListener("wheel", onWheel);
-      container.removeEventListener("touchstart", onTouchStart);
-      container.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("wheel", onWheel);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
     };
   }, []);
 

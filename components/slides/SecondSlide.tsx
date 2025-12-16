@@ -43,7 +43,7 @@ export default function SecondSlide({
             diseño en un mismo equipo para garantizar la mejor solución.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-2 z-0 mx-32">
+          <div className="flex flex-wrap justify-center gap-2 z-0 mx-24 ">
             {ideales.map(({ label, background }, index) => (
               <button
                 key={index}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import instagram from "../../media/Instagram_icon.png";
+import instagram from "../../media/Instagram_icon.webp";
 import tiktok from "../../media/tiktok.png";
 import linkedin from "../../media/LinkedIn_icon.png";
 import instagram2 from "../../media/Instagram.webp";

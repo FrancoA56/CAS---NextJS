@@ -11,7 +11,20 @@ export default function ImagesCol() {
   return (
     <>
       {/*desktop*/}
-      <div className=" relative hidden h-screen md:flex flex-row md:flex-col items-end justify-end left-[8%]  3xl:bottom-[105%] bottom-[102%]  pointer-events-none">
+      <div
+        className="
+    relative
+    hidden md:flex
+    flex-col
+    gap-6
+    items-end
+    translate-x-[88px]
+    3xl:translate-x-[128px]
+    -top-1/2
+    -translate-y-1/2
+    pointer-events-none
+  "
+      >
         <div className="flex flex-col gap-6">
           <div className="flip-container w-44 3xl:w-64 h-44 3xl:h-64 pointer-events-auto">
             <div className="flipper rotate-on-hover transition-transform duration-700">

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import imagen1 from "../../media/opcion3inicio1.jpg";
-import imagen2 from "../../media/opcion3inicio2.jpg";
-import imagen3 from "../../media/opcion3inicio3.jpg";
+import imagen1 from "../../media/opcion3inicio1.webp";
+import imagen2 from "../../media/opcion3inicio2.webp";
+import imagen3 from "../../media/opcion3inicio3.webp";
 import { useIsIOS } from "../../hooks/useIsIOS";
 export default function Opcion3() {
   const isIOS = useIsIOS();
@@ -11,28 +11,28 @@ export default function Opcion3() {
     <>
       {/* Desktop */}
 
-      <div className=" h-[100dvh] safe-area w-full md:flex hidden flex-col justify-between px-20 text-black text-center bg-blue ">
+      <div className=" h-[100dvh] safe-area w-screen md:flex hidden flex-col justify-between px-20 text-black text-center bg-blue ">
         {/* Título */}
-        <div className="h-auto flex flex-row items-start justify-center gap-12 mt-12">
+        <div className="h-auto w-full flex flex-row items-start justify-center gap-12 mt-12">
           <Image
             src={imagen1}
             alt="WholesaleColores"
-            className="rounded-xl w-[23%] mt-8"
+            className="rounded-xl w-[18%] mt-8"
           ></Image>
           <Image
             src={imagen2}
             alt="WholesaleColores"
-            className="rounded-xl w-[23%] "
+            className="rounded-xl w-[18%] "
           ></Image>
           <Image
             src={imagen3}
             alt="WholesaleColores"
-            className="rounded-xl w-[23%] mt-8"
+            className="rounded-xl w-[18%] mt-8"
           ></Image>
         </div>
 
         {/* Texto al fondo alineado a la derecha */}
-        <div className="flex flex-col items-end text-end mb-12">
+        <div className="flex flex-col items-end text-end mb-12 w-11/12">
           <div className="font-bold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl">
             COMUNICA
           </div>
